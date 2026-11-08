@@ -8,501 +8,128 @@
 
 <style>
 :root{
---navy:#061638;
---blue:#087be5;
---green:#12bd4c;
---ink:#102448;
---muted:#61728b;
---line:#d7e5f5;
---pale:#f1f8ff;
+--navy:#061638;--blue:#087be5;--green:#12bd4c;
+--ink:#102448;--muted:#61728b;--line:#d7e5f5;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
-margin:0;
-font-family:Arial,Helvetica,sans-serif;
+margin:0;font-family:Arial,Helvetica,sans-serif;
 background:linear-gradient(180deg,#f4f8ff,#edf5ff,#f8fbff);
-color:var(--ink);
-line-height:1.5
+color:var(--ink);line-height:1.5
 }
 a{text-decoration:none;color:inherit}
 button,input,textarea,select{font:inherit}
 .wrap{width:min(1160px,93%);margin:auto}
 
-header{
-background:#fff;
-position:sticky;
-top:0;
-z-index:10;
-box-shadow:0 2px 12px #001b3610
-}
-.nav{
-min-height:78px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:15px
-}
-.brand{
-font-size:21px;
-font-weight:900;
-color:var(--navy)
-}
+header{background:white;position:sticky;top:0;z-index:10;box-shadow:0 2px 12px #001b3610}
+.nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.brand{font-size:21px;font-weight:900;color:var(--navy)}
 .brand span{color:#15bd4b}
-.navlinks{
-display:flex;
-gap:17px;
-font-size:14px;
-font-weight:700
-}
+.navlinks{display:flex;gap:17px;font-size:14px;font-weight:700}
 .navlinks a:hover{color:var(--blue)}
-.wa{
-background:#13b94c;
-color:white;
-padding:12px 17px;
-border-radius:28px;
-font-weight:900
-}
+.wa{background:#13b94c;color:white;padding:12px 17px;border-radius:28px;font-weight:900}
 
 .hero{
 background:radial-gradient(ellipse at 78% 28%,#0d7bd5,#0a367b 36%,#061638 76%);
-color:white;
-overflow:hidden
+color:white;overflow:hidden
 }
 .hero-inner{
-padding:65px 0;
-min-height:500px;
-display:grid;
-grid-template-columns:1fr 1fr;
-align-items:center;
-gap:35px
+padding:65px 0;min-height:500px;
+display:grid;grid-template-columns:1fr 1fr;
+align-items:center;gap:35px
 }
-.kicker{
-color:#6cffb0;
-text-transform:uppercase;
-letter-spacing:2px;
-font-size:12px;
-font-weight:900
-}
-.hero h1{
-font-size:clamp(38px,5vw,64px);
-line-height:1.05;
-margin:13px 0;
-letter-spacing:-1.5px
-}
+.kicker{color:#6cffb0;text-transform:uppercase;letter-spacing:2px;font-size:12px;font-weight:900}
+.hero h1{font-size:clamp(38px,5vw,64px);line-height:1.05;margin:13px 0;letter-spacing:-1.5px}
 .hero h1 span{color:#70ff35}
-.hero p{
-color:#d9eaff;
-font-size:18px;
-line-height:1.8
-}
-.checks{
-display:flex;
-gap:12px 20px;
-flex-wrap:wrap;
-margin:22px 0;
-font-weight:800
-}
-.checks span:before{
-content:"✓";
-background:#21d84e;
-color:#043b26;
-border-radius:50%;
-padding:2px 7px;
-margin-right:7px
-}
-.hero-art img{
-width:100%;
-max-width:540px;
-height:auto;
-display:block;
-border-radius:22px;
-border:1px solid #8ac8ff55;
-box-shadow:0 24px 70px #00102f88
-}
-.btn{
-border:0;
-border-radius:11px;
-padding:13px 19px;
-background:linear-gradient(100deg,#14c94c,#04a7c4);
-color:white;
-font-weight:900;
-cursor:pointer;
-display:inline-block;
-box-shadow:0 8px 20px #08a95a25
-}
+.hero p{color:#d9eaff;font-size:18px;line-height:1.8}
+.checks{display:flex;gap:12px 20px;flex-wrap:wrap;margin:22px 0;font-weight:800}
+.checks span:before{content:"✓";background:#21d84e;color:#043b26;border-radius:50%;padding:2px 7px;margin-right:7px}
+.hero-art img{width:100%;max-width:540px;height:auto;display:block;border-radius:22px;border:1px solid #8ac8ff55;box-shadow:0 24px 70px #00102f88}
+.btn{border:0;border-radius:11px;padding:13px 19px;background:linear-gradient(100deg,#14c94c,#04a7c4);color:white;font-weight:900;cursor:pointer;display:inline-block;box-shadow:0 8px 20px #08a95a25}
 .btn:hover{transform:translateY(-2px)}
 .btn.dark{background:#071a42}
-.btn.light{
-background:white;
-color:#08234c;
-border:1px solid var(--line)
-}
+.btn.light{background:white;color:#08234c;border:1px solid var(--line)}
 
 section{padding:60px 0}
-.heading{
-text-align:center;
-margin-bottom:32px
-}
-.heading small{
-color:#078f9c;
-letter-spacing:3px;
-font-weight:900
-}
-.heading h2{
-font-size:clamp(28px,4vw,40px);
-margin:5px;
-color:#071b43
-}
-.heading p{
-color:var(--muted);
-max-width:720px;
-margin:8px auto;
-line-height:1.7
-}
+.heading{text-align:center;margin-bottom:32px}
+.heading small{color:#078f9c;letter-spacing:3px;font-weight:900}
+.heading h2{font-size:clamp(28px,4vw,40px);margin:5px;color:#071b43}
+.heading p{color:var(--muted);max-width:720px;margin:8px auto;line-height:1.7}
 
-#services{
-background:linear-gradient(180deg,#f4f8ff,#eaf3ff,#f8fbff)
-}
-.grid{
-display:grid;
-grid-template-columns:repeat(2,minmax(0,1fr));
-gap:22px;
-align-items:start
-}
-.poster-card{
-background:white;
-border:1px solid var(--line);
-border-radius:22px;
-overflow:hidden;
-box-shadow:0 16px 40px #09285817;
-transition:.2s
-}
-.poster-card:hover{
-transform:translateY(-4px);
-box-shadow:0 22px 48px #09285824
-}
-.poster-card>img{
-display:block;
-width:100%;
-height:auto;
-object-fit:contain;
-background:#fff
-}
+#services{background:linear-gradient(180deg,#f4f8ff,#eaf3ff,#f8fbff)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;align-items:start}
+.poster-card{background:white;border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:0 16px 40px #09285817;transition:.2s}
+.poster-card:hover{transform:translateY(-4px)}
+.poster-card>img{display:block;width:100%;height:auto;object-fit:contain;background:white}
 .poster-card-body{padding:19px 20px 22px}
-.poster-card-body h3{
-margin:0 0 7px;
-color:#08234c;
-font-size:23px
-}
-.poster-card-body>p{
-margin:0 0 14px;
-color:#61728b;
-font-size:13px;
-line-height:1.75
-}
+.poster-card-body h3{margin:0 0 7px;color:#08234c;font-size:23px}
+.poster-card-body>p{margin:0 0 14px;color:#61728b;font-size:13px;line-height:1.75}
 .offer-list{display:grid;gap:10px}
-.offer{
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:12px;
-border:1px solid #d9e7f3;
-border-radius:15px;
-padding:13px;
-background:linear-gradient(110deg,#f4f9ff,#f0fff7)
-}
-.offer strong{
-display:block;
-color:#112d5a;
-font-size:14px
-}
-.offer small{
-display:block;
-color:#718096;
-font-size:11px;
-margin-top:3px
-}
-.offer-price{
-font-size:22px;
-font-weight:950;
-color:#087e43;
-white-space:nowrap
-}
-.offer .btn{
-padding:9px 12px;
-font-size:12px;
-white-space:nowrap
-}
-.service-note{
-font-size:12px;
-color:#65758b;
-margin-top:20px;
-text-align:center
-}
+.offer{display:flex;align-items:center;justify-content:space-between;gap:12px;border:1px solid #d9e7f3;border-radius:15px;padding:13px;background:linear-gradient(110deg,#f4f9ff,#f0fff7)}
+.offer strong{display:block;color:#112d5a;font-size:14px}
+.offer small{display:block;color:#718096;font-size:11px;margin-top:3px}
+.offer-price{font-size:22px;font-weight:950;color:#087e43;white-space:nowrap}
+.offer .btn{padding:9px 12px;font-size:12px;white-space:nowrap}
+.service-note{font-size:12px;color:#65758b;margin-top:20px;text-align:center}
 
-.payment-poster{
-max-width:980px;
-margin:auto;
-background:white;
-border:1px solid #dce6f3;
-border-radius:22px;
-overflow:hidden;
-box-shadow:0 16px 40px #09285817
-}
-.payment-poster img{
-display:block;
-width:100%;
-height:auto
-}
+.payment-poster{max-width:980px;margin:auto;background:white;border:1px solid #dce6f3;border-radius:22px;overflow:hidden;box-shadow:0 16px 40px #09285817}
+.payment-poster img{display:block;width:100%;height:auto}
 
-#reviews{
-background:radial-gradient(ellipse at top,#0b3c85,#061638 72%);
-color:white
-}
+#reviews{background:radial-gradient(ellipse at top,#0b3c85,#061638 72%);color:white}
 #reviews .heading h2{color:white}
 #reviews .heading p{color:#c9dcf5}
-.reviewgrid{
-display:grid;
-grid-template-columns:repeat(3,minmax(0,1fr));
-gap:16px
-}
-.review{
-border:1px solid #d8e6f8;
-border-radius:18px;
-padding:20px;
-background:linear-gradient(145deg,#fff,#f3f8ff);
-box-shadow:0 10px 26px #00112f25;
-color:#102448
-}
-.review-person{
-display:flex;
-align-items:center;
-gap:11px
-}
-.avatar{
-width:48px;
-height:48px;
-flex:0 0 48px;
-border-radius:50%;
-display:grid;
-place-items:center;
-background:linear-gradient(135deg,#087be5,#11b98b);
-color:white;
-font-weight:900
-}
+.reviewgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.review{border:1px solid #d8e6f8;border-radius:18px;padding:20px;background:linear-gradient(145deg,#fff,#f3f8ff);box-shadow:0 10px 26px #00112f25;color:#102448}
+.review-person{display:flex;align-items:center;gap:11px}
+.avatar{width:48px;height:48px;flex:0 0 48px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#087be5,#11b98b);color:white;font-weight:900}
 .review b{font-size:14px}
 .stars{color:#e9a600;letter-spacing:2px}
-.review p{
-font-size:14px;
-line-height:1.7;
-min-height:65px;
-color:#60718a
-}
-.review-demo{
-font-size:9px;
-font-weight:900;
-color:#93630a;
-background:#fff6df;
-border:1px solid #edd49a;
-padding:4px 7px;
-border-radius:20px
-}
+.review p{font-size:14px;line-height:1.7;min-height:65px;color:#60718a}
+.review-demo{font-size:9px;font-weight:900;color:#93630a;background:#fff6df;border:1px solid #edd49a;padding:4px 7px;border-radius:20px}
 
-#contact{
-background:linear-gradient(180deg,#f8fbff,#eaf3ff)
-}
-.contact{
-background:radial-gradient(circle at 85% 10%,#0c74c7,#08285e 65%,#061638);
-color:white;
-text-align:center;
-padding:38px 20px;
-border-radius:22px;
-box-shadow:0 18px 40px #09285825
-}
+#contact{background:linear-gradient(180deg,#f8fbff,#eaf3ff)}
+.contact{background:radial-gradient(circle at 85% 10%,#0c74c7,#08285e 65%,#061638);color:white;text-align:center;padding:38px 20px;border-radius:22px;box-shadow:0 18px 40px #09285825}
 .contact p{color:#d8eaff}
+footer{background:#061638;color:#d5e2f4;text-align:center;padding:28px}
+.admin-footer{border:0;background:transparent;color:#9fc5ff;text-decoration:underline;cursor:pointer;font:inherit;margin-top:8px}
 
-footer{
-background:#061638;
-color:#d5e2f4;
-text-align:center;
-padding:28px;
-margin-top:0
-}
-.admin-footer{
-border:0;
-background:transparent;
-color:#9fc5ff;
-text-decoration:underline;
-cursor:pointer;
-font:inherit;
-margin-top:8px
-}
-
-.backdrop{
-position:fixed;
-inset:0;
-background:#06132fce;
-display:none;
-align-items:center;
-justify-content:center;
-padding:15px;
-z-index:40
-}
+.backdrop{position:fixed;inset:0;background:#06132fce;display:none;align-items:center;justify-content:center;padding:15px;z-index:40}
 .backdrop.open{display:flex}
-.modal{
-background:white;
-border-radius:18px;
-padding:22px;
-width:min(560px,100%);
-max-height:92vh;
-overflow:auto
-}
-.modalhead{
-display:flex;
-justify-content:space-between;
-align-items:center
-}
+.modal{background:white;border-radius:18px;padding:22px;width:min(560px,100%);max-height:92vh;overflow:auto}
+.modalhead{display:flex;justify-content:space-between;align-items:center}
 .modal h2{margin:0;color:#08234c}
-.close{
-border:0;
-border-radius:50%;
-width:35px;
-height:35px;
-font-size:22px;
-cursor:pointer
-}
+.close{border:0;border-radius:50%;width:35px;height:35px;font-size:22px;cursor:pointer}
 .field{margin:13px 0}
-.field label{
-font-size:13px;
-font-weight:900;
-display:block;
-margin-bottom:6px
-}
-.field input{
-width:100%;
-padding:11px;
-border:1px solid #cbd9e9;
-border-radius:9px
-}
-.summary{
-background:#eafff1;
-border-radius:10px;
-padding:12px;
-font-size:20px;
-font-weight:950;
-color:#087e43;
-margin:12px 0
-}
+.field label{font-size:13px;font-weight:900;display:block;margin-bottom:6px}
+.field input{width:100%;padding:11px;border:1px solid #cbd9e9;border-radius:9px}
+.summary{background:#eafff1;border-radius:10px;padding:12px;font-size:20px;font-weight:950;color:#087e43;margin:12px 0}
 .hint{font-size:12px;color:#68778c}
-.paychoices{
-display:grid;
-grid-template-columns:repeat(3,minmax(0,1fr));
-gap:8px
-}
-.pay{
-padding:12px 5px;
-font-size:12px;
-font-weight:900;
-border:1px solid #d4e1ef;
-border-radius:10px;
-background:#fff;
-cursor:pointer;
-color:#17345d
-}
-.paylogo{
-font-size:20px;
-display:block;
-margin-bottom:5px
-}
-.pay.selected{
-outline:3px solid #12bd4c;
-background:#eafff0
-}
+.paychoices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.pay{padding:12px 5px;font-size:12px;font-weight:900;border:1px solid #d4e1ef;border-radius:10px;background:white;cursor:pointer;color:#17345d}
+.paylogo{font-size:20px;display:block;margin-bottom:5px}
+.pay.selected{outline:3px solid #12bd4c;background:#eafff0}
 
-.admin-backdrop{
-display:none;
-position:fixed;
-inset:0;
-background:#06132fdb;
-z-index:100;
-padding:16px;
-align-items:center;
-justify-content:center
-}
+.admin-backdrop{display:none;position:fixed;inset:0;background:#06132fdb;z-index:100;padding:16px;align-items:center;justify-content:center}
 .admin-backdrop.open{display:flex}
-.admin-panel{
-width:min(920px,100%);
-max-height:94vh;
-overflow:auto;
-background:#fff;
-border-radius:20px;
-padding:22px
-}
-.admin-head{
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:15px
-}
-.admin-head small{
-font-weight:900;
-letter-spacing:1.5px;
-color:#0b9e65
-}
+.admin-panel{width:min(920px,100%);max-height:94vh;overflow:auto;background:white;border-radius:20px;padding:22px}
+.admin-head{display:flex;align-items:center;justify-content:space-between;gap:15px}
+.admin-head small{font-weight:900;letter-spacing:1.5px;color:#0b9e65}
 .admin-head h2{margin:3px 0 10px;color:#09275c}
-.admin-warning{
-background:#fff5df;
-border:1px solid #f1d28b;
-color:#6c4a00;
-border-radius:10px;
-padding:12px;
-font-size:13px
-}
-.admin-help{
-background:#eef7ff;
-border-radius:10px;
-padding:12px;
-margin:12px 0;
-color:#244363;
-font-size:13px
-}
-.admin-label{
-display:block;
-font-weight:900;
-color:#102448;
-margin:14px 0 7px
-}
-.admin-panel textarea{
-width:100%;
-min-height:360px;
-resize:vertical;
-border:1px solid #b9cbe0;
-border-radius:12px;
-padding:14px;
-font:12px/1.55 monospace;
-color:#102448;
-background:#f8fbff
-}
-.admin-actions{
-display:flex;
-flex-wrap:wrap;
-gap:9px;
-margin-top:13px
-}
+.admin-warning{background:#fff5df;border:1px solid #f1d28b;color:#6c4a00;border-radius:10px;padding:12px;font-size:13px}
+.admin-help{background:#eef7ff;border-radius:10px;padding:14px;margin:12px 0;color:#244363;font-size:13px}
+.admin-help h3{margin:0 0 7px}
+.admin-label{display:block;font-weight:900;color:#102448;margin:14px 0 7px}
+.admin-panel textarea{width:100%;min-height:360px;resize:vertical;border:1px solid #b9cbe0;border-radius:12px;padding:14px;font:12px/1.55 monospace;color:#102448;background:#f8fbff}
+.admin-actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:13px}
 .admin-status{font-size:13px;color:#60718a}
+.admin-file{width:100%;padding:10px;border:1px solid #cbd9e9;border-radius:9px;background:white}
 [hidden]{display:none!important}
 
 @media(max-width:740px){
-.nav{min-height:70px}
-.brand{font-size:17px}
-.navlinks{display:none}
+.nav{min-height:70px}.brand{font-size:17px}.navlinks{display:none}
 .wa{padding:10px;font-size:12px}
-.hero-inner{
-grid-template-columns:1fr;
-padding:40px 0;
-gap:15px
-}
+.hero-inner{grid-template-columns:1fr;padding:40px 0;gap:15px}
 .hero-art img{max-width:100%}
 .hero h1{font-size:clamp(36px,10vw,50px)}
 .grid{grid-template-columns:1fr}
@@ -545,7 +172,7 @@ section{padding:46px 0}
 <a class="btn" href="#services">Explore Services ↓</a>
 </div>
 <div class="hero-art">
-<img src="assets/hero-digital-growth.png" alt="Digital growth illustration" fetchpriority="high">
+<img id="heroImage" src="assets/hero-digital-growth.png" alt="Digital growth illustration" fetchpriority="high">
 </div>
 </div>
 </div>
@@ -570,7 +197,7 @@ section{padding:46px 0}
 <p>Choose your preferred payment option when placing an order. We will confirm the recipient details through WhatsApp.</p>
 </div>
 <div class="payment-poster">
-<img src="assets/payment-methods.png" alt="Accepted payment methods" loading="lazy">
+<img id="paymentImage" src="assets/payment-methods.png" alt="Accepted payment methods" loading="lazy">
 </div>
 </div>
 </section>
@@ -613,28 +240,20 @@ section{padding:46px 0}
 <button class="close" id="close" aria-label="Close">×</button>
 </div>
 <p id="serviceName" class="hint"></p>
-
 <div class="field">
 <label for="quantity">Quantity</label>
 <input id="quantity" type="number" min="1" max="100" value="1">
 </div>
-
 <div class="field">
 <label for="buyer">Your name (optional)</label>
 <input id="buyer" placeholder="Your name">
 </div>
-
 <div class="summary" id="summary">Total: $0</div>
-
 <b>Select a payment method</b>
 <p class="hint">Select your preferred payment method.</p>
 <div class="paychoices" id="payChoices"></div>
-
 <p class="hint">Your service, selected package, total and payment choice will be sent to WhatsApp. We will confirm the recipient details before you pay.</p>
-
-<button class="btn" id="whatsOrder" style="width:100%" disabled>
-Contact on WhatsApp to Order →
-</button>
+<button class="btn" id="whatsOrder" style="width:100%" disabled>Contact on WhatsApp to Order →</button>
 </div>
 </div>
 
@@ -650,38 +269,50 @@ Contact on WhatsApp to Order →
 </div>
 
 <div id="adminLogin">
-<p class="admin-help">আপনার Supabase-এ তৈরি করা Admin ইমেইল ও পাসওয়ার্ড দিয়ে লগইন করুন।</p>
-
+<p class="admin-help">আপনার Supabase Admin ইমেইল ও পাসওয়ার্ড দিয়ে লগইন করুন।</p>
 <div class="field">
 <label for="adminEmail">Admin Email</label>
 <input id="adminEmail" type="email" autocomplete="username" placeholder="আপনার Supabase ইমেইল">
 </div>
-
 <div class="field">
 <label for="adminPassword">Password</label>
 <input id="adminPassword" type="password" autocomplete="current-password" placeholder="আপনার Supabase পাসওয়ার্ড">
 </div>
-
 <button class="btn" id="adminLoginBtn" type="button">Login</button>
 <p id="loginStatus" class="admin-status"></p>
 </div>
 
 <div id="adminContent" hidden>
-<p class="admin-warning">লগইন সফল। এখানে পরিবর্তন Save করলে তা ডেটাবেসে সংরক্ষিত হবে এবং সবার ওয়েবসাইটে দেখা যাবে।</p>
+<p class="admin-warning">লগইন সফল। ছবি আপলোডের পর Save Changes চাপুন।</p>
 
 <div class="admin-help">
-<b>ছবি আপলোড:</b> নিচে সার্ভিস বেছে ছবি আপলোড করুন। এরপর Save Changes চাপুন।
+<h3>১. Hero Image পরিবর্তন</h3>
+<p>ওয়েবসাইটের প্রথম পেজের বড় ছবিটি মোবাইল থেকে নির্বাচন করে আপলোড করুন।</p>
+<input class="admin-file" type="file" id="heroFile" accept="image/*">
+<div class="admin-actions">
+<button class="btn" id="uploadHero" type="button">Upload Hero Image</button>
+</div>
 </div>
 
-<label class="admin-label" for="uploadCategory">কোন সার্ভিসের পোস্টার বদলাবেন?</label>
+<div class="admin-help">
+<h3>২. Payment Methods Image পরিবর্তন</h3>
+<p>বিকাশ, নগদ, রকেট, Visa, PayPal ইত্যাদির সব লোগো একটি ছবিতে সাজিয়ে একবারে আপলোড করুন।</p>
+<input class="admin-file" type="file" id="paymentFile" accept="image/*">
+<div class="admin-actions">
+<button class="btn" id="uploadPayment" type="button">Upload Payment Image</button>
+</div>
+</div>
+
+<div class="admin-help">
+<h3>৩. Service Poster পরিবর্তন</h3>
+<p>যে সার্ভিসের পোস্টার পরিবর্তন করবেন সেটি নির্বাচন করুন।</p>
+<label class="admin-label" for="uploadCategory">Service নির্বাচন</label>
 <select id="uploadCategory" style="width:100%;padding:11px;border:1px solid #cbd9e9;border-radius:9px"></select>
-
 <label class="admin-label" for="posterFile">নতুন পোস্টার ছবি</label>
-<input id="posterFile" type="file" accept="image/*" style="width:100%;padding:10px;border:1px solid #cbd9e9;border-radius:9px">
-
+<input class="admin-file" type="file" id="posterFile" accept="image/*">
 <div class="admin-actions">
 <button class="btn" id="uploadPoster" type="button">Upload Poster</button>
-<button class="btn light" id="adminLogout" type="button">Logout</button>
+</div>
 </div>
 
 <label class="admin-label" for="adminJson">Website Settings (Advanced JSON)</label>
@@ -691,9 +322,9 @@ Contact on WhatsApp to Order →
 <button class="btn" id="adminSave" type="button">Save Changes</button>
 <button class="btn light" id="adminReset" type="button">Reset to Original</button>
 <button class="btn dark" id="adminExport" type="button">Download Settings</button>
+<button class="btn light" id="adminLogout" type="button">Logout</button>
 </div>
 </div>
-
 <p id="adminStatus" class="admin-status" role="status"></p>
 </section>
 </div>
@@ -708,22 +339,14 @@ const DEFAULT_WA="8801913022305";
 
 /* PAYMENT METHODS */
 const DEFAULT_METHODS=[
-["bKash",""],
-["Nagad",""],
-["Rocket",""],
-["Bank Account",""],
-["Visa Card",""],
-["Binance",""],
-["Western Union",""],
-["Ria Money Transfer",""],
-["Payoneer",""],
-["PayPal",""],
-["MoneyGram",""]
+["bKash",""],["Nagad",""],["Rocket",""],
+["Bank Account",""],["Visa Card",""],["Binance",""],
+["Western Union",""],["Ria Money Transfer",""],
+["Payoneer",""],["PayPal",""],["MoneyGram",""]
 ];
 
-/* ALL SERVICES */
+/* SERVICES */
 const DEFAULT_CATEGORIES=[
-
 {
 id:"youtube",
 name:"YouTube Services",
@@ -735,7 +358,6 @@ offers:[
 {id:"yt-combo",name:"1,000 Subscribers + 4,000 Watch Hours",price:60,unit:"package"}
 ]
 },
-
 {
 id:"yt-sale",
 name:"YouTube Monetized Channel for Sale",
@@ -745,7 +367,6 @@ offers:[
 {id:"yt-monetized",name:"Monetization ON Channel · 1,000 Subscribers",price:250,unit:"channel"}
 ]
 },
-
 {
 id:"facebook",
 name:"Facebook Services",
@@ -758,7 +379,6 @@ offers:[
 {id:"fb-monetization",name:"Facebook Full Monetization Support",price:50,unit:"package"}
 ]
 },
-
 {
 id:"spotify",
 name:"Spotify Services",
@@ -770,7 +390,6 @@ offers:[
 {id:"sp-promo",name:"Monthly Listener / Podcast Promotion",price:200,unit:"month"}
 ]
 },
-
 {
 id:"instagram",
 name:"Instagram Services",
@@ -781,7 +400,6 @@ offers:[
 {id:"ig-views",name:"5,000 Instagram Views",price:5,unit:"package"}
 ]
 },
-
 {
 id:"tiktok",
 name:"TikTok Services",
@@ -792,7 +410,6 @@ offers:[
 {id:"tt-views",name:"10 Million TikTok Views",price:10,unit:"package"}
 ]
 },
-
 {
 id:"editing",
 name:"Video Editing & YouTube Creative Services",
@@ -806,7 +423,6 @@ offers:[
 {id:"edit-upload",name:"Upload & Optimization",quote:true}
 ]
 },
-
 {
 id:"website-design",
 name:"Website Design & Development",
@@ -819,42 +435,22 @@ offers:[
 {id:"web-custom",name:"Custom Website Development",quote:true}
 ]
 }
-
 ];
 
-/* SAMPLE REVIEWS */
+/* REVIEWS */
 const DEFAULT_REVIEWS=[
-{
-name:"Ayesha Rahman · Sample",
-text:"The team explained the service options clearly and helped me understand the next steps before ordering."
-},
-{
-name:"Rafiul Islam · Sample",
-text:"The communication was friendly and the package details were easy to understand. A smooth experience."
-},
-{
-name:"Nusrat Jahan · Sample",
-text:"I liked how simple it was to choose a service and send my request directly through WhatsApp."
-},
-{
-name:"Md. Hasan · Sample",
-text:"Quick responses to my questions and clear information about the available services and pricing."
-},
-{
-name:"Tariqul Hasan · Sample",
-text:"The website looks organized, and finding the service I needed was straightforward."
-},
-{
-name:"Sadia Akter · Sample",
-text:"Helpful support and a clear ordering process. It was easy to ask for a custom quote."
-},
-{
-name:"Imran Hossain · Sample",
-text:"A convenient way to browse digital services and contact the team without confusion."
-}
+{name:"Ayesha Rahman · Sample",text:"The team explained the service options clearly and helped me understand the next steps before ordering."},
+{name:"Rafiul Islam · Sample",text:"The communication was friendly and the package details were easy to understand. A smooth experience."},
+{name:"Nusrat Jahan · Sample",text:"I liked how simple it was to choose a service and send my request directly through WhatsApp."},
+{name:"Md. Hasan · Sample",text:"Quick responses to my questions and clear information about the available services and pricing."},
+{name:"Tariqul Hasan · Sample",text:"The website looks organized, and finding the service I needed was straightforward."},
+{name:"Sadia Akter · Sample",text:"Helpful support and a clear ordering process. It was easy to ask for a custom quote."},
+{name:"Imran Hossain · Sample",text:"A convenient way to browse digital services and contact the team without confusion."}
 ];
 
 const DEFAULT_CONFIG={
+heroImage:"assets/hero-digital-growth.png",
+paymentImage:"assets/payment-methods.png",
 whatsapp:DEFAULT_WA,
 email:"siratakanda06@gmail.com",
 location:"Kishoreganj, Bangladesh",
@@ -865,48 +461,34 @@ reviews:DEFAULT_REVIEWS
 
 const STORAGE_KEY="siratGrowItAgencyConfig_v2";
 
-function cloneConfig(value){
-return JSON.parse(JSON.stringify(value));
+function cloneConfig(v){
+return JSON.parse(JSON.stringify(v));
 }
 
 function loadConfig(){
 try{
 const saved=JSON.parse(localStorage.getItem(STORAGE_KEY)||"null");
-
-if(!saved || !Array.isArray(saved.categories)){
-return cloneConfig(DEFAULT_CONFIG);
-}
-
+if(!saved||!Array.isArray(saved.categories))return cloneConfig(DEFAULT_CONFIG);
 const merged=cloneConfig(DEFAULT_CONFIG);
-
 merged.whatsapp=saved.whatsapp||merged.whatsapp;
 merged.email=saved.email||merged.email;
 merged.location=saved.location||merged.location;
-
+merged.heroImage=saved.heroImage||merged.heroImage;
+merged.paymentImage=saved.paymentImage||merged.paymentImage;
 merged.reviews=Array.isArray(saved.reviews)?saved.reviews:merged.reviews;
 merged.methods=Array.isArray(saved.methods)?saved.methods:merged.methods;
-
 merged.categories=merged.categories.map(def=>{
 const old=saved.categories.find(x=>x&&x.id===def.id);
-
-return old
-?{...def,...old,offers:Array.isArray(old.offers)?old.offers:def.offers}
-:def;
+return old?{...def,...old,offers:Array.isArray(old.offers)?old.offers:def.offers}:def;
 });
-
 return merged;
-
-}catch(e){
-return cloneConfig(DEFAULT_CONFIG);
-}
-
+}catch(e){return cloneConfig(DEFAULT_CONFIG);}
 }
 
 let config=loadConfig();
 let WA=config.whatsapp||DEFAULT_WA;
 let methods=config.methods||DEFAULT_METHODS;
 let categories=config.categories||DEFAULT_CATEGORIES;
-
 let offers={};
 let current=null;
 let selected="";
@@ -919,11 +501,7 @@ const whatsOrder=document.getElementById("whatsOrder");
 
 function escapeHtml(v){
 return String(v??"").replace(/[&<>"']/g,c=>({
-"&":"&amp;",
-"<":"&lt;",
-">":"&gt;",
-'"':"&quot;",
-"'":"&#39;"
+"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
 }[c]));
 }
 
@@ -934,7 +512,6 @@ return Number.isFinite(n)?"$"+n:"Contact";
 
 function buildOfferMap(){
 offers={};
-
 categories.forEach(c=>{
 (c.offers||[]).forEach(o=>{
 offers[o.id]={...o,category:c.name};
@@ -942,282 +519,166 @@ offers[o.id]={...o,category:c.name};
 });
 }
 
-/* DISPLAY SERVICES */
+/* SERVICE DISPLAY */
 function renderServices(){
-
 grid.innerHTML="";
-
 buildOfferMap();
 
 categories.forEach(c=>{
-
 const card=document.createElement("article");
 card.className="poster-card";
 
 const rows=(c.offers||[]).map(o=>{
-
 if(o.quote){
-return `
-<div class="offer">
-<div>
-<strong>${escapeHtml(o.name)}</strong>
-<small>Contact for a custom quote</small>
-</div>
+return `<div class="offer">
+<div><strong>${escapeHtml(o.name)}</strong><small>Contact for a custom quote</small></div>
 <button class="btn quote" type="button" data-id="${escapeHtml(o.id)}">Get Quote</button>
 </div>`;
 }
-
-return `
-<div class="offer">
-<div>
-<strong>${escapeHtml(o.name)}</strong>
-<small>${o.unit==="month"?"Monthly service":"Fixed package price"}</small>
-</div>
+return `<div class="offer">
+<div><strong>${escapeHtml(o.name)}</strong><small>${o.unit==="month"?"Monthly service":"Fixed package price"}</small></div>
 <span class="offer-price">${money(o.price)}${o.unit==="month"?"/mo":""}</span>
 <button class="btn order" type="button" data-id="${escapeHtml(o.id)}">Order Now</button>
 </div>`;
-
 }).join("");
 
 card.innerHTML=`
-
-${c.image?`
-<img src="${escapeHtml(c.image)}"
-alt="${escapeHtml(c.name)} promotional poster"
-loading="lazy"
-decoding="async"
-onerror="this.hidden=true">
-`:""}
-
+${c.image?`<img src="${escapeHtml(c.image)}" alt="${escapeHtml(c.name)} promotional poster" loading="lazy" onerror="this.hidden=true">`:""}
 <div class="poster-card-body">
 <h3>${escapeHtml(c.name)}</h3>
 <p>${escapeHtml(c.intro||"")}</p>
 <div class="offer-list">${rows}</div>
 </div>`;
-
 grid.appendChild(card);
-
 });
-
 }
 
 /* REVIEWS */
 function renderReviews(){
-
 const rg=document.getElementById("reviewGrid");
-
 rg.innerHTML=(config.reviews||[]).map(r=>{
-
-const initials=String(r.name||"Client")
-.replace(/·.*$/,"")
-.trim()
-.split(/\s+/)
-.slice(0,2)
-.map(x=>x[0]||"")
-.join("")
-.toUpperCase();
-
-return `
-<article class="review">
+const initials=String(r.name||"Client").replace(/·.*$/,"").trim().split(/\s+/).slice(0,2).map(x=>x[0]||"").join("").toUpperCase();
+return `<article class="review">
 <div class="review-person">
 <span class="avatar">${escapeHtml(initials||"C")}</span>
-<div>
-<b>${escapeHtml(r.name||"Client")}</b>
-<div class="stars">★★★★★</div>
-</div>
+<div><b>${escapeHtml(r.name||"Client")}</b><div class="stars">★★★★★</div></div>
 </div>
 <p>“${escapeHtml(r.text||"")}”</p>
-<span class="review-demo">
-${r.verified?"CLIENT REVIEW":"SAMPLE · REPLACE WITH REAL FEEDBACK"}
-</span>
+<span class="review-demo">${r.verified?"CLIENT REVIEW":"SAMPLE · REPLACE WITH REAL FEEDBACK"}</span>
 </article>`;
-
 }).join("");
-
 }
 
-/* CONTACT DETAILS */
+/* CONTACT */
 function renderContact(){
-
-const p=document.getElementById("contactDetails");
-
-p.textContent=
+document.getElementById("contactDetails").textContent=
 `WhatsApp: +${WA} · Email: ${config.email||""} · ${config.location||""}`;
-
 document.getElementById("headerWa").href=`https://wa.me/${WA}`;
 document.getElementById("contactWa").href=`https://wa.me/${WA}`;
-
 document.getElementById("reviewLink").href=
 `https://wa.me/${WA}?text=${encodeURIComponent("Hello, I would like to share my genuine review.")}`;
-
 }
 
 function renderAll(){
 renderServices();
 renderReviews();
 renderContact();
+
+document.getElementById("heroImage").src=
+config.heroImage||"assets/hero-digital-growth.png";
+
+document.getElementById("paymentImage").src=
+config.paymentImage||"assets/payment-methods.png";
 }
 
 renderAll();
 
-/* ORDER MODAL */
+/* ORDER SYSTEM */
 function payButton([name]){
-
 const symbols={
-"bKash":"৳",
-"Nagad":"N",
-"Rocket":"R",
-"Bank Account":"▤",
-"Visa Card":"V",
-"Binance":"◇",
-"Western Union":"WU",
-"Ria Money Transfer":"Ria",
-"Payoneer":"P",
-"PayPal":"P",
-"MoneyGram":"M"
+"bKash":"৳","Nagad":"N","Rocket":"R",
+"Bank Account":"▤","Visa Card":"V","Binance":"◇",
+"Western Union":"WU","Ria Money Transfer":"Ria",
+"Payoneer":"P","PayPal":"P","MoneyGram":"M"
 };
-
-return `
-<button class="pay" type="button" data-method="${escapeHtml(name)}">
-<span class="paylogo">${symbols[name]||"৳"}</span>
-${escapeHtml(name)}
+return `<button class="pay" type="button" data-method="${escapeHtml(name)}">
+<span class="paylogo">${symbols[name]||"৳"}</span>${escapeHtml(name)}
 </button>`;
-
 }
 
 function update(){
-
 if(!current)return;
-
 const q=Math.max(1,Math.min(100,parseInt(qty.value||"1",10)));
-
 qty.value=q;
-
 document.getElementById("summary").textContent=
 `Total: ${money(current.price*q)}${current.unit==="month"?" / month":""}`;
-
 }
 
 function openOrder(id){
-
 current=offers[id];
-
 if(!current)return;
-
 selected="";
-
-document.getElementById("serviceName").textContent=
-`${current.category} · ${current.name}`;
-
+document.getElementById("serviceName").textContent=`${current.category} · ${current.name}`;
 document.getElementById("buyer").value="";
 qty.value=1;
-
 update();
-
 payChoices.innerHTML=methods.map(payButton).join("");
-
 whatsOrder.disabled=true;
 whatsOrder.style.opacity=".55";
-
 backdrop.classList.add("open");
-
 }
 
 function requestQuote(id){
-
 const o=offers[id];
-
 if(!o)return;
-
-const msg=
-`Hello Sirat Grow It Agency, I would like a quotation for: ${o.name}. Please share the available packages and price.`;
-
-window.open(
-`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`,
-"_blank"
-);
-
+const msg=`Hello Sirat Grow It Agency, I would like a quotation for: ${o.name}. Please share the available packages and price.`;
+window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`,"_blank");
 }
 
 grid.addEventListener("click",e=>{
-
 const order=e.target.closest(".order");
 const quote=e.target.closest(".quote");
-
 if(order)openOrder(order.dataset.id);
 if(quote)requestQuote(quote.dataset.id);
-
 });
 
 payChoices.addEventListener("click",e=>{
-
 const b=e.target.closest("[data-method]");
-
 if(!b)return;
-
 selected=b.dataset.method;
-
-payChoices.querySelectorAll(".pay").forEach(x=>{
-x.classList.toggle("selected",x===b);
-});
-
+payChoices.querySelectorAll(".pay").forEach(x=>x.classList.toggle("selected",x===b));
 whatsOrder.disabled=false;
 whatsOrder.style.opacity="1";
-
 });
 
 qty.addEventListener("input",update);
-
-document.getElementById("close").onclick=()=>{
-backdrop.classList.remove("open");
-};
-
-backdrop.addEventListener("click",e=>{
-if(e.target===backdrop){
-backdrop.classList.remove("open");
-}
-});
+document.getElementById("close").onclick=()=>backdrop.classList.remove("open");
+backdrop.addEventListener("click",e=>{if(e.target===backdrop)backdrop.classList.remove("open");});
 
 whatsOrder.onclick=()=>{
-
 if(!current||!selected)return;
-
 const q=Math.max(1,Math.min(100,parseInt(qty.value||"1",10)));
-
 const buyer=document.getElementById("buyer").value.trim();
-
 const total=Number(current.price)*q;
-
 const msg=[
-"Hello Sirat Grow It Agency,",
-"",
+"Hello Sirat Grow It Agency,","",
 "I would like to place an order:",
 `Service: ${current.category} — ${current.name}`,
 `Quantity: ${q}`,
 `Unit price: ${money(current.price)}${current.unit==="month"?" per month":""}`,
 `Total: ${money(total)}${current.unit==="month"?" per month":""}`,
 `Payment method: ${selected}`,
-`Name: ${buyer||"Not provided"}`,
-"",
+`Name: ${buyer||"Not provided"}`,"",
 "Please confirm availability and share the payment instructions."
 ].join("\n");
-
-window.open(
-`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`,
-"_blank"
-);
-
+window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`,"_blank");
 };
 
-/* SUPABASE ADMIN */
+/* SUPABASE */
 const SUPABASE_URL="https://qdtpyovjxybwmcdlplpb.supabase.co";
-
 const SUPABASE_PUBLISHABLE_KEY="sb_publishable_FcyMx5TrNmp2uuCDcSbhYw_SEgS2UH1";
 
-const sb=window.supabase.createClient(
-SUPABASE_URL,
-SUPABASE_PUBLISHABLE_KEY
-);
+const sb=window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY);
 
 const adminBackdrop=document.getElementById("adminBackdrop");
 const adminJson=document.getElementById("adminJson");
@@ -1226,182 +687,114 @@ const adminLogin=document.getElementById("adminLogin");
 const adminContent=document.getElementById("adminContent");
 
 function setAdminStatus(message,ok=false){
-
 adminStatus.textContent=message;
-
 adminStatus.style.color=ok?"#087e43":"#b42318";
-
 }
 
 function fillUploadCategories(){
-
 const sel=document.getElementById("uploadCategory");
-
 sel.innerHTML="";
-
 categories.forEach(c=>{
-
 const o=document.createElement("option");
-
 o.value=c.id;
 o.textContent=c.name;
-
 sel.appendChild(o);
-
 });
-
 }
 
 function showAdminSession(isLoggedIn){
-
 adminLogin.hidden=isLoggedIn;
 adminContent.hidden=!isLoggedIn;
-
 if(isLoggedIn){
-
 adminJson.value=JSON.stringify(config,null,2);
-
 fillUploadCategories();
-
 setAdminStatus("ডেটাবেসের সঙ্গে সংযোগ হয়েছে।",true);
-
 }
-
 }
 
 async function openAdmin(){
-
 adminBackdrop.classList.add("open");
-
 adminBackdrop.setAttribute("aria-hidden","false");
-
 const {data,error}=await sb.auth.getSession();
-
 if(error){
 setAdminStatus("Session error: "+error.message);
 return;
 }
-
 showAdminSession(!!data.session);
-
 }
 
 function closeAdmin(){
-
 adminBackdrop.classList.remove("open");
-
 adminBackdrop.setAttribute("aria-hidden","true");
-
 }
 
 async function loadCloudSettings(){
-
 try{
-
-const {data,error}=await sb
-.from("website_settings")
-.select("settings")
-.eq("id",1)
-.maybeSingle();
-
+const {data,error}=await sb.from("website_settings")
+.select("settings").eq("id",1).maybeSingle();
 if(error)throw error;
 
 if(data&&data.settings&&Array.isArray(data.settings.categories)){
-
 config={
 ...cloneConfig(DEFAULT_CONFIG),
 ...data.settings
 };
 
+config.heroImage=config.heroImage||DEFAULT_CONFIG.heroImage;
+config.paymentImage=config.paymentImage||DEFAULT_CONFIG.paymentImage;
+config.methods=config.methods||DEFAULT_METHODS;
+config.reviews=config.reviews||DEFAULT_REVIEWS;
+
 WA=config.whatsapp||DEFAULT_WA;
-methods=config.methods||DEFAULT_METHODS;
+methods=config.methods;
 categories=config.categories;
-
 renderAll();
-
 }
-
 }catch(e){
-
 console.warn("Could not load cloud settings",e);
-
 }
-
 }
 
 async function ownerGate(){
-
-if(location.hash==="#owner"){
-await openAdmin();
-}
-
+if(location.hash==="#owner")await openAdmin();
 }
 
 window.addEventListener("hashchange",ownerGate);
-
 ownerGate();
-
 loadCloudSettings();
 
-/* ADMIN CLOSE */
 document.getElementById("adminClose").onclick=closeAdmin;
-
 adminBackdrop.addEventListener("click",e=>{
-
-if(e.target===adminBackdrop){
-closeAdmin();
-}
-
+if(e.target===adminBackdrop)closeAdmin();
 });
 
-/* ADMIN LOGIN */
+/* LOGIN */
 document.getElementById("adminLoginBtn").onclick=async()=>{
-
 const email=document.getElementById("adminEmail").value.trim();
-
 const password=document.getElementById("adminPassword").value;
-
 const out=document.getElementById("loginStatus");
-
 out.textContent="লগইন হচ্ছে...";
 
-const {data,error}=await sb.auth.signInWithPassword({
-email,
-password
-});
-
+const {error}=await sb.auth.signInWithPassword({email,password});
 if(error){
-
 out.textContent="লগইন হয়নি: "+error.message;
-
 return;
-
 }
-
 out.textContent="লগইন সফল";
-
 await loadCloudSettings();
-
 showAdminSession(true);
-
 };
 
-/* ADMIN LOGOUT */
+/* LOGOUT */
 document.getElementById("adminLogout").onclick=async()=>{
-
 await sb.auth.signOut();
-
 showAdminSession(false);
-
 setAdminStatus("আপনি লগআউট করেছেন।",true);
-
 };
 
 /* SAVE SETTINGS */
 document.getElementById("adminSave").onclick=async()=>{
-
 try{
-
 const next=JSON.parse(adminJson.value);
 
 if(!Array.isArray(next.categories)||!Array.isArray(next.methods)){
@@ -1409,163 +802,150 @@ throw new Error("categories ও methods অবশ্যই array হতে হ�
 }
 
 for(const c of next.categories){
-
 if(!c.id||!c.name||!Array.isArray(c.offers)){
 throw new Error("প্রতিটি service-এ id, name, offers দিন");
 }
-
 }
 
 for(const m of next.methods){
-
 if(!Array.isArray(m)||m.length<2){
 throw new Error("প্রতিটি payment method [নাম, image path] আকারে দিন");
 }
-
 }
 
 setAdminStatus("ডেটাবেসে সংরক্ষণ হচ্ছে...",true);
 
-const {error}=await sb
-.from("website_settings")
+const {data,error}=await sb.from("website_settings")
 .update({
 settings:next,
 updated_at:new Date().toISOString()
 })
-.eq("id",1);
+.eq("id",1)
+.select("id");
 
 if(error)throw error;
+if(!data||!data.length){
+throw new Error("website_settings টেবিলে id=1 রো পাওয়া যায়নি");
+}
 
 config=next;
-
 WA=config.whatsapp||DEFAULT_WA;
 methods=config.methods||DEFAULT_METHODS;
 categories=config.categories;
 
 localStorage.setItem(STORAGE_KEY,JSON.stringify(config));
-
 renderAll();
-
 adminJson.value=JSON.stringify(config,null,2);
 
-setAdminStatus(
-"সফল! পরিবর্তনগুলো ডেটাবেসে সংরক্ষিত হয়েছে।",
-true
-);
+setAdminStatus("সফল! সব পরিবর্তন ডেটাবেসে সংরক্ষিত হয়েছে।",true);
 
 }catch(err){
-
 setAdminStatus("Save হয়নি: "+err.message);
-
 }
-
 };
 
-/* UPLOAD POSTER */
-document.getElementById("uploadPoster").onclick=async()=>{
-
-try{
-
-const file=document.getElementById("posterFile").files[0];
-
-if(!file){
-throw new Error("আগে একটি ছবি নির্বাচন করুন");
-}
-
-const category=categories.find(
-c=>c.id===document.getElementById("uploadCategory").value
-);
-
-if(!category){
-throw new Error("সার্ভিস নির্বাচন করুন");
-}
+/* COMMON IMAGE UPLOAD */
+async function uploadImage(file,folder){
+if(!file)throw new Error("আগে একটি ছবি নির্বাচন করুন");
+if(!file.type.startsWith("image/"))throw new Error("শুধু ছবি আপলোড করুন");
+if(file.size>5*1024*1024)throw new Error("ছবির সাইজ 5MB-এর কম রাখুন");
 
 const safeName=file.name.replace(/[^a-zA-Z0-9._-]/g,"-");
+const path=`${folder}/${Date.now()}-${safeName}`;
 
-const path=`posters/${Date.now()}-${safeName}`;
-
-setAdminStatus("ছবি আপলোড হচ্ছে...",true);
-
-const {error}=await sb.storage
-.from("website-images")
-.upload(path,file,{
+const {error}=await sb.storage.from("website-images").upload(path,file,{
 cacheControl:"3600",
 upsert:false
 });
-
 if(error)throw error;
 
-const {data}=sb.storage
-.from("website-images")
-.getPublicUrl(path);
+const {data}=sb.storage.from("website-images").getPublicUrl(path);
+return data.publicUrl;
+}
 
-category.image=data.publicUrl;
+/* HERO IMAGE UPLOAD */
+document.getElementById("uploadHero").onclick=async()=>{
+try{
+const file=document.getElementById("heroFile").files[0];
+setAdminStatus("Hero ছবি আপলোড হচ্ছে...",true);
 
-adminJson.value=JSON.stringify(config,null,2);
+config.heroImage=await uploadImage(file,"hero");
 
 renderAll();
+adminJson.value=JSON.stringify(config,null,2);
+document.getElementById("heroFile").value="";
 
-setAdminStatus(
-"ছবি আপলোড হয়েছে। এখন Save Changes চাপুন।",
-true
-);
-
+setAdminStatus("Hero ছবি আপলোড হয়েছে। এবার Save Changes চাপুন।",true);
 }catch(err){
-
-setAdminStatus("ছবি আপলোড হয়নি: "+err.message);
-
+setAdminStatus("Hero Upload Error: "+err.message);
 }
-
 };
 
-/* RESET SETTINGS */
-document.getElementById("adminReset").onclick=()=>{
+/* PAYMENT IMAGE UPLOAD */
+document.getElementById("uploadPayment").onclick=async()=>{
+try{
+const file=document.getElementById("paymentFile").files[0];
+setAdminStatus("Payment Methods-এর ছবি আপলোড হচ্ছে...",true);
 
-if(!confirm("ওয়েবসাইটের সেটিংস মূল ডিফল্ট অবস্থায় ফেরাতে চান?")){
-return;
+config.paymentImage=await uploadImage(file,"payments");
+
+renderAll();
+adminJson.value=JSON.stringify(config,null,2);
+document.getElementById("paymentFile").value="";
+
+setAdminStatus("Payment-এর সব লোগো আপলোড হয়েছে। এবার Save Changes চাপুন।",true);
+}catch(err){
+setAdminStatus("Payment Upload Error: "+err.message);
 }
+};
+
+/* SERVICE POSTER UPLOAD */
+document.getElementById("uploadPoster").onclick=async()=>{
+try{
+const file=document.getElementById("posterFile").files[0];
+const category=categories.find(c=>c.id===document.getElementById("uploadCategory").value);
+if(!category)throw new Error("সার্ভিস নির্বাচন করুন");
+
+setAdminStatus("Service Poster আপলোড হচ্ছে...",true);
+category.image=await uploadImage(file,"posters");
+
+renderAll();
+adminJson.value=JSON.stringify(config,null,2);
+document.getElementById("posterFile").value="";
+
+setAdminStatus("Poster আপলোড হয়েছে। এবার Save Changes চাপুন।",true);
+}catch(err){
+setAdminStatus("Poster Upload Error: "+err.message);
+}
+};
+
+/* RESET */
+document.getElementById("adminReset").onclick=()=>{
+if(!confirm("ওয়েবসাইটের সেটিংস মূল ডিফল্ট অবস্থায় ফেরাতে চান?"))return;
 
 config=cloneConfig(DEFAULT_CONFIG);
-
 WA=config.whatsapp;
 methods=config.methods;
 categories=config.categories;
 
 adminJson.value=JSON.stringify(config,null,2);
-
 renderAll();
-
 fillUploadCategories();
 
-setAdminStatus(
-"ডিফল্ট সেটিংস দেখানো হয়েছে। স্থায়ী করতে Save Changes চাপুন।",
-true
-);
-
+setAdminStatus("ডিফল্ট সেটিংস দেখানো হয়েছে। স্থায়ী করতে Save Changes চাপুন।",true);
 };
 
 /* DOWNLOAD SETTINGS */
 document.getElementById("adminExport").onclick=()=>{
-
-const blob=new Blob(
-[adminJson.value],
-{type:"application/json"}
-);
-
+const blob=new Blob([adminJson.value],{type:"application/json"});
 const url=URL.createObjectURL(blob);
-
 const a=document.createElement("a");
-
 a.href=url;
 a.download="sirat-agency-settings.json";
-
 a.click();
-
 URL.revokeObjectURL(url);
-
 };
 
 </script>
-
 </body>
 </html>
