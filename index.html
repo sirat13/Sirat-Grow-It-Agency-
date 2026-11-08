@@ -56,53 +56,6 @@ section{padding:60px 0}
 .offer-price{font-size:22px;font-weight:950;color:#087e43;white-space:nowrap}
 .offer .btn{padding:9px 12px;font-size:12px;white-space:nowrap}
 .service-note{font-size:12px;color:#65758b;margin-top:20px;text-align:center}
-
-/* PAYMENT LOGOS */
-.payment-logos{
-display:grid;
-grid-template-columns:repeat(4,minmax(0,1fr));
-gap:15px;
-max-width:980px;
-margin:auto;
-}
-.payment-logo-card{
-background:white;
-border:1px solid #dce6f3;
-border-radius:16px;
-padding:17px 8px;
-min-height:125px;
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-gap:10px;
-box-shadow:0 10px 25px #09285812;
-}
-.payment-mark{
-width:66px;
-height:55px;
-border-radius:13px;
-display:flex;
-align-items:center;
-justify-content:center;
-font-weight:1000;
-font-size:17px;
-letter-spacing:-.5px;
-color:white;
-box-shadow:0 5px 12px #00112f20;
-}
-.payment-name{font-size:13px;font-weight:900;color:#17345d;text-align:center}
-.logo-bkash{background:linear-gradient(135deg,#e2136e,#a8004d)}
-.logo-nagad{background:linear-gradient(135deg,#f58220,#d83217)}
-.logo-rocket{background:linear-gradient(135deg,#8c2b91,#4a176f)}
-.logo-bank{background:linear-gradient(135deg,#164c85,#0b2851)}
-.logo-visa{background:linear-gradient(135deg,#173a8a,#087be5);font-style:italic;font-size:21px}
-.logo-binance{background:linear-gradient(135deg,#f3ba2f,#d99500);color:#171717;font-size:25px}
-.logo-western-union{background:linear-gradient(135deg,#ffdf00,#e9b900);color:#171717;font-size:20px}
-.logo-ria{background:linear-gradient(135deg,#7c1738,#b52d55)}
-.logo-payoneer{background:linear-gradient(135deg,#ff5a1f,#d92c10);font-size:14px}
-.logo-paypal{background:linear-gradient(135deg,#003087,#009cde);font-style:italic;font-size:20px}
-.logo-moneygram{background:linear-gradient(135deg,#e32929,#a90000);font-size:13px}
 #reviews{background:radial-gradient(ellipse at top,#0b3c85,#061638 72%);color:white}
 #reviews .heading h2{color:white}
 #reviews .heading p{color:#c9dcf5}
@@ -118,7 +71,8 @@ box-shadow:0 5px 12px #00112f20;
 .contact{background:radial-gradient(circle at 85% 10%,#0c74c7,#08285e 65%,#061638);color:white;text-align:center;padding:38px 20px;border-radius:22px;box-shadow:0 18px 40px #09285825}
 .contact p{color:#d8eaff}
 footer{background:#061638;color:#d5e2f4;text-align:center;padding:28px}
-.admin-footer{border:0;background:transparent;color:#9fc5ff;text-decoration:underline;cursor:pointer;font:inherit;margin-top:8px}
+
+/* ORDER MODAL */
 .backdrop{position:fixed;inset:0;background:#06132fce;display:none;align-items:center;justify-content:center;padding:15px;z-index:40}
 .backdrop.open{display:flex}
 .modal{background:white;border-radius:18px;padding:22px;width:min(560px,100%);max-height:92vh;overflow:auto}
@@ -130,23 +84,27 @@ footer{background:#061638;color:#d5e2f4;text-align:center;padding:28px}
 .field input,.field textarea,.field select{width:100%;padding:11px;border:1px solid #cbd9e9;border-radius:9px}
 .summary{background:#eafff1;border-radius:10px;padding:12px;font-size:20px;font-weight:950;color:#087e43;margin:12px 0}
 .hint{font-size:12px;color:#68778c}
-.paychoices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
-.pay{
-padding:12px 5px;
-font-size:12px;
-font-weight:900;
-border:1px solid #d4e1ef;
-border-radius:10px;
+
+/* REAL PAYMENT POSTER */
+.order-payment-poster{
+width:100%;
+margin:14px 0;
 background:white;
-cursor:pointer;
-color:#17345d;
-display:flex;
-flex-direction:column;
-align-items:center;
-gap:7px;
+border:1px solid #dce6f3;
+border-radius:12px;
+overflow:hidden;
 }
-.pay .payment-mark{width:55px;height:43px;font-size:14px;border-radius:9px}
+.order-payment-poster img{
+display:block;
+width:100%;
+height:auto;
+object-fit:contain;
+}
+.paychoices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.pay{padding:12px 5px;font-size:12px;font-weight:900;border:1px solid #d4e1ef;border-radius:10px;background:white;cursor:pointer;color:#17345d}
 .pay.selected{outline:3px solid #12bd4c;background:#eafff0}
+
+/* ADMIN PANEL */
 .admin-backdrop{display:none;position:fixed;inset:0;background:#06132fdb;z-index:100;padding:12px;align-items:center;justify-content:center}
 .admin-backdrop.open{display:flex}
 .admin-panel{width:min(1000px,100%);max-height:96vh;overflow:auto;background:white;border-radius:20px;padding:22px}
@@ -173,17 +131,15 @@ hr{border:0;border-top:1px solid #e0e9f3;margin:16px 0}
 [hidden]{display:none!important}
 
 @media(max-width:740px){
-.nav{min-height:70px}.brand{font-size:17px}.navlinks{display:none}
+.nav{min-height:70px}
+.brand{font-size:17px}
+.navlinks{display:none}
 .wa{padding:10px;font-size:12px}
 .hero-inner{grid-template-columns:1fr;padding:40px 0;gap:15px}
 .hero-art img{max-width:100%}
 .hero h1{font-size:clamp(36px,10vw,50px)}
 .grid{grid-template-columns:1fr}
 .reviewgrid{grid-template-columns:1fr}
-.payment-logos{grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
-.payment-logo-card{min-height:105px;padding:12px 5px}
-.payment-mark{width:55px;height:45px;font-size:14px}
-.payment-name{font-size:11px}
 section{padding:46px 0}
 .offer{flex-wrap:wrap}
 .offer .btn{margin-left:auto}
@@ -192,7 +148,6 @@ section{padding:46px 0}
 .editor-row input:first-child{grid-column:1/-1}
 }
 @media(max-width:380px){
-.payment-logos{grid-template-columns:repeat(2,minmax(0,1fr))}
 .paychoices{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 </style>
@@ -205,7 +160,6 @@ section{padding:46px 0}
 <a class="brand" href="#">↗ Sirat Grow It <span>Agency</span></a>
 <nav class="navlinks">
 <a href="#services">Services</a>
-<a href="#payments">Payments</a>
 <a href="#reviews">Reviews</a>
 <a href="#contact">Contact</a>
 </nav>
@@ -244,17 +198,6 @@ section{padding:46px 0}
 </div>
 </section>
 
-<section id="payments">
-<div class="wrap">
-<div class="heading">
-<small>PAYMENT OPTIONS</small>
-<h2>Available Payment Methods</h2>
-<p>Choose your preferred payment option when placing an order. We will confirm the recipient details through WhatsApp.</p>
-</div>
-<div class="payment-logos" id="paymentLogos"></div>
-</div>
-</section>
-
 <section id="reviews">
 <div class="wrap">
 <div class="heading">
@@ -280,34 +223,52 @@ section{padding:46px 0}
 </section>
 
 <footer>
-© 2026 Sirat Grow It Agency · All rights reserved<br>
-<a class="admin-footer" href="#owner">Website Admin Login</a>
+© 2026 Sirat Grow It Agency · All rights reserved
 </footer>
 
+<!-- ORDER MODAL -->
 <div class="backdrop" id="backdrop">
 <div class="modal">
 <div class="modalhead">
 <h2>Place Your Order</h2>
 <button class="close" id="close">×</button>
 </div>
+
 <p id="serviceName" class="hint"></p>
+
 <div class="field">
 <label for="quantity">Quantity</label>
 <input id="quantity" type="number" min="1" max="100" value="1">
 </div>
+
 <div class="field">
 <label for="buyer">Your name (optional)</label>
 <input id="buyer" placeholder="Your name">
 </div>
+
 <div class="summary" id="summary">Total: $0</div>
+
 <b>Select a payment method</b>
-<p class="hint">আপনার পছন্দের পেমেন্ট মেথডের লোগো নির্বাচন করুন।</p>
+<p class="hint">নিচে আমাদের আসল পেমেন্ট মেথডের ছবি দেখুন এবং পেমেন্ট পদ্ধতি নির্বাচন করুন।</p>
+
+<div class="order-payment-poster">
+<img
+id="orderPaymentImage"
+src="assets/payment-methods.png"
+alt="All Payment Methods"
+onerror="this.alt='Payment image not found. Check assets/payment-methods.png';this.style.minHeight='80px';this.style.padding='15px';"
+>
+</div>
+
 <div class="paychoices" id="payChoices"></div>
+
 <p class="hint">Your service, selected package, total and payment choice will be sent to WhatsApp. We will confirm the recipient details before you pay.</p>
+
 <button class="btn" id="whatsOrder" style="width:100%" disabled>Contact on WhatsApp to Order →</button>
 </div>
 </div>
 
+<!-- ADMIN PANEL -->
 <div class="admin-backdrop" id="adminBackdrop" aria-hidden="true">
 <section class="admin-panel" role="dialog" aria-modal="true">
 
@@ -335,7 +296,7 @@ section{padding:46px 0}
 
 <div id="adminContent" hidden>
 
-<p class="admin-warning">লগইন সফল। ছবি আপলোড করলে স্বয়ংক্রিয়ভাবে সেভ হবে। অন্য পরিবর্তনের জন্য Save All Changes চাপুন। পেমেন্ট লোগোগুলো ওয়েবসাইটে কোড থেকেই দেখানো হয়।</p>
+<p class="admin-warning">লগইন সফল। ছবি আপলোড করলে স্বয়ংক্রিয়ভাবে সেভ হবে। অন্য পরিবর্তনের জন্য Save All Changes চাপুন।</p>
 
 <div class="admin-help">
 <h3>১. Hero Image পরিবর্তন</h3>
@@ -390,17 +351,17 @@ section{padding:46px 0}
 const DEFAULT_WA="8801913022305";
 
 const DEFAULT_METHODS=[
-["bKash","bkash"],
-["Nagad","nagad"],
-["Rocket","rocket"],
-["Bank Account","bank"],
-["Visa Card","visa"],
-["Binance","binance"],
-["Western Union","western-union"],
-["Ria Money Transfer","ria"],
-["Payoneer","payoneer"],
-["PayPal","paypal"],
-["MoneyGram","moneygram"]
+["bKash"],
+["Nagad"],
+["Rocket"],
+["Bank Account"],
+["Visa Card"],
+["Binance"],
+["Western Union"],
+["Ria Money Transfer"],
+["Payoneer"],
+["PayPal"],
+["MoneyGram"]
 ];
 
 const DEFAULT_CATEGORIES=[
@@ -517,20 +478,14 @@ function clone(v){
 return JSON.parse(JSON.stringify(v));
 }
 
-const STORAGE_KEY="siratGrowItAgencyConfig_v5";
+const STORAGE_KEY="siratGrowItAgencyConfig_v6";
 
 function loadLocal(){
 try{
 const x=JSON.parse(localStorage.getItem(STORAGE_KEY)||"null");
-const result=x&&Array.isArray(x.categories)
+return x&&Array.isArray(x.categories)
 ?{...clone(DEFAULT_CONFIG),...x}
 :clone(DEFAULT_CONFIG);
-
-/* Old payment poster settings are no longer used. */
-delete result.paymentImage;
-delete result.methods;
-
-return result;
 }catch(e){
 return clone(DEFAULT_CONFIG);
 }
@@ -571,46 +526,6 @@ offers={};
 categories.forEach(c=>(c.offers||[]).forEach(o=>{
 offers[o.id]={...o,category:c.name};
 }));
-}
-
-/* PAYMENT LOGO SYSTEM */
-
-function getPaymentLogo(name){
-const item=methods.find(m=>m[0]===name);
-if(!item)return {text:String(name).slice(0,5),className:"logo-bank"};
-
-const logos={
-bkash:{text:"bKash",className:"logo-bkash"},
-nagad:{text:"Nagad",className:"logo-nagad"},
-rocket:{text:"Rocket",className:"logo-rocket"},
-bank:{text:"BANK",className:"logo-bank"},
-visa:{text:"VISA",className:"logo-visa"},
-binance:{text:"◆",className:"logo-binance"},
-"western-union":{text:"WU",className:"logo-western-union"},
-ria:{text:"RIA",className:"logo-ria"},
-payoneer:{text:"Payoneer",className:"logo-payoneer"},
-paypal:{text:"PayPal",className:"logo-paypal"},
-moneygram:{text:"MG",className:"logo-moneygram"}
-};
-
-return logos[item[1]]||{text:String(name).slice(0,5),className:"logo-bank"};
-}
-
-function paymentLogoMarkup(name){
-const logo=getPaymentLogo(name);
-return `<span class="payment-mark ${logo.className}">${escapeHtml(logo.text)}</span>`;
-}
-
-function renderPaymentLogos(){
-const html=methods.map(m=>{
-const name=m[0];
-return `<div class="payment-logo-card">
-${paymentLogoMarkup(name)}
-<span class="payment-name">${escapeHtml(name)}</span>
-</div>`;
-}).join("");
-
-$("paymentLogos").innerHTML=html;
 }
 
 /* WEBSITE RENDER */
@@ -686,8 +601,6 @@ function renderAll(){
 renderServices();
 renderReviews();
 renderContact();
-renderPaymentLogos();
-
 $("heroImage").src=config.heroImage||"assets/hero-digital-growth.png";
 }
 
@@ -697,10 +610,7 @@ renderAll();
 
 function payButton(method){
 const name=Array.isArray(method)?method[0]:method.name;
-return `<button class="pay" type="button" data-method="${escapeHtml(name)}">
-${paymentLogoMarkup(name)}
-<span>${escapeHtml(name)}</span>
-</button>`;
+return `<button class="pay" type="button" data-method="${escapeHtml(name)}">${escapeHtml(name)}</button>`;
 }
 
 function update(){
@@ -862,16 +772,10 @@ config={...clone(DEFAULT_CONFIG),...data.settings};
 config.heroImage=config.heroImage||DEFAULT_CONFIG.heroImage;
 config.reviews=config.reviews||DEFAULT_REVIEWS;
 
-/* Always use the built-in payment methods, not old cloud settings. */
-delete config.paymentImage;
-delete config.methods;
-
 WA=config.whatsapp||DEFAULT_WA;
-methods=clone(DEFAULT_METHODS);
 categories=config.categories;
 
 renderAll();
-
 localStorage.setItem(STORAGE_KEY,JSON.stringify(config));
 }
 }catch(e){
@@ -963,10 +867,6 @@ config.email=$("editEmail").value.trim();
 config.location=$("editLocation").value.trim();
 config.categories=categories;
 
-/* Remove old payment settings. */
-delete config.paymentImage;
-delete config.methods;
-
 if(!config.whatsapp)throw new Error("WhatsApp নম্বর দিন");
 
 if(!config.categories.length){
@@ -1010,10 +910,8 @@ throw new Error("website_settings টেবিলে id=1 রো পাওয়া
 
 WA=config.whatsapp;
 categories=config.categories;
-methods=clone(DEFAULT_METHODS);
 
 localStorage.setItem(STORAGE_KEY,JSON.stringify(config));
-
 renderAll();
 
 if(showMessage){
@@ -1021,7 +919,7 @@ setAdminStatus("সফল! পরিবর্তনগুলো ডেটাব�
 }
 }
 
-/* HERO UPLOAD: AUTOMATIC SAVE */
+/* HERO IMAGE UPLOAD */
 
 $("uploadHero").onclick=async()=>{
 try{
@@ -1109,7 +1007,7 @@ card.querySelector(".cat-id").oninput=e=>c.id=e.target.value.trim();
 card.querySelector(".cat-intro").oninput=e=>c.intro=e.target.value;
 card.querySelector(".cat-image").oninput=e=>c.image=e.target.value;
 
-/* SERVICE POSTER UPLOAD: SHOW IMMEDIATELY + AUTO SAVE */
+/* SERVICE POSTER: IMMEDIATE DISPLAY + AUTOMATIC CLOUD SAVE */
 
 card.querySelector(".cat-upload").onclick=async()=>{
 try{
@@ -1123,10 +1021,10 @@ c.image=url;
 config.categories=categories;
 card.querySelector(".cat-image").value=url;
 
-/* Show the new poster on the website immediately. */
+/* Show new poster immediately. */
 renderServices();
 
-/* Save the new poster in Supabase automatically. */
+/* Save poster automatically in Supabase. */
 await saveSettings(false);
 
 card.querySelector(".cat-file").value="";
@@ -1172,7 +1070,6 @@ Custom quote (no fixed price)
 `;
 
 row.querySelector(".offer-unit").value=o.unit||"package";
-
 row.querySelector(".offer-name").oninput=e=>o.name=e.target.value;
 row.querySelector(".offer-price").oninput=e=>o.price=Number(e.target.value);
 row.querySelector(".offer-unit").onchange=e=>o.unit=e.target.value;
@@ -1232,11 +1129,8 @@ renderCategoriesEditor();
 $("adminSave").onclick=async()=>{
 try{
 setAdminStatus("ডেটাবেসে সংরক্ষণ হচ্ছে...",true);
-
 await saveSettings(true);
-
 renderEditors();
-
 }catch(e){
 setAdminStatus("Save হয়নি: "+e.message);
 }
@@ -1249,7 +1143,6 @@ if(!confirm("ওয়েবসাইটের সেটিংস মূল ডি�
 
 config=clone(DEFAULT_CONFIG);
 WA=config.whatsapp;
-methods=clone(DEFAULT_METHODS);
 categories=config.categories;
 
 $("editWhatsapp").value=config.whatsapp;
