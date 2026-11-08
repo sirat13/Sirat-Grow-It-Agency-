@@ -194,7 +194,7 @@ const sb=window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY);
 const adminBackdrop=document.getElementById("adminBackdrop"),adminJson=document.getElementById("adminJson"),adminStatus=document.getElementById("adminStatus");
 const adminLogin=document.getElementById("adminLogin"),adminContent=document.getElementById("adminContent");
 function setAdminStatus(message,ok=false){adminStatus.textContent=message;adminStatus.style.color=ok?"#087e43":"#b42318"}
-function fillUploadCategories(){const sel=document.getElementById("uploadCategory");sel.innerHTML=categories.map(c=>`<option value="${escapeAttr(c.id)}">${escapeHtml(c.name)}</option>`).join("")}
+function fillUploadCategories(){const sel=document.getElementById("uploadCategory");sel.innerHTML="";categories.forEach(c=>{const o=document.createElement("option");o.value=c.id;o.textContent=c.name;sel.appendChild(o)})}
 function showAdminSession(isLoggedIn){adminLogin.hidden=isLoggedIn;adminContent.hidden=!isLoggedIn;if(isLoggedIn){adminJson.value=JSON.stringify(config,null,2);fillUploadCategories();setAdminStatus("ডেটাবেসের সঙ্গে সংযোগ হয়েছে।")}}
 async function openAdmin(){adminBackdrop.classList.add("open");adminBackdrop.setAttribute("aria-hidden","false");const {data}=await sb.auth.getSession();showAdminSession(!!data.session)}
 function closeAdmin(){adminBackdrop.classList.remove("open");adminBackdrop.setAttribute("aria-hidden","true")}
@@ -209,3 +209,90 @@ document.getElementById("uploadPoster").onclick=async()=>{try{const file=documen
 document.getElementById("adminReset").onclick=()=>{if(!confirm("ওয়েবসাইটের সেটিংস মূল ডিফল্ট অবস্থায় ফেরাতে চান? এরপর Save Changes চাপতে হবে।"))return;config=cloneConfig(DEFAULT_CONFIG);WA=config.whatsapp;methods=config.methods;categories=config.categories;adminJson.value=JSON.stringify(config,null,2);renderAll();fillUploadCategories();setAdminStatus("ডিফল্ট সেটিংস দেখানো হয়েছে। স্থায়ী করতে Save Changes চাপুন।",true)};
 document.getElementById("adminExport").onclick=()=>{const blob=new Blob([adminJson.value],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="sirat-agency-settings.json";a.click();URL.revokeObjectURL(url)};
 </script></body></html>
+t:auto;padding:0}.poster-card-body{padding:15px}.grid{grid-template-columns:1fr}}
+
+
+.admin-open{border:1px solid #cbd9e9;background:#f5f9ff;color:#09275c;border-radius:22px;padding:10px 14px;font-weight:900;cursor:pointer}.admin-footer{border:0;background:transparent;color:#9fc5ff;text-decoration:underline;cursor:pointer;font:inherit}.admin-backdrop{display:none;position:fixed;inset:0;background:#06132fdb;z-index:100;padding:16px;align-items:center;justify-content:center}.admin-backdrop.open{display:flex}.admin-panel{width:min(920px,100%);max-height:94vh;overflow:auto;background:#fff;border-radius:20px;padding:22px;box-shadow:0 25px 80px #0007}.admin-head{display:flex;align-items:center;justify-content:space-between;gap:15px}.admin-head small{font-weight:900;letter-spacing:1.5px;color:#0b9e65}.admin-head h2{margin:3px 0 10px;color:#09275c}.admin-warning{background:#fff5df;border:1px solid #f1d28b;color:#6c4a00;border-radius:10px;padding:12px;font-size:13px}.admin-help{background:#eef7ff;border-radius:10px;padding:12px;margin:12px 0;color:#244363;font-size:13px}.admin-label{display:block;font-weight:900;color:#102448;margin:14px 0 7px}.admin-panel textarea{width:100%;min-height:360px;resize:vertical;border:1px solid #b9cbe0;border-radius:12px;padding:14px;font:12px/1.55 ui-monospace,SFMono-Regular,Consolas,monospace;color:#102448;background:#f8fbff}.admin-actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:13px}.admin-status{font-size:13px;color:#60718a}.admin-panel .close{cursor:pointer}@media(max-width:740px){.admin-open{padding:9px 10px;font-size:12px}.admin-panel{padding:15px}.admin-panel textarea{min-height:300px}}
+
+/* 2026 visual refresh */
+body{background:linear-gradient(180deg,#f4f8ff 0%,#edf5ff 45%,#f8fbff 100%);color:#102448}
+header{background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border-bottom:1px solid #e4ecf7}
+.nav{min-height:82px}.brand{font-size:22px;letter-spacing:-.5px}.brand:before{content:"S";display:inline-grid;place-items:center;width:42px;height:42px;margin-right:10px;border-radius:14px;color:#fff;background:linear-gradient(145deg,#0a3d8b,#09b9a5);box-shadow:0 7px 18px #0b4b8b35;vertical-align:middle;font-weight:1000}
+.navlinks a{padding:9px 12px;border-radius:22px;transition:.2s}.navlinks a:hover{background:#eaf3ff;color:#0755bd}
+.hero{background:radial-gradient(ellipse at 78% 28%,#0d7bd5 0%,#0a367b 36%,#061638 76%);}
+.hero-inner{padding:68px 0;min-height:520px}.hero h1{letter-spacing:-1.6px;text-shadow:0 5px 22px #00112f55}.hero p{font-size:clamp(17px,1.8vw,20px);line-height:1.8}.hero-art img{border:1px solid #8ac8ff55;box-shadow:0 24px 70px #00102f88,0 0 0 8px #ffffff0a}
+.btn{box-shadow:0 8px 20px #08a95a25;transition:transform .18s,box-shadow .18s}.btn:hover{transform:translateY(-2px);box-shadow:0 12px 26px #087cbd35}
+section{padding:64px 0}.heading{margin-bottom:34px}.heading small{letter-spacing:3px}.heading h2{letter-spacing:-.8px}.heading p{max-width:720px;margin:8px auto 0;line-height:1.7}
+#services{background:linear-gradient(180deg,#f4f8ff,#eaf3ff 55%,#f8fbff)}
+.poster-card{border-radius:22px;border:1px solid #d9e5f5;box-shadow:0 16px 40px #09285817;transition:transform .2s,box-shadow .2s}.poster-card:hover{transform:translateY(-4px);box-shadow:0 22px 48px #09285824}
+.poster-card>img{background:#fff;object-fit:contain;object-position:center;width:100%;height:auto;max-height:none;padding:0}.poster-card-body h3{font-size:23px;letter-spacing:-.4px}.poster-card-body p{line-height:1.75}.offer{border-radius:15px;background:linear-gradient(110deg,#f4f9ff,#f0fff7);border:1px solid #d9e7f3;padding:13px 14px}.offer .btn{white-space:nowrap}
+#reviews{background:radial-gradient(ellipse at top,#0b3c85,#061638 72%);color:#fff}#reviews .heading h2{color:#fff}#reviews .heading p{color:#c9dcf5}
+.reviewgrid{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.review{border:1px solid #d8e6f8;border-radius:18px;padding:20px;background:linear-gradient(145deg,#fff,#f3f8ff);box-shadow:0 10px 26px #00112f25;color:#102448}.review-person{display:flex;align-items:center;gap:11px}.review-person b{font-size:14px}.review .avatar{width:48px;height:48px;flex:0 0 48px;margin:0;border:3px solid #fff;box-shadow:0 4px 12px #09285825;font-size:15px}.review .stars{color:#e9a600;letter-spacing:2px;font-size:14px}.review p{font-size:14px;line-height:1.7;min-height:72px}.review-demo{font-size:9px}.reviewgrid .review:nth-child(3n+2) .avatar{background:linear-gradient(135deg,#7b36c7,#e35a9b)}.reviewgrid .review:nth-child(3n) .avatar{background:linear-gradient(135deg,#087be5,#11b98b)}
+#contact{background:linear-gradient(180deg,#f8fbff,#eaf3ff)}.contact{background:radial-gradient(circle at 85% 10%,#0c74c7,#08285e 65%,#061638);box-shadow:0 18px 40px #09285825}
+footer{margin-top:0;border-top:1px solid #21477a}
+@media(max-width:740px){.nav{min-height:72px}.brand{font-size:18px}.brand:before{width:36px;height:36px;margin-right:7px}.hero-inner{padding:42px 0 48px}.hero-art img{border-radius:16px}.reviewgrid{grid-template-columns:1fr}.review p{min-height:0}section{padding:48px 0}}
+
+.payment-poster{max-width:980px;margin:0 auto;background:#fff;border:1px solid #dce6f3;border-radius:22px;overflow:hidden;box-shadow:0 16px 40px #09285817}.payment-poster img{display:block;width:100%;height:auto;object-fit:contain}.poster-card>img{min-height:120px}
+</style></head>
+<body>
+<header><div class="wrap nav"><a class="brand" href="#">↗ Sirat Grow It <span>Agency</span></a><nav class="navlinks"><a href="#services">Services</a><a href="#payments">Payments</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a></nav><div style="display:flex;gap:8px;align-items:center"><a class="wa" id="headerWa" href="https://wa.me/8801913022305">☏ Chat on WhatsApp</a></div></div></header>
+<div class="hero"><div class="wrap hero-inner"><div><div class="kicker">Creative • Content • Digital Growth</div><h1>Grow Your Online Presence with <span>Professional Services!</span></h1><p>Channel guidance, video editing, social media support and professional website design for creators and businesses.</p><div class="checks"><span>Clear Service Details</span><span>Custom Website Quotes</span><span>Direct WhatsApp Support</span></div><a class="btn" href="#services">Explore Services ↓</a></div><div class="hero-art"><img src="assets/hero-digital-growth.png" alt="Digital growth illustration with laptop and social media icons" fetchpriority="high"></div></div></div>
+<section id="services"><div class="wrap"><div class="heading"><small>OUR SERVICES</small><h2>Choose Your Service</h2><p>Browse the latest service posters, select a package and place your order directly through WhatsApp.</p></div><div class="grid" id="servicesGrid"></div><p class="service-note">All campaigns are subject to platform rules and account eligibility. No guaranteed reach, monetization approval or audience results are implied.</p></div></section>
+<section id="payments"><div class="wrap"><div class="heading"><small>PAYMENT OPTIONS</small><h2>Available Payment Methods</h2><p>Choose your preferred payment option when placing an order. We will confirm the recipient details through WhatsApp.</p></div><div class="payment-poster"><img src="assets/payment-methods.png" alt="Accepted payment methods: bKash, Nagad, Rocket, Bank Account, Visa, Binance, Western Union, Ria, Payoneer, PayPal and MoneyGram" loading="lazy" decoding="async"></div></div></section>
+<section id="reviews"><div class="wrap"><div class="heading"><small>CLIENT FEEDBACK</small><h2>Customer Reviews</h2><p>Sample review layout — replace these examples with genuine customer feedback before publishing.</p></div><div class="reviewgrid" id="reviewGrid"></div><div style="text-align:center;margin-top:20px"><a class="btn" href="https://wa.me/8801913022305?text=Hello%20Sirat%20IT%20Agency%2C%20I%20would%20like%20to%20share%20my%20genuine%20review.">Share Your Genuine Review</a></div></div></section>
+<section id="contact"><div class="wrap"><div class="contact"><h2>Let's Grow Together!</h2><p>WhatsApp: 01913022305 · Email: siratakanda06@gmail.com · Kishoreganj, Bangladesh</p><a class="btn" href="https://wa.me/8801913022305">Chat on WhatsApp Now</a></div></div></section>
+<footer>© 2026 Sirat Grow It Agency · All rights reserved</footer>
+<div class="backdrop" id="backdrop"><div class="modal"><div class="modalhead"><h2>Place Your Order</h2><button class="close" id="close" aria-label="Close">×</button></div><p id="serviceName" class="hint"></p><div class="field"><label for="quantity">Quantity</label><input id="quantity" type="number" min="1" max="100" value="1"></div><div class="field"><label for="buyer">Your name (optional)</label><input id="buyer" placeholder="Your name"></div><div class="summary" id="summary">Total: $0</div><b>Select a payment method</b><p class="hint" style="margin:5px 0 10px">Payment options appear here after you choose a service package.</p><div class="paychoices" id="payChoices"></div><p class="hint">Choose one of the payment methods below. Your service, selected package, total and payment choice will be sent to WhatsApp. We will confirm the recipient details before you pay.</p><button class="btn" id="whatsOrder" style="width:100%">Contact on WhatsApp to Order →</button></div></div>
+
+<div class="admin-backdrop" id="adminBackdrop" aria-hidden="true"><section class="admin-panel" role="dialog" aria-modal="true" aria-labelledby="adminTitle"><div class="admin-head"><div><small>WEBSITE CONTROL CENTER</small><h2 id="adminTitle">Sirat Grow It Agency · Admin Panel</h2></div><button id="adminClose" class="close" aria-label="Close">×</button></div>
+<div id="adminLogin"><p class="admin-help">আপনার Supabase-এ তৈরি করা Admin ইমেইল ও পাসওয়ার্ড দিয়ে লগইন করুন।</p><div class="field"><label for="adminEmail">Admin Email</label><input id="adminEmail" type="email" autocomplete="username" placeholder="আপনার Supabase ইমেইল"></div><div class="field"><label for="adminPassword">Password</label><input id="adminPassword" type="password" autocomplete="current-password" placeholder="আপনার Supabase পাসওয়ার্ড"></div><button class="btn" id="adminLoginBtn" type="button">Login</button><p id="loginStatus" class="admin-status" role="status"></p></div>
+<div id="adminContent" hidden><p class="admin-warning">লগইন সফল। এখানে পরিবর্তন Save করলে তা ডেটাবেসে সংরক্ষিত হবে এবং সবার ওয়েবসাইটে দেখা যাবে।</p><div class="admin-help"><b>ছবি আপলোড:</b> নিচে সার্ভিস বেছে ছবি আপলোড করুন। এরপর Save Changes চাপুন।</div><label class="admin-label" for="uploadCategory">কোন সার্ভিসের পোস্টার বদলাবেন?</label><select id="uploadCategory" style="width:100%;padding:11px;border:1px solid #cbd9e9;border-radius:9px"></select><label class="admin-label" for="posterFile">নতুন পোস্টার ছবি</label><input id="posterFile" type="file" accept="image/*" style="width:100%;padding:10px;border:1px solid #cbd9e9;border-radius:9px"><div class="admin-actions"><button class="btn" id="uploadPoster" type="button">Upload Poster</button><button class="btn light" id="adminLogout" type="button">Logout</button></div><label class="admin-label" for="adminJson">Website Settings (Advanced JSON)</label><textarea id="adminJson" spellcheck="false"></textarea><div class="admin-actions"><button class="btn" id="adminSave" type="button">Save Changes</button><button class="btn light" id="adminReset" type="button">Reset to Original</button><button class="btn dark" id="adminExport" type="button">Download Settings</button></div></div><p id="adminStatus" class="admin-status" role="status"></p></section></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const DEFAULT_WA="8801913022305";
+const DEFAULT_METHODS=[
+ ["bKash",""],["Nagad",""],["Rocket",""],["Bank Account",""],["Visa Card",""],["Binance",""],
+ ["Western Union",""],["Ria Money Transfer",""],["Payoneer",""],["PayPal",""],["MoneyGram",""]
+];
+const DEFAULT_CATEGORIES=[
+ {id:"youtube",name:"YouTube Services",image:"assets/youtube-services.png",intro:"Channel growth packages and monetization eligibility support.",offers:[
+  {id:"yt-hours",name:"4,000 Watch Hours",price:50,unit:"package",detail:"YouTube watch-time package"},
+  {id:"yt-subs",name:"1,000 Subscribers",price:30,unit:"package",detail:"YouTube subscriber package"},
+  {id:"yt-combo",name:"1,000 Subscribers + 4,000 Watch Hours",price:60,unit:"package",detail:"Combined YouTube package"}
+ ]},
+ {id:"yt-sale",name:"YouTube Monetized Channel for Sale",image:"assets/youtube-monetized-channel.png",intro:"Channel listing with 1,000 subscribers and monetization shown as active. Verify ownership, eligibility, strikes and transfer details before purchase.",offers:[
+  {id:"yt-monetized",name:"Monetization ON Channel · 1,000 Subscribers",price:250,unit:"channel",detail:"One monetized YouTube channel"}
+ ]},
+ {id:"facebook",name:"Facebook Services",image:"assets/facebook-services.png",intro:"Facebook page growth, watch-time and monetization support packages.",offers:[
+  {id:"fb-followers",name:"10,000 Followers",price:20,unit:"package"},
+  {id:"fb-watch-600k",name:"600,000 Watch Hours",price:20,unit:"package"},
+  {id:"fb-watch-60k",name:"60,000 Watch Hours",price:15,unit:"package"},
+  {id:"fb-monetization",name:"Facebook Full Monetization Support",price:50,unit:"package"}
+ ]},
+ {id:"spotify",name:"Spotify Services",image:"assets/spotify-services.png",intro:"Spotify profile and music promotion packages.",offers:[
+  {id:"sp-followers",name:"5,000 Spotify Followers",price:20,unit:"package"},
+  {id:"sp-plays",name:"5,000 Spotify Plays",price:10,unit:"package"},
+  {id:"sp-promo",name:"Monthly Listener / Podcast Promotion",price:200,unit:"month",detail:"Monthly promotion service"}
+ ]},
+ {id:"instagram",name:"Instagram Services",image:"assets/instagram-services.png",intro:"Instagram profile and content visibility packages.",offers:[
+  {id:"ig-followers",name:"5,000 Instagram Followers",price:20,unit:"package"},
+  {id:"ig-views",name:"5,000 Instagram Views",price:5,unit:"package"}
+ ]},
+ {id:"tiktok",name:"TikTok Services",image:"assets/tiktok-services.png",intro:"TikTok profile and video visibility packages.",offers:[
+  {id:"tt-followers",name:"5,000 TikTok Followers",price:20,unit:"package"},
+  {id:"tt-views",name:"10 Million TikTok Views",price:10,unit:"package"}
+ ]},
+ {id:"editing",name:"Video Editing & YouTube Creative Services",image:"assets/video-editing-services.png",intro:"Professional editing and channel support for kids education, cartoon/rhyme, animal documentary, world history, war, true crime, sports and faceless channels.",quote:true,offers:[
+  {id:"edit-video",name:"Video Editing",quote:true},
+  {id:"edit-script",name:"Script Writing",quote:true},
+  {id:"edit-thumbnail",name:"Thumbnail Design",quote:true},
+  {id:"edit-seo",name:"SEO Optimization",quote:true},
+  {id:"edit-upload",name:"Upload & Optimization",quote:true}
+ ]},
+ {id:"website-design",name:"Website Design & Development",image:"",intro:"Need a professional website? We design and build business websites, landing pages, portfolios and online stores. Tell us what you need and receive a custom quote.",quote:true,offers:[
+  {id:"web-business",name:"Business Website Design",quote:true},
+  {id:"web-landing",name:"Landing Page Design",quote:true},
+  {id:"web-ecommerce",name:"E-commerce Website",quote:true},
+  {id:"web-custom",name:"Custom Website Development",quote:true}
+ ]}
+];
