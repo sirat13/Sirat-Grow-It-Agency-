@@ -55,7 +55,7 @@ section{padding:60px 0}
 .offer .btn{padding:9px 12px;font-size:12px;white-space:nowrap}
 .service-note{font-size:12px;color:#65758b;margin-top:20px;text-align:center}
 .payment-poster{max-width:980px;margin:auto;background:white;border:1px solid #dce6f3;border-radius:22px;overflow:hidden;box-shadow:0 16px 40px #09285817}
-.payment-poster img{display:block;width:100%;height:auto}
+.payment-poster img{display:block;width:100%;height:auto;object-fit:contain}
 #reviews{background:radial-gradient(ellipse at top,#0b3c85,#061638 72%);color:white}
 #reviews .heading h2{color:white}
 #reviews .heading p{color:#c9dcf5}
@@ -165,7 +165,16 @@ section{padding:46px 0}
 <section id="payments">
 <div class="wrap">
 <div class="heading"><small>PAYMENT OPTIONS</small><h2>Available Payment Methods</h2><p>Choose your preferred payment option when placing an order. We will confirm the recipient details through WhatsApp.</p></div>
-<div class="payment-poster"><img id="paymentImage" src="assets/payment-methods.png" alt="Accepted payment methods"></div>
+
+<div class="payment-poster">
+<img
+id="paymentImage"
+src="./assets/payment-methods.png"
+alt="bKash, Nagad, Rocket, Bank Account, Visa, Binance, Western Union, Ria, Payoneer, PayPal and MoneyGram payment methods"
+onerror="this.alt='Payment poster not found. Check the image filename in the assets folder.';this.style.minHeight='80px';this.style.padding='20px';"
+>
+</div>
+
 </div>
 </section>
 
@@ -224,28 +233,21 @@ section{padding:46px 0}
 </div>
 
 <div class="admin-help">
-<h3>২. Payment Poster পরিবর্তন</h3>
-<p>সব পেমেন্ট লোগো একসঙ্গে সাজানো ছবি আপলোড করুন।</p>
-<input class="admin-file" type="file" id="paymentFile" accept="image/*">
-<button class="btn" id="uploadPayment" type="button">Upload Payment Poster</button>
-</div>
-
-<div class="admin-help">
-<h3>৩. Payment Method-এর আলাদা লোগো</h3>
-<p>প্রতিটি পেমেন্টের নাম ও লোগো আলাদাভাবে পরিবর্তন করতে পারবেন।</p>
+<h3>২. Payment Method-এর আলাদা লোগো</h3>
+<p>অর্ডার করার সময় পেমেন্ট মেথডের নাম ও লোগো আলাদাভাবে পরিবর্তন করতে পারবেন। মূল Payment Methods অংশে assets ফোল্ডারের একসঙ্গে তৈরি পোস্টারটি দেখানো হবে।</p>
 <div id="methodsEditor"></div>
 <button class="btn" id="addMethod" type="button">+ Add Payment Method</button>
 </div>
 
 <div class="admin-help">
-<h3>৪. Services ও Packages পরিচালনা</h3>
+<h3>৩. Services ও Packages পরিচালনা</h3>
 <p>সার্ভিসের নাম, বিবরণ, প্যাকেজ, দাম পরিবর্তন করুন। নতুন সার্ভিস ও প্যাকেজ যোগ করতে পারবেন।</p>
 <div id="categoriesEditor"></div>
 <button class="btn" id="addCategory" type="button">+ Add New Service</button>
 </div>
 
 <div class="admin-help">
-<h3>৫. Contact Information</h3>
+<h3>৪. Contact Information</h3>
 <div class="field"><label>WhatsApp Number (Country code সহ, যেমন 8801913022305)</label><input id="editWhatsapp" type="text"></div>
 <div class="field"><label>Email</label><input id="editEmail" type="email"></div>
 <div class="field"><label>Location</label><input id="editLocation" type="text"></div>
@@ -267,6 +269,7 @@ section{padding:46px 0}
 "use strict";
 
 const DEFAULT_WA="8801913022305";
+const PAYMENT_POSTER_PATH="./assets/payment-methods.png";
 
 const DEFAULT_METHODS=[
 ["bKash",""],["Nagad",""],["Rocket",""],["Bank Account",""],["Visa Card",""],["Binance",""],["Western Union",""],["Ria Money Transfer",""],["Payoneer",""],["PayPal",""],["MoneyGram",""]
@@ -319,7 +322,7 @@ const DEFAULT_REVIEWS=[
 
 const DEFAULT_CONFIG={
 heroImage:"assets/hero-digital-growth.png",
-paymentImage:"assets/payment-methods.png",
+paymentImage:PAYMENT_POSTER_PATH,
 whatsapp:DEFAULT_WA,
 email:"siratakanda06@gmail.com",
 location:"Kishoreganj, Bangladesh",
@@ -395,9 +398,15 @@ $("reviewLink").href=`https://wa.me/${WA}?text=${encodeURIComponent("Hello, I wo
 }
 
 function renderAll(){
-renderServices();renderReviews();renderContact();
-$("heroImage").src=config.heroImage||DEFAULT_CONFIG.heroImage;
-$("paymentImage").src=config.paymentImage||DEFAULT_CONFIG.paymentImage;
+renderServices();
+renderReviews();
+renderContact();
+
+$("heroImage").src=config.heroImage||"assets/hero-digital-growth.png";
+
+/* Payment poster is always loaded directly from the assets folder.
+   Cloud settings and admin uploads cannot replace this local image. */
+$("paymentImage").src=PAYMENT_POSTER_PATH;
 }
 renderAll();
 
@@ -492,7 +501,10 @@ if(error)throw error;
 if(data&&data.settings&&Array.isArray(data.settings.categories)){
 config={...clone(DEFAULT_CONFIG),...data.settings};
 config.heroImage=config.heroImage||DEFAULT_CONFIG.heroImage;
-config.paymentImage=config.paymentImage||DEFAULT_CONFIG.paymentImage;
+
+/* Ignore any old cloud paymentImage value. */
+config.paymentImage=PAYMENT_POSTER_PATH;
+
 config.methods=Array.isArray(config.methods)?config.methods:clone(DEFAULT_METHODS);
 config.reviews=config.reviews||DEFAULT_REVIEWS;
 WA=config.whatsapp||DEFAULT_WA;
@@ -546,13 +558,6 @@ setAdminStatus("Hero ছবি আপলোড হচ্ছে...",true);
 config.heroImage=await uploadImage($("heroFile").files[0],"hero");
 $("heroFile").value="";renderAll();setAdminStatus("Hero ছবি আপলোড হয়েছে। Save All Changes চাপুন।",true);
 }catch(e){setAdminStatus("Hero Upload Error: "+e.message)}
-};
-$("uploadPayment").onclick=async()=>{
-try{
-setAdminStatus("Payment poster আপলোড হচ্ছে...",true);
-config.paymentImage=await uploadImage($("paymentFile").files[0],"payments");
-$("paymentFile").value="";renderAll();setAdminStatus("Payment poster আপলোড হয়েছে। Save All Changes চাপুন।",true);
-}catch(e){setAdminStatus("Payment Upload Error: "+e.message)}
 };
 
 /* EDITOR HELPERS */
@@ -674,6 +679,10 @@ config.email=$("editEmail").value.trim();
 config.location=$("editLocation").value.trim();
 config.categories=categories;
 config.methods=methods.map(m=>[String(m[0]||"").trim(),String(m[1]||"").trim()]);
+
+/* Keep the payment poster fixed to the assets folder. */
+config.paymentImage=PAYMENT_POSTER_PATH;
+
 if(!config.whatsapp)throw new Error("WhatsApp নম্বর দিন");
 if(!config.categories.length)throw new Error("কমপক্ষে একটি Service থাকতে হবে");
 const ids=new Set();
@@ -706,6 +715,7 @@ setAdminStatus("সফল! সব পরিবর্তন ডেটাবেস
 $("adminReset").onclick=()=>{
 if(!confirm("ওয়েবসাইটের সেটিংস মূল ডিফল্ট অবস্থায় ফেরাতে চান?"))return;
 config=clone(DEFAULT_CONFIG);
+config.paymentImage=PAYMENT_POSTER_PATH;
 WA=config.whatsapp;methods=config.methods;categories=config.categories;
 $("editWhatsapp").value=config.whatsapp;
 $("editEmail").value=config.email;
