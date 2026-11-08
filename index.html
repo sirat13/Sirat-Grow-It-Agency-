@@ -5,23 +5,14 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Sirat Grow It Agency</title>
 <meta name="description" content="Creative services, channel support, video editing and social media solutions.">
-
 <style>
-:root{
---navy:#061638;--blue:#087be5;--green:#12bd4c;
---ink:#102448;--muted:#61728b;--line:#d7e5f5;
-}
+:root{--navy:#061638;--blue:#087be5;--green:#12bd4c;--ink:#102448;--muted:#61728b;--line:#d7e5f5}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{
-margin:0;font-family:Arial,Helvetica,sans-serif;
-background:linear-gradient(180deg,#f4f8ff,#edf5ff,#f8fbff);
-color:var(--ink);line-height:1.5
-}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(180deg,#f4f8ff,#edf5ff,#f8fbff);color:var(--ink);line-height:1.5}
 a{text-decoration:none;color:inherit}
 button,input,textarea,select{font:inherit}
 .wrap{width:min(1160px,93%);margin:auto}
-
 header{background:white;position:sticky;top:0;z-index:10;box-shadow:0 2px 12px #001b3610}
 .nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:15px}
 .brand{font-size:21px;font-weight:900;color:var(--navy)}
@@ -29,16 +20,8 @@ header{background:white;position:sticky;top:0;z-index:10;box-shadow:0 2px 12px #
 .navlinks{display:flex;gap:17px;font-size:14px;font-weight:700}
 .navlinks a:hover{color:var(--blue)}
 .wa{background:#13b94c;color:white;padding:12px 17px;border-radius:28px;font-weight:900}
-
-.hero{
-background:radial-gradient(ellipse at 78% 28%,#0d7bd5,#0a367b 36%,#061638 76%);
-color:white;overflow:hidden
-}
-.hero-inner{
-padding:65px 0;min-height:500px;
-display:grid;grid-template-columns:1fr 1fr;
-align-items:center;gap:35px
-}
+.hero{background:radial-gradient(ellipse at 78% 28%,#0d7bd5,#0a367b 36%,#061638 76%);color:white;overflow:hidden}
+.hero-inner{padding:65px 0;min-height:500px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:35px}
 .kicker{color:#6cffb0;text-transform:uppercase;letter-spacing:2px;font-size:12px;font-weight:900}
 .hero h1{font-size:clamp(38px,5vw,64px);line-height:1.05;margin:13px 0;letter-spacing:-1.5px}
 .hero h1 span{color:#70ff35}
@@ -50,13 +33,12 @@ align-items:center;gap:35px
 .btn:hover{transform:translateY(-2px)}
 .btn.dark{background:#071a42}
 .btn.light{background:white;color:#08234c;border:1px solid var(--line)}
-
+.btn.red{background:#c62828}
 section{padding:60px 0}
 .heading{text-align:center;margin-bottom:32px}
 .heading small{color:#078f9c;letter-spacing:3px;font-weight:900}
 .heading h2{font-size:clamp(28px,4vw,40px);margin:5px;color:#071b43}
 .heading p{color:var(--muted);max-width:720px;margin:8px auto;line-height:1.7}
-
 #services{background:linear-gradient(180deg,#f4f8ff,#eaf3ff,#f8fbff)}
 .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;align-items:start}
 .poster-card{background:white;border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:0 16px 40px #09285817;transition:.2s}
@@ -72,10 +54,8 @@ section{padding:60px 0}
 .offer-price{font-size:22px;font-weight:950;color:#087e43;white-space:nowrap}
 .offer .btn{padding:9px 12px;font-size:12px;white-space:nowrap}
 .service-note{font-size:12px;color:#65758b;margin-top:20px;text-align:center}
-
 .payment-poster{max-width:980px;margin:auto;background:white;border:1px solid #dce6f3;border-radius:22px;overflow:hidden;box-shadow:0 16px 40px #09285817}
 .payment-poster img{display:block;width:100%;height:auto}
-
 #reviews{background:radial-gradient(ellipse at top,#0b3c85,#061638 72%);color:white}
 #reviews .heading h2{color:white}
 #reviews .heading p{color:#c9dcf5}
@@ -87,13 +67,11 @@ section{padding:60px 0}
 .stars{color:#e9a600;letter-spacing:2px}
 .review p{font-size:14px;line-height:1.7;min-height:65px;color:#60718a}
 .review-demo{font-size:9px;font-weight:900;color:#93630a;background:#fff6df;border:1px solid #edd49a;padding:4px 7px;border-radius:20px}
-
 #contact{background:linear-gradient(180deg,#f8fbff,#eaf3ff)}
 .contact{background:radial-gradient(circle at 85% 10%,#0c74c7,#08285e 65%,#061638);color:white;text-align:center;padding:38px 20px;border-radius:22px;box-shadow:0 18px 40px #09285825}
 .contact p{color:#d8eaff}
 footer{background:#061638;color:#d5e2f4;text-align:center;padding:28px}
 .admin-footer{border:0;background:transparent;color:#9fc5ff;text-decoration:underline;cursor:pointer;font:inherit;margin-top:8px}
-
 .backdrop{position:fixed;inset:0;background:#06132fce;display:none;align-items:center;justify-content:center;padding:15px;z-index:40}
 .backdrop.open{display:flex}
 .modal{background:white;border-radius:18px;padding:22px;width:min(560px,100%);max-height:92vh;overflow:auto}
@@ -102,17 +80,16 @@ footer{background:#061638;color:#d5e2f4;text-align:center;padding:28px}
 .close{border:0;border-radius:50%;width:35px;height:35px;font-size:22px;cursor:pointer}
 .field{margin:13px 0}
 .field label{font-size:13px;font-weight:900;display:block;margin-bottom:6px}
-.field input{width:100%;padding:11px;border:1px solid #cbd9e9;border-radius:9px}
+.field input,.field textarea,.field select{width:100%;padding:11px;border:1px solid #cbd9e9;border-radius:9px}
 .summary{background:#eafff1;border-radius:10px;padding:12px;font-size:20px;font-weight:950;color:#087e43;margin:12px 0}
 .hint{font-size:12px;color:#68778c}
 .paychoices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
 .pay{padding:12px 5px;font-size:12px;font-weight:900;border:1px solid #d4e1ef;border-radius:10px;background:white;cursor:pointer;color:#17345d}
-.paylogo{font-size:20px;display:block;margin-bottom:5px}
+.paylogo{width:42px;height:32px;object-fit:contain;display:block;margin:0 auto 5px}
 .pay.selected{outline:3px solid #12bd4c;background:#eafff0}
-
-.admin-backdrop{display:none;position:fixed;inset:0;background:#06132fdb;z-index:100;padding:16px;align-items:center;justify-content:center}
+.admin-backdrop{display:none;position:fixed;inset:0;background:#06132fdb;z-index:100;padding:12px;align-items:center;justify-content:center}
 .admin-backdrop.open{display:flex}
-.admin-panel{width:min(920px,100%);max-height:94vh;overflow:auto;background:white;border-radius:20px;padding:22px}
+.admin-panel{width:min(1000px,100%);max-height:96vh;overflow:auto;background:white;border-radius:20px;padding:22px}
 .admin-head{display:flex;align-items:center;justify-content:space-between;gap:15px}
 .admin-head small{font-weight:900;letter-spacing:1.5px;color:#0b9e65}
 .admin-head h2{margin:3px 0 10px;color:#09275c}
@@ -120,12 +97,21 @@ footer{background:#061638;color:#d5e2f4;text-align:center;padding:28px}
 .admin-help{background:#eef7ff;border-radius:10px;padding:14px;margin:12px 0;color:#244363;font-size:13px}
 .admin-help h3{margin:0 0 7px}
 .admin-label{display:block;font-weight:900;color:#102448;margin:14px 0 7px}
-.admin-panel textarea{width:100%;min-height:360px;resize:vertical;border:1px solid #b9cbe0;border-radius:12px;padding:14px;font:12px/1.55 monospace;color:#102448;background:#f8fbff}
-.admin-actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:13px}
-.admin-status{font-size:13px;color:#60718a}
 .admin-file{width:100%;padding:10px;border:1px solid #cbd9e9;border-radius:9px;background:white}
+.admin-actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:13px}
+.admin-status{font-size:13px;color:#60718a;white-space:pre-wrap}
+.admin-panel input,.admin-panel textarea,.admin-panel select{max-width:100%}
+.admin-panel input[type=text],.admin-panel input[type=number],.admin-panel input[type=email],.admin-panel input[type=password],.admin-panel textarea,.admin-panel select{width:100%;padding:10px;border:1px solid #cbd9e9;border-radius:9px}
+.editor-card{background:#fff;border:1px solid #d7e5f5;border-radius:13px;padding:13px;margin:12px 0}
+.editor-row{display:grid;grid-template-columns:2fr 1fr 1fr;gap:8px;margin:8px 0}
+.editor-row input{min-width:0}
+.editor-title{font-weight:900;color:#09275c}
+.editor-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:9px}
+.small-btn{border:0;border-radius:8px;padding:8px 11px;cursor:pointer;font-weight:800;background:#e8f2ff;color:#12345c}
+.small-btn.red{background:#ffebeb;color:#a11}
+.logo-preview{width:45px;height:40px;object-fit:contain;vertical-align:middle;margin-right:8px}
+hr{border:0;border-top:1px solid #e0e9f3;margin:16px 0}
 [hidden]{display:none!important}
-
 @media(max-width:740px){
 .nav{min-height:70px}.brand{font-size:17px}.navlinks{display:none}
 .wa{padding:10px;font-size:12px}
@@ -137,22 +123,19 @@ footer{background:#061638;color:#d5e2f4;text-align:center;padding:28px}
 section{padding:46px 0}
 .offer{flex-wrap:wrap}
 .offer .btn{margin-left:auto}
-.admin-panel{padding:15px}
-.admin-panel textarea{min-height:300px}
+.admin-panel{padding:13px}
+.editor-row{grid-template-columns:1fr 1fr}
+.editor-row input:first-child{grid-column:1/-1}
 }
 </style>
 </head>
-
 <body>
 
 <header>
 <div class="wrap nav">
 <a class="brand" href="#">↗ Sirat Grow It <span>Agency</span></a>
 <nav class="navlinks">
-<a href="#services">Services</a>
-<a href="#payments">Payments</a>
-<a href="#reviews">Reviews</a>
-<a href="#contact">Contact</a>
+<a href="#services">Services</a><a href="#payments">Payments</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a>
 </nav>
 <a class="wa" id="headerWa" href="https://wa.me/8801913022305">☏ Chat on WhatsApp</a>
 </div>
@@ -164,26 +147,16 @@ section{padding:46px 0}
 <div class="kicker">Creative • Content • Digital Growth</div>
 <h1>Grow Your Online Presence with <span>Professional Services!</span></h1>
 <p>Channel guidance, video editing, social media support and professional website design for creators and businesses.</p>
-<div class="checks">
-<span>Clear Service Details</span>
-<span>Custom Website Quotes</span>
-<span>Direct WhatsApp Support</span>
-</div>
+<div class="checks"><span>Clear Service Details</span><span>Custom Website Quotes</span><span>Direct WhatsApp Support</span></div>
 <a class="btn" href="#services">Explore Services ↓</a>
 </div>
-<div class="hero-art">
-<img id="heroImage" src="assets/hero-digital-growth.png" alt="Digital growth illustration" fetchpriority="high">
-</div>
+<div class="hero-art"><img id="heroImage" src="assets/hero-digital-growth.png" alt="Digital growth illustration"></div>
 </div>
 </div>
 
 <section id="services">
 <div class="wrap">
-<div class="heading">
-<small>OUR SERVICES</small>
-<h2>Choose Your Service</h2>
-<p>Browse our service posters, select a package and place your order directly through WhatsApp.</p>
-</div>
+<div class="heading"><small>OUR SERVICES</small><h2>Choose Your Service</h2><p>Browse our service posters, select a package and place your order directly through WhatsApp.</p></div>
 <div class="grid" id="servicesGrid"></div>
 <p class="service-note">All campaigns are subject to platform rules and account eligibility. No guaranteed reach, monetization approval or audience results are implied.</p>
 </div>
@@ -191,135 +164,95 @@ section{padding:46px 0}
 
 <section id="payments">
 <div class="wrap">
-<div class="heading">
-<small>PAYMENT OPTIONS</small>
-<h2>Available Payment Methods</h2>
-<p>Choose your preferred payment option when placing an order. We will confirm the recipient details through WhatsApp.</p>
-</div>
-<div class="payment-poster">
-<img id="paymentImage" src="assets/payment-methods.png" alt="Accepted payment methods" loading="lazy">
-</div>
+<div class="heading"><small>PAYMENT OPTIONS</small><h2>Available Payment Methods</h2><p>Choose your preferred payment option when placing an order. We will confirm the recipient details through WhatsApp.</p></div>
+<div class="payment-poster"><img id="paymentImage" src="assets/payment-methods.png" alt="Accepted payment methods"></div>
 </div>
 </section>
 
 <section id="reviews">
 <div class="wrap">
-<div class="heading">
-<small>CLIENT FEEDBACK</small>
-<h2>Customer Reviews</h2>
-<p>Sample review layout — replace these examples with genuine customer feedback before publishing.</p>
-</div>
+<div class="heading"><small>CLIENT FEEDBACK</small><h2>Customer Reviews</h2><p>Sample review layout — replace these examples with genuine customer feedback before publishing.</p></div>
 <div class="reviewgrid" id="reviewGrid"></div>
-<div style="text-align:center;margin-top:22px">
-<a class="btn" id="reviewLink" href="https://wa.me/8801913022305">Share Your Genuine Review</a>
-</div>
+<div style="text-align:center;margin-top:22px"><a class="btn" id="reviewLink" href="https://wa.me/8801913022305">Share Your Genuine Review</a></div>
 </div>
 </section>
 
 <section id="contact">
-<div class="wrap">
-<div class="contact">
+<div class="wrap"><div class="contact">
 <h2>Let's Grow Together!</h2>
 <p id="contactDetails">WhatsApp: 01913022305 · Email: siratakanda06@gmail.com · Kishoreganj, Bangladesh</p>
 <a class="btn" id="contactWa" href="https://wa.me/8801913022305">Chat on WhatsApp Now</a>
-</div>
-</div>
+</div></div>
 </section>
 
-<footer>
-© 2026 Sirat Grow It Agency · All rights reserved
-<br>
-<a class="admin-footer" href="#owner">Website Admin Login</a>
-</footer>
+<footer>© 2026 Sirat Grow It Agency · All rights reserved<br><a class="admin-footer" href="#owner">Website Admin Login</a></footer>
 
-<!-- ORDER MODAL -->
 <div class="backdrop" id="backdrop">
 <div class="modal">
-<div class="modalhead">
-<h2>Place Your Order</h2>
-<button class="close" id="close" aria-label="Close">×</button>
-</div>
+<div class="modalhead"><h2>Place Your Order</h2><button class="close" id="close">×</button></div>
 <p id="serviceName" class="hint"></p>
-<div class="field">
-<label for="quantity">Quantity</label>
-<input id="quantity" type="number" min="1" max="100" value="1">
-</div>
-<div class="field">
-<label for="buyer">Your name (optional)</label>
-<input id="buyer" placeholder="Your name">
-</div>
+<div class="field"><label for="quantity">Quantity</label><input id="quantity" type="number" min="1" max="100" value="1"></div>
+<div class="field"><label for="buyer">Your name (optional)</label><input id="buyer" placeholder="Your name"></div>
 <div class="summary" id="summary">Total: $0</div>
-<b>Select a payment method</b>
-<p class="hint">Select your preferred payment method.</p>
+<b>Select a payment method</b><p class="hint">Select your preferred payment method.</p>
 <div class="paychoices" id="payChoices"></div>
 <p class="hint">Your service, selected package, total and payment choice will be sent to WhatsApp. We will confirm the recipient details before you pay.</p>
 <button class="btn" id="whatsOrder" style="width:100%" disabled>Contact on WhatsApp to Order →</button>
 </div>
 </div>
 
-<!-- ADMIN PANEL -->
 <div class="admin-backdrop" id="adminBackdrop" aria-hidden="true">
 <section class="admin-panel" role="dialog" aria-modal="true">
-<div class="admin-head">
-<div>
-<small>WEBSITE CONTROL CENTER</small>
-<h2>Sirat Grow It Agency · Admin Panel</h2>
-</div>
-<button id="adminClose" class="close">×</button>
-</div>
+<div class="admin-head"><div><small>WEBSITE CONTROL CENTER</small><h2>Sirat Grow It Agency · Admin Panel</h2></div><button id="adminClose" class="close">×</button></div>
 
 <div id="adminLogin">
 <p class="admin-help">আপনার Supabase Admin ইমেইল ও পাসওয়ার্ড দিয়ে লগইন করুন।</p>
-<div class="field">
-<label for="adminEmail">Admin Email</label>
-<input id="adminEmail" type="email" autocomplete="username" placeholder="আপনার Supabase ইমেইল">
-</div>
-<div class="field">
-<label for="adminPassword">Password</label>
-<input id="adminPassword" type="password" autocomplete="current-password" placeholder="আপনার Supabase পাসওয়ার্ড">
-</div>
+<div class="field"><label for="adminEmail">Admin Email</label><input id="adminEmail" type="email" autocomplete="username" placeholder="আপনার Supabase ইমেইল"></div>
+<div class="field"><label for="adminPassword">Password</label><input id="adminPassword" type="password" autocomplete="current-password" placeholder="আপনার Supabase পাসওয়ার্ড"></div>
 <button class="btn" id="adminLoginBtn" type="button">Login</button>
 <p id="loginStatus" class="admin-status"></p>
 </div>
 
 <div id="adminContent" hidden>
-<p class="admin-warning">লগইন সফল। ছবি আপলোডের পর Save Changes চাপুন।</p>
+<p class="admin-warning">লগইন সফল। পরিবর্তন করার পর নিচের Save All Changes বাটনে চাপ দিন।</p>
 
 <div class="admin-help">
 <h3>১. Hero Image পরিবর্তন</h3>
-<p>ওয়েবসাইটের প্রথম পেজের বড় ছবিটি মোবাইল থেকে নির্বাচন করে আপলোড করুন।</p>
+<p>ওয়েবসাইটের প্রথম পেজের বড় ছবিটি নির্বাচন করে আপলোড করুন।</p>
 <input class="admin-file" type="file" id="heroFile" accept="image/*">
-<div class="admin-actions">
 <button class="btn" id="uploadHero" type="button">Upload Hero Image</button>
 </div>
-</div>
 
 <div class="admin-help">
-<h3>২. Payment Methods Image পরিবর্তন</h3>
-<p>বিকাশ, নগদ, রকেট, Visa, PayPal ইত্যাদির সব লোগো একটি ছবিতে সাজিয়ে একবারে আপলোড করুন।</p>
+<h3>২. Payment Poster পরিবর্তন</h3>
+<p>সব পেমেন্ট লোগো একসঙ্গে সাজানো ছবি আপলোড করুন।</p>
 <input class="admin-file" type="file" id="paymentFile" accept="image/*">
-<div class="admin-actions">
-<button class="btn" id="uploadPayment" type="button">Upload Payment Image</button>
-</div>
+<button class="btn" id="uploadPayment" type="button">Upload Payment Poster</button>
 </div>
 
 <div class="admin-help">
-<h3>৩. Service Poster পরিবর্তন</h3>
-<p>যে সার্ভিসের পোস্টার পরিবর্তন করবেন সেটি নির্বাচন করুন।</p>
-<label class="admin-label" for="uploadCategory">Service নির্বাচন</label>
-<select id="uploadCategory" style="width:100%;padding:11px;border:1px solid #cbd9e9;border-radius:9px"></select>
-<label class="admin-label" for="posterFile">নতুন পোস্টার ছবি</label>
-<input class="admin-file" type="file" id="posterFile" accept="image/*">
-<div class="admin-actions">
-<button class="btn" id="uploadPoster" type="button">Upload Poster</button>
-</div>
+<h3>৩. Payment Method-এর আলাদা লোগো</h3>
+<p>প্রতিটি পেমেন্টের নাম ও লোগো আলাদাভাবে পরিবর্তন করতে পারবেন।</p>
+<div id="methodsEditor"></div>
+<button class="btn" id="addMethod" type="button">+ Add Payment Method</button>
 </div>
 
-<label class="admin-label" for="adminJson">Website Settings (Advanced JSON)</label>
-<textarea id="adminJson" spellcheck="false"></textarea>
+<div class="admin-help">
+<h3>৪. Services ও Packages পরিচালনা</h3>
+<p>সার্ভিসের নাম, বিবরণ, প্যাকেজ, দাম পরিবর্তন করুন। নতুন সার্ভিস ও প্যাকেজ যোগ করতে পারবেন।</p>
+<div id="categoriesEditor"></div>
+<button class="btn" id="addCategory" type="button">+ Add New Service</button>
+</div>
+
+<div class="admin-help">
+<h3>৫. Contact Information</h3>
+<div class="field"><label>WhatsApp Number (Country code সহ, যেমন 8801913022305)</label><input id="editWhatsapp" type="text"></div>
+<div class="field"><label>Email</label><input id="editEmail" type="email"></div>
+<div class="field"><label>Location</label><input id="editLocation" type="text"></div>
+</div>
 
 <div class="admin-actions">
-<button class="btn" id="adminSave" type="button">Save Changes</button>
+<button class="btn" id="adminSave" type="button">Save All Changes</button>
 <button class="btn light" id="adminReset" type="button">Reset to Original</button>
 <button class="btn dark" id="adminExport" type="button">Download Settings</button>
 <button class="btn light" id="adminLogout" type="button">Logout</button>
@@ -330,114 +263,50 @@ section{padding:46px 0}
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
 <script>
 "use strict";
 
-/* WHATSAPP */
 const DEFAULT_WA="8801913022305";
 
-/* PAYMENT METHODS */
 const DEFAULT_METHODS=[
-["bKash",""],["Nagad",""],["Rocket",""],
-["Bank Account",""],["Visa Card",""],["Binance",""],
-["Western Union",""],["Ria Money Transfer",""],
-["Payoneer",""],["PayPal",""],["MoneyGram",""]
+["bKash",""],["Nagad",""],["Rocket",""],["Bank Account",""],["Visa Card",""],["Binance",""],["Western Union",""],["Ria Money Transfer",""],["Payoneer",""],["PayPal",""],["MoneyGram",""]
 ];
 
-/* SERVICES */
 const DEFAULT_CATEGORIES=[
-{
-id:"youtube",
-name:"YouTube Services",
-image:"https://qdtpyovjxybwmcdlplpb.supabase.co/storage/v1/object/public/website-images/youtube-services.png",
-intro:"Channel growth packages and monetization eligibility support.",
-offers:[
+{id:"youtube",name:"YouTube Services",image:"https://qdtpyovjxybwmcdlplpb.supabase.co/storage/v1/object/public/website-images/youtube-services.png",intro:"Channel growth packages and monetization eligibility support.",offers:[
 {id:"yt-hours",name:"4,000 Watch Hours",price:50,unit:"package"},
 {id:"yt-subs",name:"1,000 Subscribers",price:30,unit:"package"},
-{id:"yt-combo",name:"1,000 Subscribers + 4,000 Watch Hours",price:60,unit:"package"}
-]
-},
-{
-id:"yt-sale",
-name:"YouTube Monetized Channel for Sale",
-image:"assets/youtube-monetized-channel.png",
-intro:"Channel listing with 1,000 subscribers and monetization shown as active. Verify ownership, eligibility, strikes and transfer details before purchase.",
-offers:[
-{id:"yt-monetized",name:"Monetization ON Channel · 1,000 Subscribers",price:250,unit:"channel"}
-]
-},
-{
-id:"facebook",
-name:"Facebook Services",
-image:"assets/facebook-services.png",
-intro:"Facebook page growth, watch-time and monetization support packages.",
-offers:[
+{id:"yt-combo",name:"1,000 Subscribers + 4,000 Watch Hours",price:60,unit:"package"}]},
+{id:"yt-sale",name:"YouTube Monetized Channel for Sale",image:"assets/youtube-monetized-channel.png",intro:"Channel listing with 1,000 subscribers and monetization shown as active. Verify ownership, eligibility, strikes and transfer details before purchase.",offers:[
+{id:"yt-monetized",name:"Monetization ON Channel · 1,000 Subscribers",price:250,unit:"channel"}]},
+{id:"facebook",name:"Facebook Services",image:"assets/facebook-services.png",intro:"Facebook page growth, watch-time and monetization support packages.",offers:[
 {id:"fb-followers",name:"10,000 Followers",price:20,unit:"package"},
 {id:"fb-watch-600k",name:"600,000 Watch Hours",price:20,unit:"package"},
 {id:"fb-watch-60k",name:"60,000 Watch Hours",price:15,unit:"package"},
-{id:"fb-monetization",name:"Facebook Full Monetization Support",price:50,unit:"package"}
-]
-},
-{
-id:"spotify",
-name:"Spotify Services",
-image:"assets/spotify-services.png",
-intro:"Spotify profile and music promotion packages.",
-offers:[
+{id:"fb-monetization",name:"Facebook Full Monetization Support",price:50,unit:"package"}]},
+{id:"spotify",name:"Spotify Services",image:"assets/spotify-services.png",intro:"Spotify profile and music promotion packages.",offers:[
 {id:"sp-followers",name:"5,000 Spotify Followers",price:20,unit:"package"},
 {id:"sp-plays",name:"5,000 Spotify Plays",price:10,unit:"package"},
-{id:"sp-promo",name:"Monthly Listener / Podcast Promotion",price:200,unit:"month"}
-]
-},
-{
-id:"instagram",
-name:"Instagram Services",
-image:"assets/instagram-services.png",
-intro:"Instagram profile and content visibility packages.",
-offers:[
+{id:"sp-promo",name:"Monthly Listener / Podcast Promotion",price:200,unit:"month"}]},
+{id:"instagram",name:"Instagram Services",image:"assets/instagram-services.png",intro:"Instagram profile and content visibility packages.",offers:[
 {id:"ig-followers",name:"5,000 Instagram Followers",price:20,unit:"package"},
-{id:"ig-views",name:"5,000 Instagram Views",price:5,unit:"package"}
-]
-},
-{
-id:"tiktok",
-name:"TikTok Services",
-image:"assets/tiktok-services.png",
-intro:"TikTok profile and video visibility packages.",
-offers:[
+{id:"ig-views",name:"5,000 Instagram Views",price:5,unit:"package"}]},
+{id:"tiktok",name:"TikTok Services",image:"assets/tiktok-services.png",intro:"TikTok profile and video visibility packages.",offers:[
 {id:"tt-followers",name:"5,000 TikTok Followers",price:20,unit:"package"},
-{id:"tt-views",name:"10 Million TikTok Views",price:10,unit:"package"}
-]
-},
-{
-id:"editing",
-name:"Video Editing & YouTube Creative Services",
-image:"assets/video-editing-services.png",
-intro:"Professional editing and channel support for kids education, cartoon/rhyme, animal documentary, world history, war, true crime, sports and faceless channels.",
-offers:[
+{id:"tt-views",name:"10 Million TikTok Views",price:10,unit:"package"}]},
+{id:"editing",name:"Video Editing & YouTube Creative Services",image:"assets/video-editing-services.png",intro:"Professional editing and channel support for creators and businesses.",offers:[
 {id:"edit-video",name:"Video Editing",quote:true},
 {id:"edit-script",name:"Script Writing",quote:true},
 {id:"edit-thumbnail",name:"Thumbnail Design",quote:true},
 {id:"edit-seo",name:"SEO Optimization",quote:true},
-{id:"edit-upload",name:"Upload & Optimization",quote:true}
-]
-},
-{
-id:"website-design",
-name:"Website Design & Development",
-image:"",
-intro:"Need a professional website? We design and build business websites, landing pages, portfolios and online stores. Tell us what you need and receive a custom quote.",
-offers:[
+{id:"edit-upload",name:"Upload & Optimization",quote:true}]},
+{id:"website-design",name:"Website Design & Development",image:"",intro:"Business websites, landing pages, portfolios and online stores. Contact us for a custom quote.",offers:[
 {id:"web-business",name:"Business Website Design",quote:true},
 {id:"web-landing",name:"Landing Page Design",quote:true},
 {id:"web-ecommerce",name:"E-commerce Website",quote:true},
-{id:"web-custom",name:"Custom Website Development",quote:true}
-]
-}
+{id:"web-custom",name:"Custom Website Development",quote:true}]}
 ];
 
-/* REVIEWS */
 const DEFAULT_REVIEWS=[
 {name:"Ayesha Rahman · Sample",text:"The team explained the service options clearly and helped me understand the next steps before ordering."},
 {name:"Rafiul Islam · Sample",text:"The communication was friendly and the package details were easy to understand. A smooth experience."},
@@ -459,255 +328,148 @@ methods:DEFAULT_METHODS,
 reviews:DEFAULT_REVIEWS
 };
 
-const STORAGE_KEY="siratGrowItAgencyConfig_v2";
+function clone(v){return JSON.parse(JSON.stringify(v))}
+const STORAGE_KEY="siratGrowItAgencyConfig_v3";
 
-function cloneConfig(v){
-return JSON.parse(JSON.stringify(v));
-}
-
-function loadConfig(){
+function loadLocal(){
 try{
-const saved=JSON.parse(localStorage.getItem(STORAGE_KEY)||"null");
-if(!saved||!Array.isArray(saved.categories))return cloneConfig(DEFAULT_CONFIG);
-const merged=cloneConfig(DEFAULT_CONFIG);
-merged.whatsapp=saved.whatsapp||merged.whatsapp;
-merged.email=saved.email||merged.email;
-merged.location=saved.location||merged.location;
-merged.heroImage=saved.heroImage||merged.heroImage;
-merged.paymentImage=saved.paymentImage||merged.paymentImage;
-merged.reviews=Array.isArray(saved.reviews)?saved.reviews:merged.reviews;
-merged.methods=Array.isArray(saved.methods)?saved.methods:merged.methods;
-merged.categories=merged.categories.map(def=>{
-const old=saved.categories.find(x=>x&&x.id===def.id);
-return old?{...def,...old,offers:Array.isArray(old.offers)?old.offers:def.offers}:def;
-});
-return merged;
-}catch(e){return cloneConfig(DEFAULT_CONFIG);}
+const x=JSON.parse(localStorage.getItem(STORAGE_KEY)||"null");
+return x&&Array.isArray(x.categories)?{...clone(DEFAULT_CONFIG),...x}:clone(DEFAULT_CONFIG);
+}catch(e){return clone(DEFAULT_CONFIG)}
 }
 
-let config=loadConfig();
+let config=loadLocal();
 let WA=config.whatsapp||DEFAULT_WA;
-let methods=config.methods||DEFAULT_METHODS;
-let categories=config.categories||DEFAULT_CATEGORIES;
+let methods=config.methods||clone(DEFAULT_METHODS);
+let categories=config.categories||clone(DEFAULT_CATEGORIES);
 let offers={};
 let current=null;
 let selected="";
 
-const grid=document.getElementById("servicesGrid");
-const backdrop=document.getElementById("backdrop");
-const qty=document.getElementById("quantity");
-const payChoices=document.getElementById("payChoices");
-const whatsOrder=document.getElementById("whatsOrder");
+const $=id=>document.getElementById(id);
+const grid=$("servicesGrid");
+const backdrop=$("backdrop");
+const qty=$("quantity");
+const payChoices=$("payChoices");
+const whatsOrder=$("whatsOrder");
 
 function escapeHtml(v){
-return String(v??"").replace(/[&<>"']/g,c=>({
-"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
-}[c]));
+return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 }
-
 function money(v){
 const n=Number(v);
 return Number.isFinite(n)?"$"+n:"Contact";
 }
-
 function buildOfferMap(){
 offers={};
-categories.forEach(c=>{
-(c.offers||[]).forEach(o=>{
-offers[o.id]={...o,category:c.name};
-});
-});
+categories.forEach(c=>(c.offers||[]).forEach(o=>offers[o.id]={...o,category:c.name}));
 }
 
-/* SERVICE DISPLAY */
 function renderServices(){
 grid.innerHTML="";
 buildOfferMap();
-
 categories.forEach(c=>{
 const card=document.createElement("article");
 card.className="poster-card";
-
 const rows=(c.offers||[]).map(o=>{
-if(o.quote){
-return `<div class="offer">
-<div><strong>${escapeHtml(o.name)}</strong><small>Contact for a custom quote</small></div>
-<button class="btn quote" type="button" data-id="${escapeHtml(o.id)}">Get Quote</button>
-</div>`;
-}
-return `<div class="offer">
-<div><strong>${escapeHtml(o.name)}</strong><small>${o.unit==="month"?"Monthly service":"Fixed package price"}</small></div>
-<span class="offer-price">${money(o.price)}${o.unit==="month"?"/mo":""}</span>
-<button class="btn order" type="button" data-id="${escapeHtml(o.id)}">Order Now</button>
-</div>`;
+if(o.quote)return `<div class="offer"><div><strong>${escapeHtml(o.name)}</strong><small>Contact for a custom quote</small></div><button class="btn quote" type="button" data-id="${escapeHtml(o.id)}">Get Quote</button></div>`;
+return `<div class="offer"><div><strong>${escapeHtml(o.name)}</strong><small>${o.unit==="month"?"Monthly service":"Fixed package price"}</small></div><span class="offer-price">${money(o.price)}${o.unit==="month"?"/mo":""}</span><button class="btn order" type="button" data-id="${escapeHtml(o.id)}">Order Now</button></div>`;
 }).join("");
-
-card.innerHTML=`
-${c.image?`<img src="${escapeHtml(c.image)}" alt="${escapeHtml(c.name)} promotional poster" loading="lazy" onerror="this.hidden=true">`:""}
-<div class="poster-card-body">
-<h3>${escapeHtml(c.name)}</h3>
-<p>${escapeHtml(c.intro||"")}</p>
-<div class="offer-list">${rows}</div>
-</div>`;
+card.innerHTML=`${c.image?`<img src="${escapeHtml(c.image)}" alt="${escapeHtml(c.name)} promotional poster" loading="lazy" onerror="this.hidden=true">`:""}<div class="poster-card-body"><h3>${escapeHtml(c.name)}</h3><p>${escapeHtml(c.intro||"")}</p><div class="offer-list">${rows}</div></div>`;
 grid.appendChild(card);
 });
 }
 
-/* REVIEWS */
 function renderReviews(){
-const rg=document.getElementById("reviewGrid");
-rg.innerHTML=(config.reviews||[]).map(r=>{
+$("reviewGrid").innerHTML=(config.reviews||[]).map(r=>{
 const initials=String(r.name||"Client").replace(/·.*$/,"").trim().split(/\s+/).slice(0,2).map(x=>x[0]||"").join("").toUpperCase();
-return `<article class="review">
-<div class="review-person">
-<span class="avatar">${escapeHtml(initials||"C")}</span>
-<div><b>${escapeHtml(r.name||"Client")}</b><div class="stars">★★★★★</div></div>
-</div>
-<p>“${escapeHtml(r.text||"")}”</p>
-<span class="review-demo">${r.verified?"CLIENT REVIEW":"SAMPLE · REPLACE WITH REAL FEEDBACK"}</span>
-</article>`;
+return `<article class="review"><div class="review-person"><span class="avatar">${escapeHtml(initials||"C")}</span><div><b>${escapeHtml(r.name||"Client")}</b><div class="stars">★★★★★</div></div></div><p>“${escapeHtml(r.text||"")}”</p><span class="review-demo">${r.verified?"CLIENT REVIEW":"SAMPLE · REPLACE WITH REAL FEEDBACK"}</span></article>`;
 }).join("");
 }
 
-/* CONTACT */
 function renderContact(){
-document.getElementById("contactDetails").textContent=
-`WhatsApp: +${WA} · Email: ${config.email||""} · ${config.location||""}`;
-document.getElementById("headerWa").href=`https://wa.me/${WA}`;
-document.getElementById("contactWa").href=`https://wa.me/${WA}`;
-document.getElementById("reviewLink").href=
-`https://wa.me/${WA}?text=${encodeURIComponent("Hello, I would like to share my genuine review.")}`;
+$("contactDetails").textContent=`WhatsApp: +${WA} · Email: ${config.email||""} · ${config.location||""}`;
+$("headerWa").href=`https://wa.me/${WA}`;
+$("contactWa").href=`https://wa.me/${WA}`;
+$("reviewLink").href=`https://wa.me/${WA}?text=${encodeURIComponent("Hello, I would like to share my genuine review.")}`;
 }
 
 function renderAll(){
-renderServices();
-renderReviews();
-renderContact();
-
-document.getElementById("heroImage").src=
-config.heroImage||"assets/hero-digital-growth.png";
-
-document.getElementById("paymentImage").src=
-config.paymentImage||"assets/payment-methods.png";
+renderServices();renderReviews();renderContact();
+$("heroImage").src=config.heroImage||DEFAULT_CONFIG.heroImage;
+$("paymentImage").src=config.paymentImage||DEFAULT_CONFIG.paymentImage;
 }
-
 renderAll();
 
 /* ORDER SYSTEM */
-function payButton([name]){
-const symbols={
-"bKash":"৳","Nagad":"N","Rocket":"R",
-"Bank Account":"▤","Visa Card":"V","Binance":"◇",
-"Western Union":"WU","Ria Money Transfer":"Ria",
-"Payoneer":"P","PayPal":"P","MoneyGram":"M"
-};
-return `<button class="pay" type="button" data-method="${escapeHtml(name)}">
-<span class="paylogo">${symbols[name]||"৳"}</span>${escapeHtml(name)}
-</button>`;
+function payButton(method){
+const name=Array.isArray(method)?method[0]:method.name;
+const logo=Array.isArray(method)?method[1]:method.image;
+return `<button class="pay" type="button" data-method="${escapeHtml(name)}">${logo?`<img class="paylogo" src="${escapeHtml(logo)}" alt="">`:`<span class="paylogo">৳</span>`}${escapeHtml(name)}</button>`;
 }
-
 function update(){
 if(!current)return;
 const q=Math.max(1,Math.min(100,parseInt(qty.value||"1",10)));
 qty.value=q;
-document.getElementById("summary").textContent=
-`Total: ${money(current.price*q)}${current.unit==="month"?" / month":""}`;
+$("summary").textContent=`Total: ${money(current.price*q)}${current.unit==="month"?" / month":""}`;
 }
-
 function openOrder(id){
-current=offers[id];
-if(!current)return;
+current=offers[id];if(!current)return;
 selected="";
-document.getElementById("serviceName").textContent=`${current.category} · ${current.name}`;
-document.getElementById("buyer").value="";
-qty.value=1;
-update();
+$("serviceName").textContent=`${current.category} · ${current.name}`;
+$("buyer").value="";qty.value=1;update();
 payChoices.innerHTML=methods.map(payButton).join("");
-whatsOrder.disabled=true;
-whatsOrder.style.opacity=".55";
+whatsOrder.disabled=true;whatsOrder.style.opacity=".55";
 backdrop.classList.add("open");
 }
-
 function requestQuote(id){
-const o=offers[id];
-if(!o)return;
+const o=offers[id];if(!o)return;
 const msg=`Hello Sirat Grow It Agency, I would like a quotation for: ${o.name}. Please share the available packages and price.`;
 window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`,"_blank");
 }
-
 grid.addEventListener("click",e=>{
-const order=e.target.closest(".order");
-const quote=e.target.closest(".quote");
+const order=e.target.closest(".order"),quote=e.target.closest(".quote");
 if(order)openOrder(order.dataset.id);
 if(quote)requestQuote(quote.dataset.id);
 });
-
 payChoices.addEventListener("click",e=>{
-const b=e.target.closest("[data-method]");
-if(!b)return;
+const b=e.target.closest("[data-method]");if(!b)return;
 selected=b.dataset.method;
 payChoices.querySelectorAll(".pay").forEach(x=>x.classList.toggle("selected",x===b));
-whatsOrder.disabled=false;
-whatsOrder.style.opacity="1";
+whatsOrder.disabled=false;whatsOrder.style.opacity="1";
 });
-
 qty.addEventListener("input",update);
-document.getElementById("close").onclick=()=>backdrop.classList.remove("open");
-backdrop.addEventListener("click",e=>{if(e.target===backdrop)backdrop.classList.remove("open");});
-
+$("close").onclick=()=>$("backdrop").classList.remove("open");
+backdrop.addEventListener("click",e=>{if(e.target===backdrop)backdrop.classList.remove("open")});
 whatsOrder.onclick=()=>{
 if(!current||!selected)return;
 const q=Math.max(1,Math.min(100,parseInt(qty.value||"1",10)));
-const buyer=document.getElementById("buyer").value.trim();
+const buyer=$("buyer").value.trim();
 const total=Number(current.price)*q;
-const msg=[
-"Hello Sirat Grow It Agency,","",
-"I would like to place an order:",
-`Service: ${current.category} — ${current.name}`,
-`Quantity: ${q}`,
-`Unit price: ${money(current.price)}${current.unit==="month"?" per month":""}`,
-`Total: ${money(total)}${current.unit==="month"?" per month":""}`,
-`Payment method: ${selected}`,
-`Name: ${buyer||"Not provided"}`,"",
-"Please confirm availability and share the payment instructions."
-].join("\n");
+const msg=["Hello Sirat Grow It Agency,","","I would like to place an order:",`Service: ${current.category} — ${current.name}`,`Quantity: ${q}`,`Unit price: ${money(current.price)}${current.unit==="month"?" per month":""}`,`Total: ${money(total)}${current.unit==="month"?" per month":""}`,`Payment method: ${selected}`,`Name: ${buyer||"Not provided"}`,"","Please confirm availability and share the payment instructions."].join("\n");
 window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`,"_blank");
 };
 
 /* SUPABASE */
 const SUPABASE_URL="https://qdtpyovjxybwmcdlplpb.supabase.co";
 const SUPABASE_PUBLISHABLE_KEY="sb_publishable_FcyMx5TrNmp2uuCDcSbhYw_SEgS2UH1";
-
 const sb=window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY);
 
-const adminBackdrop=document.getElementById("adminBackdrop");
-const adminJson=document.getElementById("adminJson");
-const adminStatus=document.getElementById("adminStatus");
-const adminLogin=document.getElementById("adminLogin");
-const adminContent=document.getElementById("adminContent");
+const adminBackdrop=$("adminBackdrop"),adminStatus=$("adminStatus"),adminLogin=$("adminLogin"),adminContent=$("adminContent");
 
 function setAdminStatus(message,ok=false){
 adminStatus.textContent=message;
 adminStatus.style.color=ok?"#087e43":"#b42318";
 }
 
-function fillUploadCategories(){
-const sel=document.getElementById("uploadCategory");
-sel.innerHTML="";
-categories.forEach(c=>{
-const o=document.createElement("option");
-o.value=c.id;
-o.textContent=c.name;
-sel.appendChild(o);
-});
-}
-
 function showAdminSession(isLoggedIn){
 adminLogin.hidden=isLoggedIn;
 adminContent.hidden=!isLoggedIn;
 if(isLoggedIn){
-adminJson.value=JSON.stringify(config,null,2);
-fillUploadCategories();
+$("editWhatsapp").value=config.whatsapp||DEFAULT_WA;
+$("editEmail").value=config.email||"";
+$("editLocation").value=config.location||"";
+renderEditors();
 setAdminStatus("ডেটাবেসের সঙ্গে সংযোগ হয়েছে।",true);
 }
 }
@@ -716,236 +478,250 @@ async function openAdmin(){
 adminBackdrop.classList.add("open");
 adminBackdrop.setAttribute("aria-hidden","false");
 const {data,error}=await sb.auth.getSession();
-if(error){
-setAdminStatus("Session error: "+error.message);
-return;
-}
+if(error){setAdminStatus("Session error: "+error.message);return}
 showAdminSession(!!data.session);
 }
-
 function closeAdmin(){
 adminBackdrop.classList.remove("open");
 adminBackdrop.setAttribute("aria-hidden","true");
 }
-
 async function loadCloudSettings(){
 try{
-const {data,error}=await sb.from("website_settings")
-.select("settings").eq("id",1).maybeSingle();
+const {data,error}=await sb.from("website_settings").select("settings").eq("id",1).maybeSingle();
 if(error)throw error;
-
 if(data&&data.settings&&Array.isArray(data.settings.categories)){
-config={
-...cloneConfig(DEFAULT_CONFIG),
-...data.settings
-};
-
+config={...clone(DEFAULT_CONFIG),...data.settings};
 config.heroImage=config.heroImage||DEFAULT_CONFIG.heroImage;
 config.paymentImage=config.paymentImage||DEFAULT_CONFIG.paymentImage;
-config.methods=config.methods||DEFAULT_METHODS;
+config.methods=Array.isArray(config.methods)?config.methods:clone(DEFAULT_METHODS);
 config.reviews=config.reviews||DEFAULT_REVIEWS;
-
 WA=config.whatsapp||DEFAULT_WA;
 methods=config.methods;
 categories=config.categories;
 renderAll();
+localStorage.setItem(STORAGE_KEY,JSON.stringify(config));
 }
-}catch(e){
-console.warn("Could not load cloud settings",e);
+}catch(e){console.warn("Could not load cloud settings",e)}
 }
-}
-
-async function ownerGate(){
-if(location.hash==="#owner")await openAdmin();
-}
-
+async function ownerGate(){if(location.hash==="#owner")await openAdmin()}
 window.addEventListener("hashchange",ownerGate);
 ownerGate();
 loadCloudSettings();
-
-document.getElementById("adminClose").onclick=closeAdmin;
-adminBackdrop.addEventListener("click",e=>{
-if(e.target===adminBackdrop)closeAdmin();
-});
+$("adminClose").onclick=closeAdmin;
+adminBackdrop.addEventListener("click",e=>{if(e.target===adminBackdrop)closeAdmin()});
 
 /* LOGIN */
-document.getElementById("adminLoginBtn").onclick=async()=>{
-const email=document.getElementById("adminEmail").value.trim();
-const password=document.getElementById("adminPassword").value;
-const out=document.getElementById("loginStatus");
+$("adminLoginBtn").onclick=async()=>{
+const email=$("adminEmail").value.trim(),password=$("adminPassword").value,out=$("loginStatus");
 out.textContent="লগইন হচ্ছে...";
-
 const {error}=await sb.auth.signInWithPassword({email,password});
-if(error){
-out.textContent="লগইন হয়নি: "+error.message;
-return;
-}
+if(error){out.textContent="লগইন হয়নি: "+error.message;return}
 out.textContent="লগইন সফল";
 await loadCloudSettings();
 showAdminSession(true);
 };
 
 /* LOGOUT */
-document.getElementById("adminLogout").onclick=async()=>{
+$("adminLogout").onclick=async()=>{
 await sb.auth.signOut();
 showAdminSession(false);
 setAdminStatus("আপনি লগআউট করেছেন।",true);
 };
 
-/* SAVE SETTINGS */
-document.getElementById("adminSave").onclick=async()=>{
-try{
-const next=JSON.parse(adminJson.value);
-
-if(!Array.isArray(next.categories)||!Array.isArray(next.methods)){
-throw new Error("categories ও methods অবশ্যই array হতে হবে");
-}
-
-for(const c of next.categories){
-if(!c.id||!c.name||!Array.isArray(c.offers)){
-throw new Error("প্রতিটি service-এ id, name, offers দিন");
-}
-}
-
-for(const m of next.methods){
-if(!Array.isArray(m)||m.length<2){
-throw new Error("প্রতিটি payment method [নাম, image path] আকারে দিন");
-}
-}
-
-setAdminStatus("ডেটাবেসে সংরক্ষণ হচ্ছে...",true);
-
-const {data,error}=await sb.from("website_settings")
-.update({
-settings:next,
-updated_at:new Date().toISOString()
-})
-.eq("id",1)
-.select("id");
-
-if(error)throw error;
-if(!data||!data.length){
-throw new Error("website_settings টেবিলে id=1 রো পাওয়া যায়নি");
-}
-
-config=next;
-WA=config.whatsapp||DEFAULT_WA;
-methods=config.methods||DEFAULT_METHODS;
-categories=config.categories;
-
-localStorage.setItem(STORAGE_KEY,JSON.stringify(config));
-renderAll();
-adminJson.value=JSON.stringify(config,null,2);
-
-setAdminStatus("সফল! সব পরিবর্তন ডেটাবেসে সংরক্ষিত হয়েছে।",true);
-
-}catch(err){
-setAdminStatus("Save হয়নি: "+err.message);
-}
-};
-
-/* COMMON IMAGE UPLOAD */
+/* IMAGE UPLOAD */
 async function uploadImage(file,folder){
 if(!file)throw new Error("আগে একটি ছবি নির্বাচন করুন");
 if(!file.type.startsWith("image/"))throw new Error("শুধু ছবি আপলোড করুন");
 if(file.size>5*1024*1024)throw new Error("ছবির সাইজ 5MB-এর কম রাখুন");
-
 const safeName=file.name.replace(/[^a-zA-Z0-9._-]/g,"-");
 const path=`${folder}/${Date.now()}-${safeName}`;
-
-const {error}=await sb.storage.from("website-images").upload(path,file,{
-cacheControl:"3600",
-upsert:false
-});
+const {error}=await sb.storage.from("website-images").upload(path,file,{cacheControl:"3600",upsert:false});
 if(error)throw error;
-
 const {data}=sb.storage.from("website-images").getPublicUrl(path);
 return data.publicUrl;
 }
-
-/* HERO IMAGE UPLOAD */
-document.getElementById("uploadHero").onclick=async()=>{
+$("uploadHero").onclick=async()=>{
 try{
-const file=document.getElementById("heroFile").files[0];
 setAdminStatus("Hero ছবি আপলোড হচ্ছে...",true);
-
-config.heroImage=await uploadImage(file,"hero");
-
-renderAll();
-adminJson.value=JSON.stringify(config,null,2);
-document.getElementById("heroFile").value="";
-
-setAdminStatus("Hero ছবি আপলোড হয়েছে। এবার Save Changes চাপুন।",true);
-}catch(err){
-setAdminStatus("Hero Upload Error: "+err.message);
-}
+config.heroImage=await uploadImage($("heroFile").files[0],"hero");
+$("heroFile").value="";renderAll();setAdminStatus("Hero ছবি আপলোড হয়েছে। Save All Changes চাপুন।",true);
+}catch(e){setAdminStatus("Hero Upload Error: "+e.message)}
+};
+$("uploadPayment").onclick=async()=>{
+try{
+setAdminStatus("Payment poster আপলোড হচ্ছে...",true);
+config.paymentImage=await uploadImage($("paymentFile").files[0],"payments");
+$("paymentFile").value="";renderAll();setAdminStatus("Payment poster আপলোড হয়েছে। Save All Changes চাপুন।",true);
+}catch(e){setAdminStatus("Payment Upload Error: "+e.message)}
 };
 
-/* PAYMENT IMAGE UPLOAD */
-document.getElementById("uploadPayment").onclick=async()=>{
-try{
-const file=document.getElementById("paymentFile").files[0];
-setAdminStatus("Payment Methods-এর ছবি আপলোড হচ্ছে...",true);
-
-config.paymentImage=await uploadImage(file,"payments");
-
-renderAll();
-adminJson.value=JSON.stringify(config,null,2);
-document.getElementById("paymentFile").value="";
-
-setAdminStatus("Payment-এর সব লোগো আপলোড হয়েছে। এবার Save Changes চাপুন।",true);
-}catch(err){
-setAdminStatus("Payment Upload Error: "+err.message);
+/* EDITOR HELPERS */
+function makeId(prefix){
+return prefix+"-"+Date.now().toString(36)+"-"+Math.random().toString(36).slice(2,6);
 }
+function renderEditors(){
+renderMethodsEditor();
+renderCategoriesEditor();
+}
+function renderMethodsEditor(){
+const box=$("methodsEditor");box.innerHTML="";
+methods.forEach((m,i)=>{
+if(!Array.isArray(m))m=[m.name||"Payment",m.image||""];
+const card=document.createElement("div");card.className="editor-card";
+card.innerHTML=`
+<div class="editor-title">${escapeHtml(m[0])}</div>
+<div class="editor-row"><input type="text" class="method-name" value="${escapeHtml(m[0])}" placeholder="Payment name"><input type="text" class="method-image" value="${escapeHtml(m[1]||"")}" placeholder="Logo image URL"></div>
+${m[1]?`<img class="logo-preview" src="${escapeHtml(m[1])}" alt="Logo preview" onerror="this.hidden=true">`:""}
+<label class="admin-label">অথবা মোবাইল থেকে লোগো আপলোড করুন</label>
+<input type="file" class="admin-file method-file" accept="image/*">
+<div class="editor-actions"><button class="small-btn method-upload" type="button">Upload Logo</button><button class="small-btn red method-remove" type="button">Remove Method</button></div>`;
+card.querySelector(".method-upload").onclick=async()=>{
+try{
+const file=card.querySelector(".method-file").files[0];
+setAdminStatus("Payment logo আপলোড হচ্ছে...",true);
+const url=await uploadImage(file,"payment-logos");
+card.querySelector(".method-image").value=url;
+m[1]=url;
+setAdminStatus("লোগো আপলোড হয়েছে। Save All Changes চাপুন।",true);
+}catch(e){setAdminStatus("Logo upload error: "+e.message)}
+};
+card.querySelector(".method-remove").onclick=()=>{
+if(!confirm("এই Payment Method মুছে ফেলবেন?"))return;
+methods.splice(i,1);renderMethodsEditor();
+};
+card.querySelector(".method-name").oninput=e=>m[0]=e.target.value;
+card.querySelector(".method-image").oninput=e=>m[1]=e.target.value;
+box.appendChild(card);
+});
+}
+$("addMethod").onclick=()=>{
+methods.push(["New Payment Method",""]);
+renderMethodsEditor();
 };
 
-/* SERVICE POSTER UPLOAD */
-document.getElementById("uploadPoster").onclick=async()=>{
+function renderCategoriesEditor(){
+const box=$("categoriesEditor");box.innerHTML="";
+categories.forEach((c,ci)=>{
+const card=document.createElement("div");card.className="editor-card";
+card.innerHTML=`
+<div class="editor-title">Service ${ci+1}</div>
+<div class="field"><label>Service Name</label><input class="cat-name" type="text" value="${escapeHtml(c.name)}"></div>
+<div class="field"><label>Service ID (ইউনিক রাখুন)</label><input class="cat-id" type="text" value="${escapeHtml(c.id)}"></div>
+<div class="field"><label>Description</label><textarea class="cat-intro" rows="3">${escapeHtml(c.intro||"")}</textarea></div>
+<div class="field"><label>Poster Image URL</label><input class="cat-image" type="text" value="${escapeHtml(c.image||"")}" placeholder="Image URL"></div>
+<label class="admin-label">নতুন Poster আপলোড</label>
+<input type="file" class="admin-file cat-file" accept="image/*">
+<button type="button" class="small-btn cat-upload">Upload Service Poster</button>
+<hr><b>Packages / Offers</b><div class="offers-editor"></div>
+<button type="button" class="small-btn add-offer">+ Add Package</button>
+<div class="editor-actions"><button type="button" class="small-btn red remove-category">Remove This Service</button></div>`;
+card.querySelector(".cat-name").oninput=e=>c.name=e.target.value;
+card.querySelector(".cat-id").oninput=e=>c.id=e.target.value.trim();
+card.querySelector(".cat-intro").oninput=e=>c.intro=e.target.value;
+card.querySelector(".cat-image").oninput=e=>c.image=e.target.value;
+card.querySelector(".cat-upload").onclick=async()=>{
 try{
-const file=document.getElementById("posterFile").files[0];
-const category=categories.find(c=>c.id===document.getElementById("uploadCategory").value);
-if(!category)throw new Error("সার্ভিস নির্বাচন করুন");
-
-setAdminStatus("Service Poster আপলোড হচ্ছে...",true);
-category.image=await uploadImage(file,"posters");
-
-renderAll();
-adminJson.value=JSON.stringify(config,null,2);
-document.getElementById("posterFile").value="";
-
-setAdminStatus("Poster আপলোড হয়েছে। এবার Save Changes চাপুন।",true);
-}catch(err){
-setAdminStatus("Poster Upload Error: "+err.message);
+setAdminStatus("Service poster আপলোড হচ্ছে...",true);
+c.image=await uploadImage(card.querySelector(".cat-file").files[0],"posters");
+card.querySelector(".cat-image").value=c.image;
+setAdminStatus("Poster আপলোড হয়েছে। Save All Changes চাপুন।",true);
+}catch(e){setAdminStatus("Poster upload error: "+e.message)}
+};
+const offersBox=card.querySelector(".offers-editor");
+function drawOffers(){
+offersBox.innerHTML="";
+(c.offers||[]).forEach((o,oi)=>{
+const row=document.createElement("div");row.className="editor-card";
+row.innerHTML=`
+<div class="editor-row"><input class="offer-name" type="text" value="${escapeHtml(o.name)}" placeholder="Package name"><input class="offer-price" type="number" min="0" step="0.01" value="${o.price??""}" placeholder="Price"><select class="offer-unit"><option value="package">Package</option><option value="month">Month</option><option value="channel">Channel</option></select></div>
+<label><input type="checkbox" class="offer-quote" ${o.quote?"checked":""}> Custom quote (no fixed price)</label>
+<div class="editor-actions"><button type="button" class="small-btn red delete-offer">Remove Package</button></div>`;
+row.querySelector(".offer-unit").value=o.unit||"package";
+row.querySelector(".offer-name").oninput=e=>o.name=e.target.value;
+row.querySelector(".offer-price").oninput=e=>o.price=Number(e.target.value);
+row.querySelector(".offer-unit").onchange=e=>o.unit=e.target.value;
+row.querySelector(".offer-quote").onchange=e=>o.quote=e.target.checked;
+row.querySelector(".delete-offer").onclick=()=>{
+c.offers.splice(oi,1);drawOffers();
+};
+offersBox.appendChild(row);
+});
 }
+drawOffers();
+card.querySelector(".add-offer").onclick=()=>{
+c.offers=c.offers||[];
+c.offers.push({id:makeId(c.id||"offer"),name:"New Package",price:0,unit:"package"});
+drawOffers();
+};
+card.querySelector(".remove-category").onclick=()=>{
+if(!confirm("এই সম্পূর্ণ Service মুছে ফেলবেন?"))return;
+categories.splice(ci,1);renderCategoriesEditor();
+};
+box.appendChild(card);
+});
+}
+$("addCategory").onclick=()=>{
+const id=makeId("service");
+categories.push({id,name:"New Service",image:"",intro:"Service description",offers:[]});
+renderCategoriesEditor();
+};
+
+/* SAVE ALL SETTINGS */
+$("adminSave").onclick=async()=>{
+try{
+config.whatsapp=$("editWhatsapp").value.replace(/\D/g,"");
+config.email=$("editEmail").value.trim();
+config.location=$("editLocation").value.trim();
+config.categories=categories;
+config.methods=methods.map(m=>[String(m[0]||"").trim(),String(m[1]||"").trim()]);
+if(!config.whatsapp)throw new Error("WhatsApp নম্বর দিন");
+if(!config.categories.length)throw new Error("কমপক্ষে একটি Service থাকতে হবে");
+const ids=new Set();
+for(const c of categories){
+if(!c.id||!c.name||!Array.isArray(c.offers))throw new Error("প্রতিটি Service-এ ID, নাম ও offers দিতে হবে");
+if(ids.has(c.id))throw new Error("একই Service ID একাধিকবার ব্যবহার করা যাবে না");
+ids.add(c.id);
+for(const o of c.offers){
+if(!o.id||!o.name)throw new Error("প্রতিটি Package-এর ID ও নাম দিতে হবে");
+}
+}
+for(const m of config.methods){
+if(!m[0])throw new Error("Payment Method-এর নাম খালি রাখা যাবে না");
+}
+setAdminStatus("ডেটাবেসে সংরক্ষণ হচ্ছে...",true);
+const {data,error}=await sb.from("website_settings").update({
+settings:config,
+updated_at:new Date().toISOString()
+}).eq("id",1).select("id");
+if(error)throw error;
+if(!data||!data.length)throw new Error("website_settings টেবিলে id=1 রো পাওয়া যায়নি");
+WA=config.whatsapp;methods=config.methods;categories=config.categories;
+localStorage.setItem(STORAGE_KEY,JSON.stringify(config));
+renderAll();renderEditors();
+setAdminStatus("সফল! সব পরিবর্তন ডেটাবেসে সংরক্ষিত হয়েছে।",true);
+}catch(e){setAdminStatus("Save হয়নি: "+e.message)}
 };
 
 /* RESET */
-document.getElementById("adminReset").onclick=()=>{
+$("adminReset").onclick=()=>{
 if(!confirm("ওয়েবসাইটের সেটিংস মূল ডিফল্ট অবস্থায় ফেরাতে চান?"))return;
-
-config=cloneConfig(DEFAULT_CONFIG);
-WA=config.whatsapp;
-methods=config.methods;
-categories=config.categories;
-
-adminJson.value=JSON.stringify(config,null,2);
-renderAll();
-fillUploadCategories();
-
-setAdminStatus("ডিফল্ট সেটিংস দেখানো হয়েছে। স্থায়ী করতে Save Changes চাপুন।",true);
+config=clone(DEFAULT_CONFIG);
+WA=config.whatsapp;methods=config.methods;categories=config.categories;
+$("editWhatsapp").value=config.whatsapp;
+$("editEmail").value=config.email;
+$("editLocation").value=config.location;
+renderAll();renderEditors();
+setAdminStatus("ডিফল্ট সেটিংস দেখানো হয়েছে। স্থায়ী করতে Save All Changes চাপুন।",true);
 };
 
 /* DOWNLOAD SETTINGS */
-document.getElementById("adminExport").onclick=()=>{
-const blob=new Blob([adminJson.value],{type:"application/json"});
+$("adminExport").onclick=()=>{
+const blob=new Blob([JSON.stringify(config,null,2)],{type:"application/json"});
 const url=URL.createObjectURL(blob);
 const a=document.createElement("a");
-a.href=url;
-a.download="sirat-agency-settings.json";
-a.click();
+a.href=url;a.download="sirat-agency-settings.json";a.click();
 URL.revokeObjectURL(url);
 };
-
 </script>
 </body>
 </html>
