@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="bn">
 <head>
@@ -6,1173 +5,144 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Sirat Grow It Agency</title>
 <meta name="description" content="Creative services, channel support, video editing and social media solutions.">
-
 <style>
 :root{--navy:#061638;--blue:#087be5;--green:#12bd4c;--ink:#102448;--muted:#61728b;--line:#d7e5f5}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(180deg,#f4f8ff,#edf5ff,#f8fbff);color:var(--ink);line-height:1.5}
-a{text-decoration:none;color:inherit}
-button,input,textarea,select{font:inherit}
-.wrap{width:min(1160px,93%);margin:auto}
-header{background:white;position:sticky;top:0;z-index:10;box-shadow:0 2px 12px #001b3610}
-.nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:15px}
-.brand{font-size:21px;font-weight:900;color:var(--navy)}
-.brand span{color:#15bd4b}
-.navlinks{display:flex;gap:17px;font-size:14px;font-weight:700}
-.navlinks a:hover{color:var(--blue)}
-.wa{background:#13b94c;color:white;padding:12px 17px;border-radius:28px;font-weight:900}
-.hero{background:radial-gradient(ellipse at 78% 28%,#0d7bd5,#0a367b 36%,#061638 76%);color:white;overflow:hidden}
-.hero-inner{padding:65px 0;min-height:500px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:35px}
-.kicker{color:#6cffb0;text-transform:uppercase;letter-spacing:2px;font-size:12px;font-weight:900}
-.hero h1{font-size:clamp(38px,5vw,64px);line-height:1.05;margin:13px 0;letter-spacing:-1.5px}
-.hero h1 span{color:#70ff35}
-.hero p{color:#d9eaff;font-size:18px;line-height:1.8}
-.checks{display:flex;gap:12px 20px;flex-wrap:wrap;margin:22px 0;font-weight:800}
-.checks span:before{content:"✓";background:#21d84e;color:#043b26;border-radius:50%;padding:2px 7px;margin-right:7px}
-.hero-art img{width:100%;max-width:540px;height:auto;display:block;border-radius:22px;border:1px solid #8ac8ff55;box-shadow:0 24px 70px #00102f88}
-.btn{border:0;border-radius:11px;padding:13px 19px;background:linear-gradient(100deg,#14c94c,#04a7c4);color:white;font-weight:900;cursor:pointer;display:inline-block;box-shadow:0 8px 20px #08a95a25}
-.btn:hover{transform:translateY(-2px)}
-.btn.dark{background:#071a42}
-.btn.light{background:white;color:#08234c;border:1px solid var(--line)}
-.btn.red{background:#c62828}
-section{padding:60px 0}
-.heading{text-align:center;margin-bottom:32px}
-.heading small{color:#078f9c;letter-spacing:3px;font-weight:900}
-.heading h2{font-size:clamp(28px,4vw,40px);margin:5px;color:#071b43}
-.heading p{color:var(--muted);max-width:720px;margin:8px auto;line-height:1.7}
-#services{background:linear-gradient(180deg,#f4f8ff,#eaf3ff,#f8fbff)}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;align-items:start}
-.poster-card{background:white;border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:0 16px 40px #09285817;transition:.2s}
-.poster-card:hover{transform:translateY(-4px)}
-.poster-card>img{display:block;width:100%;height:auto;object-fit:contain;background:white}
-.poster-card-body{padding:19px 20px 22px}
-.poster-card-body h3{margin:0 0 7px;color:#08234c;font-size:23px}
-.poster-card-body>p{margin:0 0 14px;color:#61728b;font-size:13px;line-height:1.75}
-.offer-list{display:grid;gap:10px}
-.offer{display:flex;align-items:center;justify-content:space-between;gap:12px;border:1px solid #d9e7f3;border-radius:15px;padding:13px;background:linear-gradient(110deg,#f4f9ff,#f0fff7)}
-.offer strong{display:block;color:#112d5a;font-size:14px}
-.offer small{display:block;color:#718096;font-size:11px;margin-top:3px}
-.offer-price{font-size:22px;font-weight:950;color:#087e43;white-space:nowrap}
-.offer .btn{padding:9px 12px;font-size:12px;white-space:nowrap}
-.service-note{font-size:12px;color:#65758b;margin-top:20px;text-align:center}
-#reviews{background:radial-gradient(ellipse at top,#0b3c85,#061638 72%);color:white}
-#reviews .heading h2{color:white}
-#reviews .heading p{color:#c9dcf5}
-.reviewgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.review{border:1px solid #d8e6f8;border-radius:18px;padding:20px;background:linear-gradient(145deg,#fff,#f3f8ff);box-shadow:0 10px 26px #00112f25;color:#102448}
-.review-person{display:flex;align-items:center;gap:11px}
-.avatar{width:48px;height:48px;flex:0 0 48px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#087be5,#11b98b);color:white;font-weight:900}
-.review b{font-size:14px}
-.stars{color:#e9a600;letter-spacing:2px}
-.review p{font-size:14px;line-height:1.7;min-height:65px;color:#60718a}
-.review-demo{font-size:9px;font-weight:900;color:#93630a;background:#fff6df;border:1px solid #edd49a;padding:4px 7px;border-radius:20px}
-#contact{background:linear-gradient(180deg,#f8fbff,#eaf3ff)}
-.contact{background:radial-gradient(circle at 85% 10%,#0c74c7,#08285e 65%,#061638);color:white;text-align:center;padding:38px 20px;border-radius:22px;box-shadow:0 18px 40px #09285825}
-.contact p{color:#d8eaff}
-footer{background:#061638;color:#d5e2f4;text-align:center;padding:28px}
-
-/* ORDER MODAL */
-.backdrop{position:fixed;inset:0;background:#06132fce;display:none;align-items:center;justify-content:center;padding:15px;z-index:40}
-.backdrop.open{display:flex}
-.modal{background:white;border-radius:18px;padding:22px;width:min(560px,100%);max-height:92vh;overflow:auto}
-.modalhead{display:flex;justify-content:space-between;align-items:center}
-.modal h2{margin:0;color:#08234c}
-.close{border:0;border-radius:50%;width:35px;height:35px;font-size:22px;cursor:pointer}
-.field{margin:13px 0}
-.field label{font-size:13px;font-weight:900;display:block;margin-bottom:6px}
-.field input,.field textarea,.field select{width:100%;padding:11px;border:1px solid #cbd9e9;border-radius:9px}
-.summary{background:#eafff1;border-radius:10px;padding:12px;font-size:20px;font-weight:950;color:#087e43;margin:12px 0}
-.hint{font-size:12px;color:#68778c}
-
-/* REAL PAYMENT POSTER */
-.order-payment-poster{
-width:100%;
-margin:14px 0;
-background:white;
-border:1px solid #dce6f3;
-border-radius:12px;
-overflow:hidden;
-}
-.order-payment-poster img{
-display:block;
-width:100%;
-height:auto;
-object-fit:contain;
-}
-.paychoices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
-.pay{padding:12px 5px;font-size:12px;font-weight:900;border:1px solid #d4e1ef;border-radius:10px;background:white;cursor:pointer;color:#17345d}
-.pay.selected{outline:3px solid #12bd4c;background:#eafff0}
-
-/* ADMIN PANEL */
-.admin-backdrop{display:none;position:fixed;inset:0;background:#06132fdb;z-index:100;padding:12px;align-items:center;justify-content:center}
-.admin-backdrop.open{display:flex}
-.admin-panel{width:min(1000px,100%);max-height:96vh;overflow:auto;background:white;border-radius:20px;padding:22px}
-.admin-head{display:flex;align-items:center;justify-content:space-between;gap:15px}
-.admin-head small{font-weight:900;letter-spacing:1.5px;color:#0b9e65}
-.admin-head h2{margin:3px 0 10px;color:#09275c}
-.admin-warning{background:#fff5df;border:1px solid #f1d28b;color:#6c4a00;border-radius:10px;padding:12px;font-size:13px}
-.admin-help{background:#eef7ff;border-radius:10px;padding:14px;margin:12px 0;color:#244363;font-size:13px}
-.admin-help h3{margin:0 0 7px}
-.admin-label{display:block;font-weight:900;color:#102448;margin:14px 0 7px}
-.admin-file{width:100%;padding:10px;border:1px solid #cbd9e9;border-radius:9px;background:white}
-.admin-actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:13px}
-.admin-status{font-size:13px;color:#60718a;white-space:pre-wrap}
-.admin-panel input,.admin-panel textarea,.admin-panel select{max-width:100%}
-.admin-panel input[type=text],.admin-panel input[type=number],.admin-panel input[type=email],.admin-panel input[type=password],.admin-panel textarea,.admin-panel select{width:100%;padding:10px;border:1px solid #cbd9e9;border-radius:9px}
-.editor-card{background:#fff;border:1px solid #d7e5f5;border-radius:13px;padding:13px;margin:12px 0}
-.editor-row{display:grid;grid-template-columns:2fr 1fr 1fr;gap:8px;margin:8px 0}
-.editor-row input{min-width:0}
-.editor-title{font-weight:900;color:#09275c}
-.editor-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:9px}
-.small-btn{border:0;border-radius:8px;padding:8px 11px;cursor:pointer;font-weight:800;background:#e8f2ff;color:#12345c}
-.small-btn.red{background:#ffebeb;color:#a11}
-hr{border:0;border-top:1px solid #e0e9f3;margin:16px 0}
-[hidden]{display:none!important}
-
-@media(max-width:740px){
-.nav{min-height:70px}
-.brand{font-size:17px}
-.navlinks{display:none}
-.wa{padding:10px;font-size:12px}
-.hero-inner{grid-template-columns:1fr;padding:40px 0;gap:15px}
-.hero-art img{max-width:100%}
-.hero h1{font-size:clamp(36px,10vw,50px)}
-.grid{grid-template-columns:1fr}
-.reviewgrid{grid-template-columns:1fr}
-section{padding:46px 0}
-.offer{flex-wrap:wrap}
-.offer .btn{margin-left:auto}
-.admin-panel{padding:13px}
-.editor-row{grid-template-columns:1fr 1fr}
-.editor-row input:first-child{grid-column:1/-1}
-}
-@media(max-width:380px){
-.paychoices{grid-template-columns:repeat(2,minmax(0,1fr))}
-}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(180deg,#f4f8ff,#edf5ff,#f8fbff);color:var(--ink)}a{text-decoration:none;color:inherit}button,input{font:inherit}.wrap{width:min(1160px,92%);margin:auto}
+header{background:#fff;position:sticky;top:0;z-index:10;box-shadow:0 2px 12px #001b3610}.nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:15px}.brand{font-size:21px;font-weight:1000;color:var(--navy)}.brand span{color:var(--green)}.navlinks{display:flex;gap:24px;font-weight:800;color:#425674}.wa{background:#12bd4c;color:white;padding:12px 17px;border-radius:10px;font-weight:900}
+.hero{background:radial-gradient(ellipse at 78% 28%,#0d7bd5,#0a367b 36%,#061638 76%);color:white;overflow:hidden}.hero-inner{padding:65px 0;min-height:500px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:35px}.kicker{color:#7ef0a5;font-weight:900;letter-spacing:2px;text-transform:uppercase}.hero h1{font-size:clamp(36px,5vw,58px);line-height:1.1;margin:17px 0}.hero h1 span{color:#70e89a}.hero p{font-size:18px;line-height:1.7;color:#d9eaff}.checks{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0}.checks span{background:#ffffff18;border:1px solid #ffffff35;padding:9px 12px;border-radius:30px;font-size:13px}.hero-art img{width:100%;max-height:390px;object-fit:contain;filter:drop-shadow(0 20px 35px #0005)}
+.btn{border:0;border-radius:11px;padding:13px 19px;background:linear-gradient(100deg,#14c94c,#04a7c4);color:white;font-weight:900;cursor:pointer;display:inline-block;box-shadow:0 8px 20px #087be52a}.btn:disabled{opacity:.5;cursor:not-allowed}.btn.light{background:#e9f2ff;color:#17406e;box-shadow:none}
+section{padding:60px 0}.heading{text-align:center;margin-bottom:32px}.heading small{color:#078f9c;letter-spacing:3px;font-weight:900}.heading h2{font-size:clamp(28px,4vw,40px);margin:10px 0;color:var(--navy)}.heading p{color:var(--muted);line-height:1.6}.service-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}.poster-card{background:white;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 10px 30px #14365c0d}.poster-card>img{width:100%;height:205px;object-fit:cover;background:#e8f1fb}.poster-body{padding:19px}.poster-body h3{margin:0 0 9px;color:var(--navy)}.poster-body p{color:var(--muted);line-height:1.55;font-size:14px}.offer-list{display:grid;gap:9px;margin-top:14px}.offer{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px;background:#f4f8ff;border:1px solid #e2edfa;border-radius:10px}.offer strong{font-size:13px}.offer .price{font-weight:900;color:#078b47;white-space:nowrap}.offer-actions{display:flex;gap:7px;flex-wrap:wrap}.offer-actions button{border:0;border-radius:8px;padding:8px 10px;font-size:12px;font-weight:900;cursor:pointer}.order{background:#087be5;color:white}.quote{background:#e4f4ea;color:#087b42}
+#reviews{background:radial-gradient(ellipse at top,#0b3c85,#061638 72%);color:white}#reviews .heading h2{color:white}#reviews .heading p{color:#c9dcf5}.reviewgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.review{background:#ffffff12;border:1px solid #ffffff25;border-radius:15px;padding:20px}.review p{color:#d9e7fa;line-height:1.6}.review strong{color:#8cf0ac}.review-avatar{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:#14bd68;color:#052d4b;font-weight:1000}
+#contact{background:linear-gradient(180deg,#f8fbff,#eaf3ff)}.contact{background:radial-gradient(circle at 85% 10%,#0c74c7,#08285e 65%,#061638);color:white;text-align:center;padding:40px 20px;border-radius:20px}.contact p{color:#d4e6fb;line-height:1.7}footer{text-align:center;padding:22px;color:#61728b;font-size:13px}
+.backdrop{position:fixed;inset:0;background:#06132fce;display:none;align-items:center;justify-content:center;padding:15px;z-index:40}.backdrop.open{display:flex}.modal{background:white;width:min(560px,100%);max-height:92vh;overflow:auto;border-radius:18px;padding:22px;box-shadow:0 20px 70px #0005}.modalhead{display:flex;justify-content:space-between;align-items:center;gap:15px}.modalhead h2{margin:0;color:var(--navy)}.close{border:0;background:#edf3fb;width:38px;height:38px;border-radius:50%;font-size:24px;cursor:pointer}.hint{color:var(--muted);font-size:13px;line-height:1.5}.field{display:grid;gap:7px;margin:13px 0}.field label{font-weight:800;font-size:13px}.field input{width:100%;padding:12px;border:1px solid #cfdded;border-radius:9px;outline-color:#087be5}.summary{background:#eff7ff;padding:13px;border-radius:10px;font-weight:1000;margin:14px 0}.paychoices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:12px}.pay{min-width:0;min-height:112px;padding:9px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;border:2px solid #e0e9f4;background:white;border-radius:12px;cursor:pointer;font-size:12px;font-weight:900}.pay img{width:100%;height:58px;object-fit:contain}.pay.selected{border-color:#0aaf55;background:#effff5;box-shadow:0 0 0 2px #0aaf5520}
+.admin-backdrop{display:none;position:fixed;inset:0;background:#06132fdb;z-index:100;padding:12px;align-items:center;justify-content:center}.admin-backdrop.open{display:flex}.admin-panel{background:#f7faff;width:min(950px,100%);max-height:95vh;overflow:auto;border-radius:18px;padding:20px}.admin-head{display:flex;justify-content:space-between;align-items:center;gap:15px;border-bottom:1px solid #dce7f4;padding-bottom:14px}.admin-head small{color:#078f9c;font-weight:900;letter-spacing:2px}.admin-head h2{margin:5px 0;color:var(--navy)}.admin-help{background:white;border:1px solid #dce7f4;padding:15px;border-radius:12px;margin:13px 0}.admin-help h3{margin:0 0 8px}.admin-help p{font-size:13px;color:var(--muted);line-height:1.5}.admin-file{display:block;margin:10px 0}.admin-warning{background:#fff8df;padding:12px;border-radius:9px;color:#74530b;font-size:13px}.admin-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:15px}.admin-status{font-size:13px;font-weight:800}.editor-card{background:#f5f9ff;border:1px solid #dce7f4;border-radius:12px;padding:14px;margin:12px 0}.editor-card input,.editor-card textarea{width:100%;padding:10px;border:1px solid #cfdded;border-radius:8px;margin:5px 0}.editor-card textarea{min-height:65px}.offers-editor{display:grid;gap:8px}.offer-edit{background:white;border:1px solid #e0e9f4;border-radius:9px;padding:10px}
+@media(max-width:740px){.nav{min-height:70px}.brand{font-size:17px}.navlinks{display:none}.wa{padding:10px;font-size:12px}.hero-inner{grid-template-columns:1fr;padding:40px 0;gap:15px}.hero-art img{max-height:240px}.service-grid,.reviewgrid{grid-template-columns:1fr}.paychoices{grid-template-columns:repeat(2,minmax(0,1fr))}section{padding:45px 0}}
+@media(max-width:380px){.paychoices{grid-template-columns:repeat(2,minmax(0,1fr))}}
 </style>
 </head>
-
 <body>
-
-<header>
-<div class="wrap nav">
+<header><div class="wrap nav">
 <a class="brand" href="#">↗ Sirat Grow It <span>Agency</span></a>
-<nav class="navlinks">
-<a href="#services">Services</a>
-<a href="#reviews">Reviews</a>
-<a href="#contact">Contact</a>
-</nav>
+<nav class="navlinks"><a href="#services">Services</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a></nav>
 <a class="wa" id="headerWa" href="https://wa.me/8801913022305">☏ Chat on WhatsApp</a>
-</div>
-</header>
-
-<div class="hero">
-<div class="wrap hero-inner">
-<div>
+</div></header>
+<div class="hero"><div class="wrap hero-inner"><div>
 <div class="kicker">Creative • Content • Digital Growth</div>
 <h1>Grow Your Online Presence with <span>Professional Services!</span></h1>
 <p>Channel guidance, video editing, social media support and professional website design for creators and businesses.</p>
-<div class="checks">
-<span>Clear Service Details</span>
-<span>Custom Website Quotes</span>
-<span>Direct WhatsApp Support</span>
-</div>
+<div class="checks"><span>Clear Service Details</span><span>Custom Website Quotes</span><span>Direct WhatsApp Support</span></div>
 <a class="btn" href="#services">Explore Services ↓</a>
-</div>
-<div class="hero-art">
-<img id="heroImage" src="assets/hero-digital-growth.png" alt="Digital growth illustration">
-</div>
-</div>
-</div>
+</div><div class="hero-art"><img id="heroImage" src="assets/hero-digital-growth.png" alt="Digital growth illustration"></div></div></div>
+<section id="services"><div class="wrap"><div class="heading"><small>OUR SERVICES</small><h2>Choose Your Service</h2><p>Browse our service posters, select a package and place your order.</p></div><div class="service-grid" id="servicesGrid"></div></div></section>
+<section id="reviews"><div class="wrap"><div class="heading"><small>CLIENT FEEDBACK</small><h2>Customer Reviews</h2><p>Sample review layout — replace these examples with genuine customer reviews.</p></div><div class="reviewgrid" id="reviewGrid"></div></div></section>
+<section id="contact"><div class="wrap"><div class="contact"><h2>Let's Grow Together!</h2><p id="contactDetails">WhatsApp: 01913022305 · Email: siratakanda06@gmail.com · Kishoreganj, Bangladesh</p><a class="btn" id="contactWa" href="https://wa.me/8801913022305">Chat with Us on WhatsApp</a></div></div></section>
+<footer>© 2026 Sirat Grow It Agency · All rights reserved</footer>
 
-<section id="services">
-<div class="wrap">
-<div class="heading">
-<small>OUR SERVICES</small>
-<h2>Choose Your Service</h2>
-<p>Browse our service posters, select a package and place your order directly through WhatsApp.</p>
-</div>
-<div class="grid" id="servicesGrid"></div>
-<p class="service-note">All campaigns are subject to platform rules and account eligibility. No guaranteed reach, monetization approval or audience results are implied.</p>
-</div>
-</section>
-
-<section id="reviews">
-<div class="wrap">
-<div class="heading">
-<small>CLIENT FEEDBACK</small>
-<h2>Customer Reviews</h2>
-<p>Sample review layout — replace these examples with genuine customer feedback before publishing.</p>
-</div>
-<div class="reviewgrid" id="reviewGrid"></div>
-<div style="text-align:center;margin-top:22px">
-<a class="btn" id="reviewLink" href="https://wa.me/8801913022305">Share Your Genuine Review</a>
-</div>
-</div>
-</section>
-
-<section id="contact">
-<div class="wrap">
-<div class="contact">
-<h2>Let's Grow Together!</h2>
-<p id="contactDetails">WhatsApp: 01913022305 · Email: siratakanda06@gmail.com · Kishoreganj, Bangladesh</p>
-<a class="btn" id="contactWa" href="https://wa.me/8801913022305">Chat on WhatsApp Now</a>
-</div>
-</div>
-</section>
-
-<footer>
-© 2026 Sirat Grow It Agency · All rights reserved
-</footer>
-
-<!-- ORDER MODAL -->
-<div class="backdrop" id="backdrop">
-<div class="modal">
-<div class="modalhead">
-<h2>Place Your Order</h2>
-<button class="close" id="close">×</button>
-</div>
-
+<div class="backdrop" id="backdrop"><div class="modal">
+<div class="modalhead"><h2>Place Your Order</h2><button class="close" id="close" type="button">×</button></div>
 <p id="serviceName" class="hint"></p>
-
-<div class="field">
-<label for="quantity">Quantity</label>
-<input id="quantity" type="number" min="1" max="100" value="1">
-</div>
-
-<div class="field">
-<label for="buyer">Your name (optional)</label>
-<input id="buyer" placeholder="Your name">
-</div>
-
+<div class="field"><label for="quantity">Quantity</label><input id="quantity" type="number" min="1" max="100" value="1"></div>
+<div class="field"><label for="buyer">Your name (optional)</label><input id="buyer" placeholder="Your name"></div>
 <div class="summary" id="summary">Total: $0</div>
-
-<b>Select a payment method</b>
-<p class="hint">নিচে আমাদের আসল পেমেন্ট মেথডের ছবি দেখুন এবং পেমেন্ট পদ্ধতি নির্বাচন করুন।</p>
-
-<div class="order-payment-poster">
-<img
-id="orderPaymentImage"
-src="assets/payment-methods.png"
-alt="All Payment Methods"
-onerror="this.alt='Payment image not found. Check assets/payment-methods.png';this.style.minHeight='80px';this.style.padding='15px';"
->
-</div>
-
+<b>Select a payment method</b><p class="hint">নিচের ১১টি পেমেন্ট মেথডের যেকোনো একটি নির্বাচন করুন।</p>
 <div class="paychoices" id="payChoices"></div>
-
 <p class="hint">Your service, selected package, total and payment choice will be sent to WhatsApp. We will confirm the recipient details before you pay.</p>
-
 <button class="btn" id="whatsOrder" style="width:100%" disabled>Contact on WhatsApp to Order →</button>
-</div>
-</div>
+</div></div>
 
-<!-- ADMIN PANEL -->
-<div class="admin-backdrop" id="adminBackdrop" aria-hidden="true">
-<section class="admin-panel" role="dialog" aria-modal="true">
-
-<div class="admin-head">
-<div>
-<small>WEBSITE CONTROL CENTER</small>
-<h2>Sirat Grow It Agency · Admin Panel</h2>
-</div>
-<button id="adminClose" class="close">×</button>
-</div>
-
-<div id="adminLogin">
-<p class="admin-help">আপনার Supabase Admin ইমেইল ও পাসওয়ার্ড দিয়ে লগইন করুন।</p>
-<div class="field">
-<label for="adminEmail">Admin Email</label>
-<input id="adminEmail" type="email" autocomplete="username" placeholder="আপনার Supabase ইমেইল">
-</div>
-<div class="field">
-<label for="adminPassword">Password</label>
-<input id="adminPassword" type="password" autocomplete="current-password" placeholder="আপনার Supabase পাসওয়ার্ড">
-</div>
-<button class="btn" id="adminLoginBtn" type="button">Login</button>
-<p id="loginStatus" class="admin-status"></p>
-</div>
-
+<div class="admin-backdrop" id="adminBackdrop" aria-hidden="true"><section class="admin-panel" role="dialog" aria-modal="true">
+<div class="admin-head"><div><small>WEBSITE CONTROL CENTER</small><h2>Sirat Grow It Agency · Admin Panel</h2></div><button id="adminClose" class="close" type="button">×</button></div>
+<div id="adminLogin"><p class="admin-help">আপনার Supabase Admin ইমেইল ও পাসওয়ার্ড দিয়ে লগইন করুন।</p>
+<div class="field"><label for="adminEmail">Admin Email</label><input id="adminEmail" type="email" autocomplete="username" placeholder="আপনার Supabase ইমেইল"></div>
+<div class="field"><label for="adminPassword">Password</label><input id="adminPassword" type="password" autocomplete="current-password" placeholder="আপনার Supabase পাসওয়ার্ড"></div>
+<button class="btn" id="adminLoginBtn" type="button">Login</button><p id="loginStatus" class="admin-status"></p></div>
 <div id="adminContent" hidden>
-
 <p class="admin-warning">লগইন সফল। ছবি আপলোড করলে স্বয়ংক্রিয়ভাবে সেভ হবে। অন্য পরিবর্তনের জন্য Save All Changes চাপুন।</p>
-
-<div class="admin-help">
-<h3>১. Hero Image পরিবর্তন</h3>
-<p>ওয়েবসাইটের প্রথম পেজের বড় ছবিটি নির্বাচন করে আপলোড করুন।</p>
-<input class="admin-file" type="file" id="heroFile" accept="image/*">
-<button class="btn" id="uploadHero" type="button">Upload Hero Image</button>
-</div>
-
-<div class="admin-help">
-<h3>২. Services ও Packages পরিচালনা</h3>
-<p>সার্ভিসের নাম, পোস্টার, বিবরণ, প্যাকেজ ও দাম পরিবর্তন করুন। পোস্টার আপলোড করলে সঙ্গে সঙ্গে ওয়েবসাইটে দেখা যাবে এবং স্বয়ংক্রিয়ভাবে সেভ হবে।</p>
-<div id="categoriesEditor"></div>
-<button class="btn" id="addCategory" type="button">+ Add New Service</button>
-</div>
-
-<div class="admin-help">
-<h3>৩. Contact Information</h3>
-<div class="field">
-<label>WhatsApp Number (Country code সহ, যেমন 8801913022305)</label>
-<input id="editWhatsapp" type="text">
-</div>
-<div class="field">
-<label>Email</label>
-<input id="editEmail" type="email">
-</div>
-<div class="field">
-<label>Location</label>
-<input id="editLocation" type="text">
-</div>
-</div>
-
-<div class="admin-actions">
-<button class="btn" id="adminSave" type="button">Save All Changes</button>
-<button class="btn light" id="adminReset" type="button">Reset to Original</button>
-<button class="btn dark" id="adminExport" type="button">Download Settings</button>
-<button class="btn light" id="adminLogout" type="button">Logout</button>
-</div>
-
-</div>
-
-<p id="adminStatus" class="admin-status" role="status"></p>
-</section>
-</div>
+<div class="admin-help"><h3>১. Hero Image পরিবর্তন</h3><p>ওয়েবসাইটের প্রথম পেজের বড় ছবিটি নির্বাচন করে আপলোড করুন।</p><input class="admin-file" type="file" id="heroFile" accept="image/*"><button class="btn" id="uploadHero" type="button">Upload Hero Image</button></div>
+<div class="admin-help"><h3>২. Services ও Packages পরিচালনা</h3><p>সার্ভিসের নাম, পোস্টার, বিবরণ, প্যাকেজ ও দাম পরিবর্তন করুন। পোস্টার আপলোড করলে সঙ্গে সঙ্গে ওয়েবসাইটে দেখা যাবে এবং Save All Changes চাপলে পরিবর্তন স্থায়ী হবে।</p><div id="categoriesEditor"></div><button class="btn light" id="addCategory" type="button">+ Add New Service</button></div>
+<div class="admin-help"><h3>৩. Contact Information</h3><div class="field"><label>WhatsApp Number (Country code সহ, যেমন 8801913022305)</label><input id="editWhatsapp" type="text"></div><div class="field"><label>Email</label><input id="editEmail" type="email"></div><div class="field"><label>Location</label><input id="editLocation" type="text"></div></div>
+<div class="admin-actions"><button class="btn" id="adminSave" type="button">Save All Changes</button><button class="btn light" id="adminReset" type="button">Reset to Original</button><button class="btn light" id="adminExport" type="button">Export Backup</button><button class="btn light" id="adminLogout" type="button">Logout</button></div>
+</div><p id="adminStatus" class="admin-status" role="status"></p>
+</section></div>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-<script>
-"use strict";
-
-/* BASIC SETTINGS */
-
+<script>"use strict";
 const DEFAULT_WA="8801913022305";
-
 const DEFAULT_METHODS=[
-["bKash"],
-["Nagad"],
-["Rocket"],
-["Bank Account"],
-["Visa Card"],
-["Binance"],
-["Western Union"],
-["Ria Money Transfer"],
-["Payoneer"],
-["PayPal"],
-["MoneyGram"]
+{name:"bKash",image:""},{name:"Nagad",image:""},{name:"Rocket",image:""},
+{name:"Bank Account",image:""},{name:"Visa Card",image:""},{name:"Binance",image:""},
+{name:"Western Union",image:""},{name:"Ria Money Transfer",image:""},
+{name:"Payoneer",image:""},{name:"PayPal",image:""},{name:"MoneyGram",image:""}
 ];
-
 const DEFAULT_CATEGORIES=[
-{
-id:"youtube",
-name:"YouTube Services",
-image:"https://qdtpyovjxybwmcdlplpb.supabase.co/storage/v1/object/public/website-images/youtube-services.png",
-intro:"Channel growth packages and monetization eligibility support.",
-offers:[
-{id:"yt-hours",name:"4,000 Watch Hours",price:50,unit:"package"},
-{id:"yt-subs",name:"1,000 Subscribers",price:30,unit:"package"},
-{id:"yt-combo",name:"1,000 Subscribers + 4,000 Watch Hours",price:60,unit:"package"}
-]
-},
-{
-id:"yt-sale",
-name:"YouTube Monetized Channel for Sale",
-image:"assets/youtube-monetized-channel.png",
-intro:"Channel listing with 1,000 subscribers and monetization shown as active. Verify ownership, eligibility, strikes and transfer details before purchase.",
-offers:[
-{id:"yt-monetized",name:"Monetization ON Channel · 1,000 Subscribers",price:250,unit:"channel"}
-]
-},
-{
-id:"facebook",
-name:"Facebook Services",
-image:"assets/facebook-services.png",
-intro:"Facebook page growth, watch-time and monetization support packages.",
-offers:[
-{id:"fb-followers",name:"10,000 Followers",price:20,unit:"package"},
-{id:"fb-watch-600k",name:"600,000 Watch Hours",price:20,unit:"package"},
-{id:"fb-watch-60k",name:"60,000 Watch Hours",price:15,unit:"package"},
-{id:"fb-monetization",name:"Facebook Full Monetization Support",price:50,unit:"package"}
-]
-},
-{
-id:"spotify",
-name:"Spotify Services",
-image:"assets/spotify-services.png",
-intro:"Spotify profile and music promotion packages.",
-offers:[
-{id:"sp-followers",name:"5,000 Spotify Followers",price:20,unit:"package"},
-{id:"sp-plays",name:"5,000 Spotify Plays",price:10,unit:"package"},
-{id:"sp-promo",name:"Monthly Listener / Podcast Promotion",price:200,unit:"month"}
-]
-},
-{
-id:"instagram",
-name:"Instagram Services",
-image:"assets/instagram-services.png",
-intro:"Instagram profile and content visibility packages.",
-offers:[
-{id:"ig-followers",name:"5,000 Instagram Followers",price:20,unit:"package"},
-{id:"ig-views",name:"5,000 Instagram Views",price:5,unit:"package"}
-]
-},
-{
-id:"tiktok",
-name:"TikTok Services",
-image:"assets/tiktok-services.png",
-intro:"TikTok profile and video visibility packages.",
-offers:[
-{id:"tt-followers",name:"5,000 TikTok Followers",price:20,unit:"package"},
-{id:"tt-views",name:"10 Million TikTok Views",price:10,unit:"package"}
-]
-},
-{
-id:"editing",
-name:"Video Editing & YouTube Creative Services",
-image:"assets/video-editing-services.png",
-intro:"Professional editing and channel support for creators and businesses.",
-offers:[
-{id:"edit-video",name:"Video Editing",quote:true},
-{id:"edit-script",name:"Script Writing",quote:true},
-{id:"edit-thumbnail",name:"Thumbnail Design",quote:true},
-{id:"edit-seo",name:"SEO Optimization",quote:true},
-{id:"edit-upload",name:"Upload & Optimization",quote:true}
-]
-},
-{
-id:"website-design",
-name:"Website Design & Development",
-image:"",
-intro:"Business websites, landing pages, portfolios and online stores. Contact us for a custom quote.",
-offers:[
-{id:"web-business",name:"Business Website Design",quote:true},
-{id:"web-landing",name:"Landing Page Design",quote:true},
-{id:"web-ecommerce",name:"E-commerce Website",quote:true},
-{id:"web-custom",name:"Custom Website Development",quote:true}
-]
-}
+{id:"youtube",name:"YouTube Services",image:"https://qdtpyovjxybwmcdlplpb.supabase.co/storage/v1/object/public/website-images/youtube-services.png",intro:"YouTube channel growth and creator support packages.",offers:[{id:"yt-subs",name:"YouTube Subscribers",price:10,unit:"one-time"},{id:"yt-watch",name:"YouTube Watch Time",price:25,unit:"one-time"},{id:"yt-views",name:"YouTube Views",price:5,unit:"one-time"}]},
+{id:"yt-sale",name:"YouTube Monetized Channel for Sale",image:"assets/youtube-monetized-channel.png",intro:"Channel listings and monetized channel assistance.",offers:[{id:"yt-channel",name:"Monetized Channel",price:0,unit:"one-time"}]},
+{id:"facebook",name:"Facebook Services",image:"assets/facebook-services.png",intro:"Facebook page growth, watch-time and content support.",offers:[{id:"fb-followers",name:"Facebook Followers",price:10,unit:"one-time"},{id:"fb-views",name:"Facebook Views",price:5,unit:"one-time"}]},
+{id:"spotify",name:"Spotify Services",image:"assets/spotify-services.png",intro:"Spotify profile and music promotion packages.",offers:[{id:"sp-streams",name:"Spotify Streams",price:10,unit:"one-time"},{id:"sp-monthly",name:"Monthly Listeners",price:15,unit:"one-time"}]},
+{id:"instagram",name:"Instagram Services",image:"assets/instagram-services.png",intro:"Instagram profile and content visibility packages.",offers:[{id:"ig-followers",name:"Instagram Followers",price:10,unit:"one-time"},{id:"ig-likes",name:"Instagram Likes",price:5,unit:"one-time"}]},
+{id:"tiktok",name:"TikTok Services",image:"assets/tiktok-services.png",intro:"TikTok profile and video visibility packages.",offers:[{id:"tt-followers",name:"TikTok Followers",price:10,unit:"one-time"},{id:"tt-views",name:"TikTok Views",price:5,unit:"one-time"}]},
+{id:"editing",name:"Video Editing & YouTube Creative Services",image:"assets/video-editing-services.png",intro:"Professional video editing, thumbnails and creative support.",offers:[{id:"video-edit",name:"Video Editing",price:20,unit:"one-time"},{id:"thumbnail",name:"YouTube Thumbnail",price:5,unit:"one-time"}]},
+{id:"website-design",name:"Website Design & Development",image:"",intro:"Business websites, landing pages, portfolios and custom website development.",offers:[{id:"landing-page",name:"Landing Page Design",price:50,unit:"one-time"},{id:"business-site",name:"Business Website",price:100,unit:"one-time"}]}
 ];
-
 const DEFAULT_REVIEWS=[
-{name:"Ayesha Rahman · Sample",text:"The team explained the service options clearly and helped me understand the next steps before ordering."},
-{name:"Rafiul Islam · Sample",text:"The communication was friendly and the package details were easy to understand. A smooth experience."},
+{name:"Ayesha Rahman · Sample",text:"The team explained the service options clearly and helped me understand the next steps."},
+{name:"Rafiul Islam · Sample",text:"The communication was friendly and the package details were easy to understand."},
 {name:"Nusrat Jahan · Sample",text:"I liked how simple it was to choose a service and send my request directly through WhatsApp."},
-{name:"Md. Hasan · Sample",text:"Quick responses to my questions and clear information about the available services and pricing."},
+{name:"Md. Hasan · Sample",text:"Quick responses to my questions and clear information about the available services."},
 {name:"Tariqul Hasan · Sample",text:"The website looks organized, and finding the service I needed was straightforward."},
 {name:"Sadia Akter · Sample",text:"Helpful support and a clear ordering process. It was easy to ask for a custom quote."},
 {name:"Imran Hossain · Sample",text:"A convenient way to browse digital services and contact the team without confusion."}
 ];
-
-const DEFAULT_CONFIG={
-heroImage:"assets/hero-digital-growth.png",
-whatsapp:DEFAULT_WA,
-email:"siratakanda06@gmail.com",
-location:"Kishoreganj, Bangladesh",
-categories:DEFAULT_CATEGORIES,
-reviews:DEFAULT_REVIEWS
-};
-
-function clone(v){
-return JSON.parse(JSON.stringify(v));
-}
-
+const DEFAULT_CONFIG={heroImage:"assets/hero-digital-growth.png",whatsapp:DEFAULT_WA,email:"siratakanda06@gmail.com",location:"Kishoreganj, Bangladesh",categories:DEFAULT_CATEGORIES,reviews:DEFAULT_REVIEWS};
+const clone=v=>JSON.parse(JSON.stringify(v));
 const STORAGE_KEY="siratGrowItAgencyConfig_v6";
-
-function loadLocal(){
-try{
-const x=JSON.parse(localStorage.getItem(STORAGE_KEY)||"null");
-return x&&Array.isArray(x.categories)
-?{...clone(DEFAULT_CONFIG),...x}
-:clone(DEFAULT_CONFIG);
-}catch(e){
-return clone(DEFAULT_CONFIG);
-}
-}
-
-let config=loadLocal();
-let WA=config.whatsapp||DEFAULT_WA;
-let methods=clone(DEFAULT_METHODS);
-let categories=config.categories||clone(DEFAULT_CATEGORIES);
-let offers={};
-let current=null;
-let selected="";
-
-const $=id=>document.getElementById(id);
-const grid=$("servicesGrid");
-const backdrop=$("backdrop");
-const qty=$("quantity");
-const payChoices=$("payChoices");
-const whatsOrder=$("whatsOrder");
-
-function escapeHtml(v){
-return String(v??"").replace(/[&<>"']/g,c=>({
-"&":"&amp;",
-"<":"&lt;",
-">":"&gt;",
-'"':"&quot;",
-"'":"&#39;"
-}[c]));
-}
-
-function money(v){
-const n=Number(v);
-return Number.isFinite(n)?"$"+n:"Contact";
-}
-
-function buildOfferMap(){
-offers={};
-categories.forEach(c=>(c.offers||[]).forEach(o=>{
-offers[o.id]={...o,category:c.name};
-}));
-}
-
-/* WEBSITE RENDER */
-
-function renderServices(){
-grid.innerHTML="";
-buildOfferMap();
-
-categories.forEach(c=>{
-const card=document.createElement("article");
-card.className="poster-card";
-
-const rows=(c.offers||[]).map(o=>{
-if(o.quote){
-return `<div class="offer">
-<div><strong>${escapeHtml(o.name)}</strong><small>Contact for a custom quote</small></div>
-<button class="btn quote" type="button" data-id="${escapeHtml(o.id)}">Get Quote</button>
-</div>`;
-}
-
-return `<div class="offer">
-<div><strong>${escapeHtml(o.name)}</strong><small>${o.unit==="month"?"Monthly service":"Fixed package price"}</small></div>
-<span class="offer-price">${money(o.price)}${o.unit==="month"?"/mo":""}</span>
-<button class="btn order" type="button" data-id="${escapeHtml(o.id)}">Order Now</button>
-</div>`;
-}).join("");
-
-card.innerHTML=`
-${c.image?`<img src="${escapeHtml(c.image)}" alt="${escapeHtml(c.name)} promotional poster" loading="lazy" onerror="this.hidden=true">`:""}
-<div class="poster-card-body">
-<h3>${escapeHtml(c.name)}</h3>
-<p>${escapeHtml(c.intro||"")}</p>
-<div class="offer-list">${rows}</div>
-</div>`;
-
-grid.appendChild(card);
-});
-}
-
-function renderReviews(){
-$("reviewGrid").innerHTML=(config.reviews||[]).map(r=>{
-const initials=String(r.name||"Client")
-.replace(/·.*$/,"")
-.trim()
-.split(/\s+/)
-.slice(0,2)
-.map(x=>x[0]||"")
-.join("")
-.toUpperCase();
-
-return `<article class="review">
-<div class="review-person">
-<span class="avatar">${escapeHtml(initials||"C")}</span>
-<div><b>${escapeHtml(r.name||"Client")}</b><div class="stars">★★★★★</div></div>
-</div>
-<p>“${escapeHtml(r.text||"")}”</p>
-<span class="review-demo">${r.verified?"CLIENT REVIEW":"SAMPLE · REPLACE WITH REAL FEEDBACK"}</span>
-</article>`;
-}).join("");
-}
-
-function renderContact(){
-$("contactDetails").textContent=
-`WhatsApp: +${WA} · Email: ${config.email||""} · ${config.location||""}`;
-
-$("headerWa").href=`https://wa.me/${WA}`;
-$("contactWa").href=`https://wa.me/${WA}`;
-$("reviewLink").href=
-`https://wa.me/${WA}?text=${encodeURIComponent("Hello, I would like to share my genuine review.")}`;
-}
-
-function renderAll(){
-renderServices();
-renderReviews();
-renderContact();
-$("heroImage").src=config.heroImage||"assets/hero-digital-growth.png";
-}
-
+function loadLocal(){try{const x=JSON.parse(localStorage.getItem(STORAGE_KEY)||"null");return x&&Array.isArray(x.categories)?x:clone(DEFAULT_CONFIG)}catch(e){return clone(DEFAULT_CONFIG)}}
+let config=loadLocal(),WA=config.whatsapp||DEFAULT_WA,methods=clone(DEFAULT_METHODS),categories=config.categories||clone(DEFAULT_CATEGORIES),offers={},current=null,selected="";
+const $=id=>document.getElementById(id),grid=$("servicesGrid"),backdrop=$("backdrop"),qty=$("quantity"),payChoices=$("payChoices"),whatsOrder=$("whatsOrder");
+function escapeHtml(v){return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function money(v){const n=Number(v);return Number.isFinite(n)?"$"+n:"Contact"}
+function buildOfferMap(){offers={};categories.forEach(c=>(c.offers||[]).forEach(o=>offers[o.id]={...o,category:c.name}))}
+function renderServices(){grid.innerHTML="";buildOfferMap();categories.forEach(c=>{const card=document.createElement("article");card.className="poster-card";card.innerHTML=`${c.image?`<img src="${escapeHtml(c.image)}" alt="${escapeHtml(c.name)}" loading="lazy">`:""}<div class="poster-body"><h3>${escapeHtml(c.name)}</h3><p>${escapeHtml(c.intro||"")}</p><div class="offer-list">${(c.offers||[]).map(o=>`<div class="offer"><div><strong>${escapeHtml(o.name)}</strong><div class="price">${money(o.price)}</div></div><div class="offer-actions"><button class="order" data-id="${escapeHtml(o.id)}">Order</button><button class="quote" data-id="${escapeHtml(o.id)}">Quote</button></div></div>`).join("")}</div></div>`;grid.appendChild(card)})}
+function renderReviews(){$("reviewGrid").innerHTML=(config.reviews||[]).map(r=>{const initials=String(r.name||"Client").split(" ").map(x=>x[0]||"").join("").slice(0,2);return `<article class="review"><div class="review-avatar">${escapeHtml(initials)}</div><p>“${escapeHtml(r.text)}”</p><strong>${escapeHtml(r.name)}</strong></article>`}).join("")}
+function renderContact(){$("contactDetails").textContent=`WhatsApp: +${WA} · Email: ${config.email||""} · ${config.location||""}`;$("headerWa").href=$("contactWa").href=`https://wa.me/${WA}`}
+function renderAll(){renderServices();renderReviews();renderContact();$("heroImage").src=config.heroImage||"assets/hero-digital-growth.png"}
 renderAll();
+function payButton(method){return `<button class="pay" type="button" data-method="${escapeHtml(method.name)}" aria-pressed="false"><span style="font-size:26px">💳</span><span>${escapeHtml(method.name)}</span></button>`}
+function update(){if(!current)return;const q=Math.max(1,Math.min(100,parseInt(qty.value||"1",10)));qty.value=q;$("summary").textContent=`Total: ${money(current.price*q)}${current.unit==="month"?" / month":""}`}
+function openOrder(id){current=offers[id];if(!current)return;selected="";$("serviceName").textContent=`${current.category} · ${current.name}`;$("buyer").value="";qty.value=1;update();payChoices.innerHTML=methods.map(payButton).join("");whatsOrder.disabled=true;whatsOrder.style.opacity=".55";backdrop.classList.add("open")}
+function requestQuote(id){const o=offers[id];if(!o)return;const msg=`Hello Sirat Grow It Agency, I would like a quotation for: ${o.name}. Please share the available packages and price.`;window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`,"_blank")}
+grid.addEventListener("click",e=>{const order=e.target.closest(".order"),quote=e.target.closest(".quote");if(order)openOrder(order.dataset.id);if(quote)requestQuote(quote.dataset.id)});
+payChoices.addEventListener("click",e=>{const b=e.target.closest(".pay[data-method]");if(!b)return;selected=b.dataset.method;payChoices.querySelectorAll(".pay").forEach(x=>{const active=x===b;x.classList.toggle("selected",active);x.setAttribute("aria-pressed",String(active))});whatsOrder.disabled=false;whatsOrder.style.opacity="1"});
+qty.addEventListener("input",update);$("close").onclick=()=>$("backdrop").classList.remove("open");backdrop.addEventListener("click",e=>{if(e.target===backdrop)backdrop.classList.remove("open")});
+whatsOrder.onclick=()=>{if(!current||!selected)return;const q=Math.max(1,Math.min(100,parseInt(qty.value||"1",10))),buyer=$("buyer").value.trim(),total=Number(current.price)*q;const msg=["Hello Sirat Grow It Agency,","","I would like to place an order:",`Service: ${current.category} — ${current.name}`,`Quantity: ${q}`,`Unit price: ${money(current.price)}${current.unit==="month"?" per month":""}`,`Total: ${money(total)}${current.unit==="month"?" per month":""}`,`Payment method: ${selected}`,`Name: ${buyer||"Not provided"}`,"","Please confirm availability and share the payment instructions."].join("\n");window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`,"_blank")};
 
-/* ORDER SYSTEM */
-
-function payButton(method){
-const name=Array.isArray(method)?method[0]:method.name;
-return `<button class="pay" type="button" data-method="${escapeHtml(name)}">${escapeHtml(name)}</button>`;
-}
-
-function update(){
-if(!current)return;
-
-const q=Math.max(1,Math.min(100,parseInt(qty.value||"1",10)));
-qty.value=q;
-
-$("summary").textContent=
-`Total: ${money(current.price*q)}${current.unit==="month"?" / month":""}`;
-}
-
-function openOrder(id){
-current=offers[id];
-if(!current)return;
-
-selected="";
-$("serviceName").textContent=`${current.category} · ${current.name}`;
-$("buyer").value="";
-qty.value=1;
-update();
-
-payChoices.innerHTML=methods.map(payButton).join("");
-
-whatsOrder.disabled=true;
-whatsOrder.style.opacity=".55";
-
-backdrop.classList.add("open");
-}
-
-function requestQuote(id){
-const o=offers[id];
-if(!o)return;
-
-const msg=`Hello Sirat Grow It Agency, I would like a quotation for: ${o.name}. Please share the available packages and price.`;
-
-window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`,"_blank");
-}
-
-grid.addEventListener("click",e=>{
-const order=e.target.closest(".order");
-const quote=e.target.closest(".quote");
-
-if(order)openOrder(order.dataset.id);
-if(quote)requestQuote(quote.dataset.id);
-});
-
-payChoices.addEventListener("click",e=>{
-const b=e.target.closest("[data-method]");
-if(!b)return;
-
-selected=b.dataset.method;
-
-payChoices.querySelectorAll(".pay").forEach(x=>{
-x.classList.toggle("selected",x===b);
-});
-
-whatsOrder.disabled=false;
-whatsOrder.style.opacity="1";
-});
-
-qty.addEventListener("input",update);
-
-$("close").onclick=()=>$("backdrop").classList.remove("open");
-
-backdrop.addEventListener("click",e=>{
-if(e.target===backdrop)backdrop.classList.remove("open");
-});
-
-whatsOrder.onclick=()=>{
-if(!current||!selected)return;
-
-const q=Math.max(1,Math.min(100,parseInt(qty.value||"1",10)));
-const buyer=$("buyer").value.trim();
-const total=Number(current.price)*q;
-
-const msg=[
-"Hello Sirat Grow It Agency,",
-"",
-"I would like to place an order:",
-`Service: ${current.category} — ${current.name}`,
-`Quantity: ${q}`,
-`Unit price: ${money(current.price)}${current.unit==="month"?" per month":""}`,
-`Total: ${money(total)}${current.unit==="month"?" per month":""}`,
-`Payment method: ${selected}`,
-`Name: ${buyer||"Not provided"}`,
-"",
-"Please confirm availability and share the payment instructions."
-].join("\n");
-
-window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`,"_blank");
-};
-
-/* SUPABASE CONNECTION */
-
+/* Supabase settings */
 const SUPABASE_URL="https://qdtpyovjxybwmcdlplpb.supabase.co";
 const SUPABASE_PUBLISHABLE_KEY="sb_publishable_FcyMx5TrNmp2uuCDcSbhYw_SEgS2UH1";
-
-const sb=window.supabase.createClient(
-SUPABASE_URL,
-SUPABASE_PUBLISHABLE_KEY
-);
-
-const adminBackdrop=$("adminBackdrop");
-const adminStatus=$("adminStatus");
-const adminLogin=$("adminLogin");
-const adminContent=$("adminContent");
-
-function setAdminStatus(message,ok=false){
-adminStatus.textContent=message;
-adminStatus.style.color=ok?"#087e43":"#b42318";
-}
-
-function showAdminSession(isLoggedIn){
-adminLogin.hidden=isLoggedIn;
-adminContent.hidden=!isLoggedIn;
-
-if(isLoggedIn){
-$("editWhatsapp").value=config.whatsapp||DEFAULT_WA;
-$("editEmail").value=config.email||"";
-$("editLocation").value=config.location||"";
-renderEditors();
-setAdminStatus("ডেটাবেসের সঙ্গে সংযোগ হয়েছে।",true);
-}
-}
-
-async function openAdmin(){
-adminBackdrop.classList.add("open");
-adminBackdrop.setAttribute("aria-hidden","false");
-
-const {data,error}=await sb.auth.getSession();
-
-if(error){
-setAdminStatus("Session error: "+error.message);
-return;
-}
-
-showAdminSession(!!data.session);
-}
-
-function closeAdmin(){
-adminBackdrop.classList.remove("open");
-adminBackdrop.setAttribute("aria-hidden","true");
-}
-
-async function loadCloudSettings(){
-try{
-const {data,error}=await sb
-.from("website_settings")
-.select("settings")
-.eq("id",1)
-.maybeSingle();
-
-if(error)throw error;
-
-if(data&&data.settings&&Array.isArray(data.settings.categories)){
-config={...clone(DEFAULT_CONFIG),...data.settings};
-
-config.heroImage=config.heroImage||DEFAULT_CONFIG.heroImage;
-config.reviews=config.reviews||DEFAULT_REVIEWS;
-
-WA=config.whatsapp||DEFAULT_WA;
-categories=config.categories;
-
-renderAll();
-localStorage.setItem(STORAGE_KEY,JSON.stringify(config));
-}
-}catch(e){
-console.warn("Could not load cloud settings",e);
-}
-}
-
-async function ownerGate(){
-if(location.hash==="#owner")await openAdmin();
-}
-
-window.addEventListener("hashchange",ownerGate);
-ownerGate();
-loadCloudSettings();
-
-$("adminClose").onclick=closeAdmin;
-
-adminBackdrop.addEventListener("click",e=>{
-if(e.target===adminBackdrop)closeAdmin();
-});
-
-/* LOGIN / LOGOUT */
-
-$("adminLoginBtn").onclick=async()=>{
-const email=$("adminEmail").value.trim();
-const password=$("adminPassword").value;
-const out=$("loginStatus");
-
-out.textContent="লগইন হচ্ছে...";
-
-const {error}=await sb.auth.signInWithPassword({email,password});
-
-if(error){
-out.textContent="লগইন হয়নি: "+error.message;
-return;
-}
-
-out.textContent="লগইন সফল";
-
-await loadCloudSettings();
-showAdminSession(true);
-};
-
-$("adminLogout").onclick=async()=>{
-await sb.auth.signOut();
-showAdminSession(false);
-setAdminStatus("আপনি লগআউট করেছেন।",true);
-};
-
-/* IMAGE UPLOAD */
-
-async function uploadImage(file,folder){
-if(!file)throw new Error("আগে একটি ছবি নির্বাচন করুন");
-
-if(!file.type.startsWith("image/")){
-throw new Error("শুধু ছবি আপলোড করুন");
-}
-
-if(file.size>5*1024*1024){
-throw new Error("ছবির সাইজ 5MB-এর কম রাখুন");
-}
-
-const safeName=file.name.replace(/[^a-zA-Z0-9._-]/g,"-");
-const path=`${folder}/${Date.now()}-${safeName}`;
-
-const {error}=await sb
-.storage
-.from("website-images")
-.upload(path,file,{
-cacheControl:"0",
-upsert:false
-});
-
-if(error)throw error;
-
-const {data}=sb
-.storage
-.from("website-images")
-.getPublicUrl(path);
-
-return data.publicUrl;
-}
-
-/* SAVE SETTINGS TO CLOUD */
-
-async function saveSettings(showMessage=true){
-config.whatsapp=$("editWhatsapp").value.replace(/\D/g,"");
-config.email=$("editEmail").value.trim();
-config.location=$("editLocation").value.trim();
-config.categories=categories;
-
-if(!config.whatsapp)throw new Error("WhatsApp নম্বর দিন");
-
-if(!config.categories.length){
-throw new Error("কমপক্ষে একটি Service থাকতে হবে");
-}
-
-const ids=new Set();
-
-for(const c of categories){
-if(!c.id||!c.name||!Array.isArray(c.offers)){
-throw new Error("প্রতিটি Service-এ ID, নাম ও offers দিতে হবে");
-}
-
-if(ids.has(c.id)){
-throw new Error("একই Service ID একাধিকবার ব্যবহার করা যাবে না");
-}
-
-ids.add(c.id);
-
-for(const o of c.offers){
-if(!o.id||!o.name){
-throw new Error("প্রতিটি Package-এর ID ও নাম দিতে হবে");
-}
-}
-}
-
-const {data,error}=await sb
-.from("website_settings")
-.update({
-settings:config,
-updated_at:new Date().toISOString()
-})
-.eq("id",1)
-.select("id");
-
-if(error)throw error;
-
-if(!data||!data.length){
-throw new Error("website_settings টেবিলে id=1 রো পাওয়া যায়নি");
-}
-
-WA=config.whatsapp;
-categories=config.categories;
-
-localStorage.setItem(STORAGE_KEY,JSON.stringify(config));
-renderAll();
-
-if(showMessage){
-setAdminStatus("সফল! পরিবর্তনগুলো ডেটাবেসে স্থায়ীভাবে সেভ হয়েছে।",true);
-}
-}
-
-/* HERO IMAGE UPLOAD */
-
-$("uploadHero").onclick=async()=>{
-try{
-setAdminStatus("Hero ছবি আপলোড হচ্ছে...",true);
-
-const url=await uploadImage(
-$("heroFile").files[0],
-"hero"
-);
-
-config.heroImage=url;
-$("heroImage").src=url;
-
-await saveSettings(false);
-
-$("heroFile").value="";
-
-setAdminStatus("Hero ছবি আপলোড ও সেভ সম্পন্ন হয়েছে।",true);
-
-}catch(e){
-setAdminStatus("Hero Upload Error: "+e.message);
-}
-};
-
-/* EDITOR HELPERS */
-
-function makeId(prefix){
-return prefix+"-"+Date.now().toString(36)+"-"+Math.random().toString(36).slice(2,6);
-}
-
-function renderEditors(){
-renderCategoriesEditor();
-}
-
-/* SERVICE EDITOR */
-
-function renderCategoriesEditor(){
-const box=$("categoriesEditor");
-box.innerHTML="";
-
-categories.forEach((c,ci)=>{
-const card=document.createElement("div");
-card.className="editor-card";
-
-card.innerHTML=`
-<div class="editor-title">Service ${ci+1}</div>
-
-<div class="field">
-<label>Service Name</label>
-<input class="cat-name" type="text" value="${escapeHtml(c.name)}">
-</div>
-
-<div class="field">
-<label>Service ID (ইউনিক রাখুন)</label>
-<input class="cat-id" type="text" value="${escapeHtml(c.id)}">
-</div>
-
-<div class="field">
-<label>Description</label>
-<textarea class="cat-intro" rows="3">${escapeHtml(c.intro||"")}</textarea>
-</div>
-
-<div class="field">
-<label>Poster Image URL</label>
-<input class="cat-image" type="text" value="${escapeHtml(c.image||"")}" placeholder="Image URL">
-</div>
-
-<label class="admin-label">নতুন Poster আপলোড</label>
-<input type="file" class="admin-file cat-file" accept="image/*">
-<button type="button" class="small-btn cat-upload">Upload Service Poster</button>
-
-<hr>
-<b>Packages / Offers</b>
-<div class="offers-editor"></div>
-
-<button type="button" class="small-btn add-offer">+ Add Package</button>
-
-<div class="editor-actions">
-<button type="button" class="small-btn red remove-category">Remove This Service</button>
-</div>
-`;
-
-card.querySelector(".cat-name").oninput=e=>c.name=e.target.value;
-card.querySelector(".cat-id").oninput=e=>c.id=e.target.value.trim();
-card.querySelector(".cat-intro").oninput=e=>c.intro=e.target.value;
-card.querySelector(".cat-image").oninput=e=>c.image=e.target.value;
-
-/* SERVICE POSTER: IMMEDIATE DISPLAY + AUTOMATIC CLOUD SAVE */
-
-card.querySelector(".cat-upload").onclick=async()=>{
-try{
-const file=card.querySelector(".cat-file").files[0];
-
-setAdminStatus("Service poster আপলোড হচ্ছে...",true);
-
-const url=await uploadImage(file,"posters");
-
-c.image=url;
-config.categories=categories;
-card.querySelector(".cat-image").value=url;
-
-/* Show new poster immediately. */
-renderServices();
-
-/* Save poster automatically in Supabase. */
-await saveSettings(false);
-
-card.querySelector(".cat-file").value="";
-
-setAdminStatus(
-"সফল! "+c.name+" সার্ভিসের নতুন পোস্টার আপলোড ও সেভ হয়েছে।",
-true
-);
-
-}catch(e){
-setAdminStatus("Poster upload error: "+e.message);
-}
-};
-
-const offersBox=card.querySelector(".offers-editor");
-
-function drawOffers(){
-offersBox.innerHTML="";
-
-(c.offers||[]).forEach((o,oi)=>{
-const row=document.createElement("div");
-row.className="editor-card";
-
-row.innerHTML=`
-<div class="editor-row">
-<input class="offer-name" type="text" value="${escapeHtml(o.name)}" placeholder="Package name">
-<input class="offer-price" type="number" min="0" step="0.01" value="${o.price??""}" placeholder="Price">
-<select class="offer-unit">
-<option value="package">Package</option>
-<option value="month">Month</option>
-<option value="channel">Channel</option>
-</select>
-</div>
-
-<label>
-<input type="checkbox" class="offer-quote" ${o.quote?"checked":""}>
-Custom quote (no fixed price)
-</label>
-
-<div class="editor-actions">
-<button type="button" class="small-btn red delete-offer">Remove Package</button>
-</div>
-`;
-
-row.querySelector(".offer-unit").value=o.unit||"package";
-row.querySelector(".offer-name").oninput=e=>o.name=e.target.value;
-row.querySelector(".offer-price").oninput=e=>o.price=Number(e.target.value);
-row.querySelector(".offer-unit").onchange=e=>o.unit=e.target.value;
-row.querySelector(".offer-quote").onchange=e=>o.quote=e.target.checked;
-
-row.querySelector(".delete-offer").onclick=()=>{
-c.offers.splice(oi,1);
-drawOffers();
-};
-
-offersBox.appendChild(row);
-});
-}
-
-drawOffers();
-
-card.querySelector(".add-offer").onclick=()=>{
-c.offers=c.offers||[];
-
-c.offers.push({
-id:makeId(c.id||"offer"),
-name:"New Package",
-price:0,
-unit:"package"
-});
-
-drawOffers();
-};
-
-card.querySelector(".remove-category").onclick=()=>{
-if(!confirm("এই সম্পূর্ণ Service মুছে ফেলবেন?"))return;
-
-categories.splice(ci,1);
-renderCategoriesEditor();
-};
-
-box.appendChild(card);
-});
-}
-
-$("addCategory").onclick=()=>{
-const id=makeId("service");
-
-categories.push({
-id,
-name:"New Service",
-image:"",
-intro:"Service description",
-offers:[]
-});
-
-renderCategoriesEditor();
-};
-
-/* SAVE ALL SETTINGS */
-
-$("adminSave").onclick=async()=>{
-try{
-setAdminStatus("ডেটাবেসে সংরক্ষণ হচ্ছে...",true);
-await saveSettings(true);
-renderEditors();
-}catch(e){
-setAdminStatus("Save হয়নি: "+e.message);
-}
-};
-
-/* RESET SETTINGS */
-
-$("adminReset").onclick=()=>{
-if(!confirm("ওয়েবসাইটের সেটিংস মূল ডিফল্ট অবস্থায় ফেরাতে চান?"))return;
-
-config=clone(DEFAULT_CONFIG);
-WA=config.whatsapp;
-categories=config.categories;
-
-$("editWhatsapp").value=config.whatsapp;
-$("editEmail").value=config.email;
-$("editLocation").value=config.location;
-
-renderAll();
-renderEditors();
-
-setAdminStatus("ডিফল্ট সেটিংস দেখানো হয়েছে। স্থায়ী করতে Save All Changes চাপুন।",true);
-};
-
-/* DOWNLOAD SETTINGS */
-
-$("adminExport").onclick=()=>{
-const blob=new Blob(
-[JSON.stringify(config,null,2)],
-{type:"application/json"}
-);
-
-const url=URL.createObjectURL(blob);
-const a=document.createElement("a");
-
-a.href=url;
-a.download="sirat-agency-settings.json";
-a.click();
-
-URL.revokeObjectURL(url);
-};
-
+const sb=window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY);
+const adminBackdrop=$("adminBackdrop"),adminStatus=$("adminStatus"),adminLogin=$("adminLogin"),adminContent=$("adminContent");
+function setAdminStatus(message,ok=false){adminStatus.textContent=message;adminStatus.style.color=ok?"#087e43":"#b42318"}
+function showAdminSession(isLoggedIn){adminLogin.hidden=isLoggedIn;adminContent.hidden=!isLoggedIn;if(isLoggedIn){$("editWhatsapp").value=config.whatsapp||DEFAULT_WA;$("editEmail").value=config.email||"";$("editLocation").value=config.location||"";renderEditors()}}
+async function openAdmin(){adminBackdrop.classList.add("open");adminBackdrop.setAttribute("aria-hidden","false");const {data}=await sb.auth.getSession();showAdminSession(!!data.session)}
+function closeAdmin(){adminBackdrop.classList.remove("open");adminBackdrop.setAttribute("aria-hidden","true")}
+async function loadCloudSettings(){try{const {data,error}=await sb.from("website_settings").select("settings").eq("id",1).maybeSingle();if(error)throw error;if(data&&data.settings){config={...clone(DEFAULT_CONFIG),...data.settings};categories=config.categories||clone(DEFAULT_CATEGORIES);WA=config.whatsapp||DEFAULT_WA;renderAll()}}catch(e){console.warn("Cloud settings not loaded:",e.message)}}
+async function ownerGate(){if(location.hash==="#owner")await openAdmin()}
+window.addEventListener("hashchange",ownerGate);ownerGate();loadCloudSettings();$("adminClose").onclick=closeAdmin;adminBackdrop.addEventListener("click",e=>{if(e.target===adminBackdrop)closeAdmin()});
+$("adminLoginBtn").onclick=async()=>{const email=$("adminEmail").value.trim(),password=$("adminPassword").value,out=$("loginStatus");out.textContent="লগইন হচ্ছে...";try{const {data,error}=await sb.auth.signInWithPassword({email,password});if(error)throw error;showAdminSession(!!data.session);out.textContent="লগইন সফল";setAdminStatus("Admin login successful",true);await loadCloudSettings()}catch(e){out.textContent="লগইন হয়নি: "+e.message}};
+$("adminLogout").onclick=async()=>{await sb.auth.signOut();showAdminSession(false);setAdminStatus("আপনি লগআউট করেছেন।",true)};
+async function uploadImage(file,folder){if(!file)throw new Error("আগে একটি ছবি নির্বাচন করুন");if(!file.type.startsWith("image/"))throw new Error("শুধু image ফাইল আপলোড করুন");const ext=(file.name.split(".").pop()||"jpg").toLowerCase(),path=`${folder}/${Date.now()}-${Math.random().toString(36).slice(2)}.${ext}`;const {error}=await sb.storage.from("website-images").upload(path,file,{upsert:true,contentType:file.type});if(error)throw error;const {data}=sb.storage.from("website-images").getPublicUrl(path);return data.publicUrl}
+async function saveSettings(showMessage=true){config.whatsapp=$("editWhatsapp").value.replace(/\D/g,"");config.email=$("editEmail").value.trim();config.location=$("editLocation").value.trim();config.categories=categories;WA=config.whatsapp||DEFAULT_WA;const {error}=await sb.from("website_settings").upsert({id:1,settings:config});if(error)throw error;localStorage.setItem(STORAGE_KEY,JSON.stringify(config));renderAll();if(showMessage)setAdminStatus("সব পরিবর্তন সফলভাবে সেভ হয়েছে।",true)}
+$("uploadHero").onclick=async()=>{try{setAdminStatus("Hero ছবি আপলোড হচ্ছে...",true);const url=await uploadImage($("heroFile").files[0],"hero");config.heroImage=url;renderAll();setAdminStatus("Hero ছবি আপলোড হয়েছে। Save All Changes চাপুন।",true)}catch(e){setAdminStatus("Upload হয়নি: "+e.message)}};
+function makeId(prefix){return prefix+"-"+Date.now().toString(36)+"-"+Math.random().toString(36).slice(2,6)}
+function renderEditors(){renderCategoriesEditor()}
+function renderCategoriesEditor(){const box=$("categoriesEditor");box.innerHTML="";categories.forEach((c,ci)=>{const card=document.createElement("div");card.className="editor-card";card.innerHTML=`<h3>Service ${ci+1}</h3><label>Service Name</label><input class="cat-name" value="${escapeHtml(c.name)}"><label>Service ID</label><input class="cat-id" value="${escapeHtml(c.id)}"><label>Description</label><textarea class="cat-intro">${escapeHtml(c.intro||"")}</textarea><label>Poster Image URL</label><input class="cat-image" value="${escapeHtml(c.image||"")}"><label>Upload Poster</label><input class="cat-file" type="file" accept="image/*"><button class="btn light cat-upload" type="button">Upload Poster</button><h4>Packages</h4><div class="offers-editor"></div><button class="btn light add-offer" type="button">+ Add Package</button><button class="btn light remove-category" type="button">Remove Service</button>`;box.appendChild(card);card.querySelector(".cat-name").oninput=e=>c.name=e.target.value;card.querySelector(".cat-id").oninput=e=>c.id=e.target.value;card.querySelector(".cat-intro").oninput=e=>c.intro=e.target.value;card.querySelector(".cat-image").oninput=e=>c.image=e.target.value;
+card.querySelector(".cat-upload").onclick=async()=>{try{const file=card.querySelector(".cat-file").files[0];setAdminStatus("Poster আপলোড হচ্ছে...",true);c.image=await uploadImage(file,"services");card.querySelector(".cat-image").value=c.image;renderServices();setAdminStatus("Poster আপলোড হয়েছে। Save All Changes চাপুন।",true)}catch(e){setAdminStatus("Poster আপলোড হয়নি: "+e.message)}};
+const offersBox=card.querySelector(".offers-editor");function drawOffers(){offersBox.innerHTML="";(c.offers||[]).forEach((o,oi)=>{const row=document.createElement("div");row.className="offer-edit";row.innerHTML=`<label>Package Name</label><input class="offer-name" value="${escapeHtml(o.name)}"><label>Package ID</label><input class="offer-id" value="${escapeHtml(o.id)}"><label>Price (USD)</label><input class="offer-price" type="number" min="0" step="0.01" value="${Number(o.price)||0}"><label>Billing</label><select class="offer-unit"><option value="one-time">One-time</option><option value="month">Monthly</option></select><button class="btn light remove-offer" type="button">Remove Package</button>`;offersBox.appendChild(row);row.querySelector(".offer-unit").value=o.unit||"one-time";row.querySelector(".offer-name").oninput=e=>o.name=e.target.value;row.querySelector(".offer-id").oninput=e=>o.id=e.target.value;row.querySelector(".offer-price").oninput=e=>o.price=Number(e.target.value);row.querySelector(".offer-unit").onchange=e=>o.unit=e.target.value;row.querySelector(".remove-offer").onclick=()=>{c.offers.splice(oi,1);drawOffers()}})}
+drawOffers();card.querySelector(".add-offer").onclick=()=>{c.offers=c.offers||[];c.offers.push({id:makeId(c.id||"offer"),name:"New Package",price:0,unit:"one-time"});drawOffers()};card.querySelector(".remove-category").onclick=()=>{if(!confirm("এই সম্পূর্ণ Service মুছে ফেলবেন?"))return;categories.splice(ci,1);renderCategoriesEditor()}})}
+$("addCategory").onclick=()=>{const id=makeId("service");categories.push({id,name:"New Service",image:"",intro:"Service description",offers:[]});renderCategoriesEditor()};
+$("adminSave").onclick=async()=>{try{setAdminStatus("ডেটাবেসে সংরক্ষণ হচ্ছে...",true);await saveSettings(true);renderEditors()}catch(e){setAdminStatus("Save হয়নি: "+e.message)}};
+$("adminReset").onclick=()=>{if(!confirm("ওয়েবসাইটের সেটিংস মূল ডিফল্ট অবস্থায় ফেরাতে চান?"))return;config=clone(DEFAULT_CONFIG);WA=config.whatsapp;categories=config.categories;$("editWhatsapp").value=config.whatsapp;$("editEmail").value=config.email;$("editLocation").value=config.location;renderAll();renderEditors();setAdminStatus("ডিফল্ট সেটিংস দেখানো হয়েছে। স্থায়ী করতে Save All Changes চাপুন।",true)};
+$("adminExport").onclick=()=>{const blob=new Blob([JSON.stringify(config,null,2)],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="sirat-agency-settings.json";a.click();URL.revokeObjectURL(url)};
 </script>
 </body>
 </html>
