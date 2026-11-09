@@ -5,1037 +5,196 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Sirat Grow It Agency</title>
 <meta name="description" content="Creative services, channel support, video editing and social media solutions.">
-
 <style>
 :root{--navy:#061638;--blue:#087be5;--green:#12bd4c;--ink:#102448;--muted:#61728b;--line:#d7e5f5}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(180deg,#f4f8ff,#edf5ff,#f8fbff);color:var(--ink);line-height:1.5}
-a{text-decoration:none;color:inherit}
-button,input,textarea,select{font:inherit}
-.wrap{width:min(1160px,93%);margin:auto}
-
-header{background:#fff;position:sticky;top:0;z-index:10;box-shadow:0 2px 12px #001b3610}
-.nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:15px}
-.brand{font-size:21px;font-weight:900;color:var(--navy)}
-.brand span{color:#15bd4b}
-.navlinks{display:flex;gap:17px;font-size:14px;font-weight:700}
-.navlinks a:hover{color:var(--blue)}
-.wa{background:#13b94c;color:white;padding:12px 17px;border-radius:28px;font-weight:900}
-
-.hero{background:radial-gradient(ellipse at 78% 28%,#0d7bd5,#0a367b 36%,#061638 76%);color:white;overflow:hidden}
-.hero-inner{padding:65px 0;min-height:470px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:35px}
-.kicker{color:#6cffb0;text-transform:uppercase;letter-spacing:2px;font-size:12px;font-weight:900}
-.hero h1{font-size:clamp(38px,5vw,64px);line-height:1.05;margin:13px 0;letter-spacing:-1.5px}
-.hero h1 span{color:#70ff35}
-.hero p{color:#d9eaff;font-size:18px;line-height:1.8}
-.checks{display:flex;gap:12px 20px;flex-wrap:wrap;margin:22px 0;font-weight:800}
-.checks span:before{content:"✓";background:#21d84e;color:#043b26;border-radius:50%;padding:2px 7px;margin-right:7px}
-.hero-art img{width:100%;max-width:540px;height:auto;display:block;border-radius:22px;border:1px solid #8ac8ff55;box-shadow:0 24px 70px #00102f88}
-
-.btn{border:0;border-radius:11px;padding:13px 19px;background:linear-gradient(100deg,#14c94c,#04a7c4);color:white;font-weight:900;cursor:pointer;display:inline-block;box-shadow:0 8px 20px #08a95a25}
-.btn:hover{transform:translateY(-2px)}
-.btn.dark{background:#071a42}
-.btn.light{background:white;color:#08234c;border:1px solid var(--line)}
-.btn.red{background:#c62828}
-
-section{padding:60px 0}
-.heading{text-align:center;margin-bottom:32px}
-.heading small{color:#078f9c;letter-spacing:3px;font-weight:900}
-.heading h2{font-size:clamp(28px,4vw,40px);margin:5px;color:#071b43}
-.heading p{color:var(--muted);max-width:720px;margin:8px auto;line-height:1.7}
-
-#services{background:linear-gradient(180deg,#f4f8ff,#eaf3ff,#f8fbff)}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;align-items:start}
-.poster-card{background:white;border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:0 16px 40px #09285817;transition:.2s}
-.poster-card:hover{transform:translateY(-4px)}
-.poster-card>img{display:block;width:100%;height:auto;object-fit:contain;background:white}
-.poster-placeholder{min-height:230px;aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:28px;color:#fff;background:radial-gradient(circle at 80% 15%,#16c5a1 0,#087be5 38%,#071b43 100%)}
-.poster-placeholder strong{font-size:clamp(24px,3vw,36px);font-weight:950;line-height:1.1;max-width:90%}
-.poster-placeholder span{font-size:11px;letter-spacing:3px;font-weight:900;margin-bottom:12px;color:#bfffe1}
-.poster-placeholder small{margin-top:12px;color:#e2f0ff;font-size:12px}
-.poster-card-body{padding:19px 20px 22px}
-.poster-card-body h3{margin:0 0 7px;color:#08234c;font-size:23px}
-.poster-card-body>p{margin:0 0 14px;color:#61728b;font-size:13px;line-height:1.75}
-.offer-list{display:grid;gap:10px}
-.offer{display:flex;align-items:center;justify-content:space-between;gap:12px;border:1px solid #d9e7f3;border-radius:15px;padding:13px;background:linear-gradient(110deg,#f4f9ff,#f0fff7)}
-.offer strong{display:block;color:#112d5a;font-size:14px}
-.offer small{display:block;color:#718096;font-size:11px;margin-top:3px}
-.offer-price{font-size:22px;font-weight:950;color:#087e43;white-space:nowrap}
-.offer .btn{padding:9px 12px;font-size:12px;white-space:nowrap}
-.service-note{font-size:12px;color:#65758b;margin-top:20px;text-align:center}
-
-#reviews{background:radial-gradient(ellipse at top,#0b3c85,#061638 72%);color:white}
-#reviews .heading h2{color:white}
-#reviews .heading p{color:#c9dcf5}
-.reviewgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.review{border:1px solid #d8e6f8;border-radius:18px;padding:20px;background:linear-gradient(145deg,#fff,#f3f8ff);box-shadow:0 10px 26px #00112f25;color:#102448}
-.review-person{display:flex;align-items:center;gap:11px}
-.avatar{width:48px;height:48px;flex:0 0 48px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#087be5,#11b98b);color:white;font-weight:900}
-.review b{font-size:14px}
-.stars{color:#e9a600;letter-spacing:2px}
-.review p{font-size:14px;line-height:1.7;min-height:65px;color:#60718a}
-.review-service{display:inline-block;margin-top:4px;padding:3px 8px;border-radius:20px;background:#e6f2ff;color:#0864b2;font-size:10px;font-weight:900;letter-spacing:.3px}
-
-#contact{background:linear-gradient(180deg,#f8fbff,#eaf3ff)}
-.contact{background:radial-gradient(circle at 85% 10%,#0c74c7,#08285e 65%,#061638);color:white;text-align:center;padding:38px 20px;border-radius:22px;box-shadow:0 18px 40px #09285825}
-.contact p{color:#d8eaff}
-footer{background:#061638;color:#d5e2f4;text-align:center;padding:28px}
-
-.backdrop{position:fixed;inset:0;background:#06132fce;display:none;align-items:center;justify-content:center;padding:15px;z-index:40}
-.backdrop.open{display:flex}
-.modal{background:white;border-radius:18px;padding:22px;width:min(600px,100%);max-height:92vh;overflow:auto}
-.modalhead{display:flex;justify-content:space-between;align-items:center}
-.modal h2{margin:0;color:#08234c}
-.close{border:0;border-radius:50%;width:35px;height:35px;font-size:22px;cursor:pointer}
-.field{margin:13px 0}
-.field label{font-size:13px;font-weight:900;display:block;margin-bottom:6px}
-.field input,.field textarea,.field select{width:100%;padding:11px;border:1px solid #cbd9e9;border-radius:9px}
-.summary{background:#eafff1;border-radius:10px;padding:12px;font-size:20px;font-weight:950;color:#087e43;margin:12px 0}
-.hint{font-size:12px;color:#68778c}
-
-/* Payment methods image and selector */
-.payment-methods-preview{
-    display:block;
-    width:100%;
-    max-width:550px;
-    height:auto;
-    margin:12px auto 18px;
-    border:1px solid #d7e5f5;
-    border-radius:12px;
-    background:#fff;
-}
-.payment-method-select{
-    display:block;
-    width:100%;
-    padding:13px;
-    border:1px solid #cbd9e9;
-    border-radius:10px;
-    background:#fff;
-    color:#102448;
-    font-weight:700;
-    margin-top:8px;
-}
-.pay-help{font-size:12px;color:#66768b;margin-top:10px}
-
-.admin-backdrop{display:none;position:fixed;inset:0;background:#06132fdb;z-index:100;padding:12px;align-items:center;justify-content:center}
-.admin-backdrop.open{display:flex}
-.admin-panel{width:min(1050px,100%);max-height:96vh;overflow:auto;background:white;border-radius:20px;padding:22px}
-.admin-head{display:flex;align-items:center;justify-content:space-between;gap:15px}
-.admin-head small{font-weight:900;letter-spacing:1.5px;color:#0b9e65}
-.admin-head h2{margin:3px 0 10px;color:#09275c}
-.admin-warning{background:#fff6df;border:1px solid #edd49a;color:#805c0a;padding:12px;border-radius:10px;font-size:12px}
-.admin-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-.admin-card{border:1px solid var(--line);border-radius:13px;padding:14px;margin:12px 0}
-.admin-card h3{margin:0 0 10px}
-.admin-card input,.admin-card textarea{width:100%;padding:10px;border:1px solid #cbd9e9;border-radius:8px;margin:5px 0 10px}
-.admin-card textarea{min-height:100px}
-.admin-actions{display:flex;gap:8px;flex-wrap:wrap}
-.admin-status{font-size:13px;font-weight:800}
-.admin-status.ok{color:#087e43}
-.admin-status.error{color:#c62828}
-.admin-service{border:1px solid #dce7f2;padding:12px;border-radius:10px;margin:10px 0}
-.admin-service h4{margin:0 0 8px}
-.admin-service textarea{min-height:80px}
-.admin-service button{margin:3px}
-
-@media(max-width:760px){
-    .navlinks{display:none}
-    .hero-inner{grid-template-columns:1fr;padding:45px 0}
-    .hero-art{order:-1}
-    .grid{grid-template-columns:1fr}
-    .reviewgrid{grid-template-columns:1fr}
-    .admin-grid{grid-template-columns:1fr}
-    .offer{flex-wrap:wrap}
-    .offer .btn{margin-left:auto}
-}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(180deg,#f4f8ff,#edf5ff,#f8fbff);color:var(--ink);line-height:1.5}a{text-decoration:none;color:inherit}button,input,textarea,select{font:inherit}.wrap{width:min(1160px,93%);margin:auto}
+header{background:#fff;position:sticky;top:0;z-index:10;box-shadow:0 2px 12px #001b3610}.nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:15px}.brand{font-size:21px;font-weight:900;color:var(--navy)}.brand span{color:#15bd4b}.navlinks{display:flex;gap:17px;font-size:14px;font-weight:700}.navlinks a:hover{color:var(--blue)}.wa{background:#13b94c;color:white;padding:12px 17px;border-radius:28px;font-weight:900}
+.hero{background:radial-gradient(ellipse at 78% 28%,#0d7bd5,#0a367b 36%,#061638 76%);color:white;overflow:hidden}.hero-inner{padding:65px 0;min-height:500px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:35px}.kicker{color:#6cffb0;text-transform:uppercase;letter-spacing:2px;font-size:12px;font-weight:900}.hero h1{font-size:clamp(38px,5vw,64px);line-height:1.05;margin:13px 0;letter-spacing:-1.5px}.hero h1 span{color:#70ff35}.hero p{color:#d9eaff;font-size:18px;line-height:1.8}.checks{display:flex;gap:12px 20px;flex-wrap:wrap;margin:22px 0;font-weight:800}.checks span:before{content:"✓";background:#21d84e;color:#043b26;border-radius:50%;padding:2px 7px;margin-right:7px}.hero-art img{width:100%;max-width:540px;height:auto;display:block;border-radius:22px;border:1px solid #8ac8ff55;box-shadow:0 24px 70px #00102f88}
+.btn{border:0;border-radius:11px;padding:13px 19px;background:linear-gradient(100deg,#14c94c,#04a7c4);color:white;font-weight:900;cursor:pointer;display:inline-block;box-shadow:0 8px 20px #08a95a25}.btn:hover{transform:translateY(-2px)}.btn.dark{background:#071a42}.btn.light{background:white;color:#08234c;border:1px solid var(--line)}.btn.red{background:#c62828}
+section{padding:60px 0}.heading{text-align:center;margin-bottom:32px}.heading small{color:#078f9c;letter-spacing:3px;font-weight:900}.heading h2{font-size:clamp(28px,4vw,40px);margin:5px;color:#071b43}.heading p{color:var(--muted);max-width:720px;margin:8px auto;line-height:1.7}#services{background:linear-gradient(180deg,#f4f8ff,#eaf3ff,#f8fbff)}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;align-items:start}.poster-card{background:white;border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:0 16px 40px #09285817;transition:.2s}.poster-card:hover{transform:translateY(-4px)}.poster-card>img{display:block;width:100%;height:auto;object-fit:contain;background:white;max-height:none}.poster-placeholder{min-height:230px;aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:28px;color:#fff;background:radial-gradient(circle at 80% 15%,#16c5a1 0,#087be5 38%,#071b43 100%);}.poster-placeholder strong{font-size:clamp(24px,3vw,36px);font-weight:950;line-height:1.1;max-width:90%;}.poster-placeholder span{font-size:11px;letter-spacing:3px;font-weight:900;margin-bottom:12px;color:#bfffe1}.poster-placeholder small{margin-top:12px;color:#e2f0ff;font-size:12px}.poster-card-body{padding:19px 20px 22px}.poster-card-body h3{margin:0 0 7px;color:#08234c;font-size:23px}.poster-card-body>p{margin:0 0 14px;color:#61728b;font-size:13px;line-height:1.75}.offer-list{display:grid;gap:10px}.offer{display:flex;align-items:center;justify-content:space-between;gap:12px;border:1px solid #d9e7f3;border-radius:15px;padding:13px;background:linear-gradient(110deg,#f4f9ff,#f0fff7)}.offer strong{display:block;color:#112d5a;font-size:14px}.offer small{display:block;color:#718096;font-size:11px;margin-top:3px}.offer-price{font-size:22px;font-weight:950;color:#087e43;white-space:nowrap}.offer .btn{padding:9px 12px;font-size:12px;white-space:nowrap}.service-note{font-size:12px;color:#65758b;margin-top:20px;text-align:center}
+#reviews{background:radial-gradient(ellipse at top,#0b3c85,#061638 72%);color:white}#reviews .heading h2{color:white}#reviews .heading p{color:#c9dcf5}.reviewgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.review{border:1px solid #d8e6f8;border-radius:18px;padding:20px;background:linear-gradient(145deg,#fff,#f3f8ff);box-shadow:0 10px 26px #00112f25;color:#102448}.review-person{display:flex;align-items:center;gap:11px}.avatar{width:48px;height:48px;flex:0 0 48px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#087be5,#11b98b);color:white;font-weight:900}.review b{font-size:14px}.stars{color:#e9a600;letter-spacing:2px}.review p{font-size:14px;line-height:1.7;min-height:65px;color:#60718a}.review-demo{font-size:9px;font-weight:900;color:#93630a;background:#fff6df;border:1px solid #edd49a;padding:4px 7px;border-radius:20px}
+#contact{background:linear-gradient(180deg,#f8fbff,#eaf3ff)}.contact{background:radial-gradient(circle at 85% 10%,#0c74c7,#08285e 65%,#061638);color:white;text-align:center;padding:38px 20px;border-radius:22px;box-shadow:0 18px 40px #09285825}.contact p{color:#d8eaff}footer{background:#061638;color:#d5e2f4;text-align:center;padding:28px}
+.backdrop{position:fixed;inset:0;background:#06132fce;display:none;align-items:center;justify-content:center;padding:15px;z-index:40}.backdrop.open{display:flex}.modal{background:white;border-radius:18px;padding:22px;width:min(560px,100%);max-height:92vh;overflow:auto}.modalhead{display:flex;justify-content:space-between;align-items:center}.modal h2{margin:0;color:#08234c}.close{border:0;border-radius:50%;width:35px;height:35px;font-size:22px;cursor:pointer}.field{margin:13px 0}.field label{font-size:13px;font-weight:900;display:block;margin-bottom:6px}.field input,.field textarea,.field select{width:100%;padding:11px;border:1px solid #cbd9e9;border-radius:9px}.summary{background:#eafff1;border-radius:10px;padding:12px;font-size:20px;font-weight:950;color:#087e43;margin:12px 0}.hint{font-size:12px;color:#68778c}
+.paychoices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:12px}
+.pay{min-width:0;min-height:112px;padding:9px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;border:1px solid #d4e1ef;border-radius:12px;background:#fff;color:#17345d;font-size:12px;font-weight:900;cursor:pointer}
+.pay img{display:block;width:100%;height:67px;object-fit:contain}
+.pay span{text-align:center;line-height:1.25}
+.pay.selected{outline:3px solid #12bd4c;background:#eafff0;border-color:#12bd4c}
+@media(max-width:380px){.paychoices{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.admin-backdrop{display:none;position:fixed;inset:0;background:#06132fdb;z-index:100;padding:12px;align-items:center;justify-content:center}.admin-backdrop.open{display:flex}.admin-panel{width:min(1000px,100%);max-height:96vh;overflow:auto;background:white;border-radius:20px;padding:22px}.admin-head{display:flex;align-items:center;justify-content:space-between;gap:15px}.admin-head small{font-weight:900;letter-spacing:1.5px;color:#0b9e65}.admin-head h2{margin:3px 0 10px;color:#09275c}.admin-warning{background:#fff5df;border:1px solid #f1d28b;color:#6c4a00;border-radius:10px;padding:12px;font-size:13px}.admin-help{background:#eef7ff;border-radius:10px;padding:14px;margin:12px 0;color:#244363;font-size:13px}.admin-help h3{margin:0 0 7px}.admin-label{display:block;font-weight:900;color:#102448;margin:14px 0 7px}.admin-file{width:100%;padding:10px;border:1px solid #cbd9e9;border-radius:9px;background:white}.admin-actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:13px}.admin-status{font-size:13px;color:#60718a;white-space:pre-wrap}.admin-panel input,.admin-panel textarea,.admin-panel select{max-width:100%}#reviewsJson{width:100%;min-height:190px;padding:12px;border:1px solid #cbd9e9;border-radius:10px;font:12px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace}.admin-panel input[type=text],.admin-panel input[type=number],.admin-panel input[type=email],.admin-panel input[type=password],.admin-panel textarea,.admin-panel select{width:100%;padding:10px;border:1px solid #cbd9e9;border-radius:9px}.editor-card{background:#fff;border:1px solid #d7e5f5;border-radius:13px;padding:13px;margin:12px 0}.editor-row{display:grid;grid-template-columns:2fr 1fr 1fr;gap:8px;margin:8px 0}.editor-row input{min-width:0}.editor-title{font-weight:900;color:#09275c}.editor-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:9px}.small-btn{border:0;border-radius:8px;padding:8px 11px;cursor:pointer;font-weight:800;background:#e8f2ff;color:#12345c}.small-btn.red{background:#ffebeb;color:#a11}hr{border:0;border-top:1px solid #e0e9f3;margin:16px 0}[hidden]{display:none!important}
+@media(max-width:740px){.nav{min-height:70px}.brand{font-size:17px}.navlinks{display:none}.wa{padding:10px;font-size:12px}.hero-inner{grid-template-columns:1fr;padding:40px 0;gap:15px}.hero-art img{max-width:100%}.hero h1{font-size:clamp(36px,10vw,50px)}.grid{grid-template-columns:1fr}.reviewgrid{grid-template-columns:1fr}section{padding:46px 0}.offer{flex-wrap:wrap}.offer .btn{margin-left:auto}.admin-panel{padding:13px}.editor-row{grid-template-columns:1fr 1fr}.editor-row input:first-child{grid-column:1/-1}}
+@media(max-width:380px){.paychoices{grid-template-columns:repeat(2,minmax(0,1fr))}}
 </style>
-</head>
+</head><body>
+<header><div class="wrap nav">
+<a class="brand" href="#">↗ Sirat Grow It <span>Agency</span></a>
+<nav class="navlinks"><a href="#services">Services</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a></nav>
+<a class="wa" id="headerWa" href="https://wa.me/8801913022305">☏ Chat on WhatsApp</a>
+</div></header>
+<div class="hero"><div class="wrap hero-inner"><div>
+<div class="kicker">Creative • Content • Digital Growth</div>
+<h1>Grow Your Online Presence with <span>Professional Services!</span></h1>
+<p>Channel guidance, video editing, social media support and professional website design for creators and businesses.</p>
+<div class="checks"><span>Clear Service Details</span><span>Custom Website Quotes</span><span>Direct WhatsApp Support</span></div>
+<a class="btn" href="#services">Explore Services ↓</a>
+</div><div class="hero-art"><img id="heroImage" src="assets/hero-digital-growth.png" alt="Digital growth illustration"></div></div></div>
 
-<body>
+<section id="services"><div class="wrap"><div class="heading"><small>OUR SERVICES</small><h2>Choose Your Service</h2><p>Browse our service posters, select a package and place your order directly through WhatsApp.</p></div><div class="grid" id="servicesGrid"></div><p class="service-note">All campaigns are subject to platform rules and account eligibility. No guaranteed reach, monetization approval or audience results are implied.</p></div></section>
 
-<header>
-<div class="wrap nav">
-    <a class="brand" href="#">SIRAT <span>GROW IT</span> AGENCY</a>
-    <nav class="navlinks">
-        <a href="#services">Services</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#contact">Contact</a>
-    </nav>
-    <a class="wa" id="headerWa" href="https://wa.me/8801913022305" target="_blank" rel="noopener">WhatsApp</a>
-</div>
-</header>
+<section id="reviews"><div class="wrap"><div class="heading"><small>CLIENT FEEDBACK</small><h2>Customer Reviews</h2><p>Sample review layout — replace these examples with genuine customer feedback before publishing.</p></div><div class="reviewgrid" id="reviewGrid"></div><div style="text-align:center;margin-top:22px"><a class="btn" id="reviewLink" href="https://wa.me/8801913022305">Share Your Genuine Review</a></div></div></section>
 
-<main>
+<section id="contact"><div class="wrap"><div class="contact"><h2>Let's Grow Together!</h2><p id="contactDetails">WhatsApp: 01913022305 · Email: siratakanda06@gmail.com · Kishoreganj, Bangladesh</p><a class="btn" id="contactWa" href="https://wa.me/8801913022305">Chat on WhatsApp Now</a></div></div></section>
+<footer>© 2026 Sirat Grow It Agency · All rights reserved</footer>
 
-<section class="hero">
-<div class="wrap hero-inner">
-    <div>
-        <div class="kicker">Grow Your Digital Presence</div>
-        <h1>Build Your <span>Digital Success</span> With Us</h1>
-        <p>Professional digital marketing, social media growth, video editing and website solutions to help your brand grow.</p>
-        <div class="checks">
-            <span>Quality Service</span>
-            <span>Expert Support</span>
-            <span>Fast Delivery</span>
-        </div>
-        <a class="btn" href="#services">Explore Services</a>
-    </div>
-    <div class="hero-art">
-        <img id="heroImage" src="assets/hero-digital-growth.png" alt="Digital growth agency">
-    </div>
-</div>
-</section>
+<div class="backdrop" id="backdrop"><div class="modal">
+<div class="modalhead"><h2>Place Your Order</h2><button class="close" id="close" type="button">×</button></div>
+<p id="serviceName" class="hint"></p>
+<div class="field"><label for="quantity">Quantity</label><input id="quantity" type="number" min="1" max="100" value="1"></div>
+<div class="field"><label for="buyer">Your name (optional)</label><input id="buyer" placeholder="Your name"></div>
+<div class="summary" id="summary">Total: $0</div>
+<b>Select a payment method</b><p class="hint">Choose one of the 11 payment methods below.</p>
+<div class="paychoices" id="payChoices"></div>
+<p class="hint">Your service, selected package, total and payment choice will be sent to WhatsApp. We will confirm the recipient details before you pay.</p>
+<button class="btn" id="whatsOrder" style="width:100%" disabled>Contact on WhatsApp to Order →</button>
+</div></div>
 
-<section id="services">
-<div class="wrap">
-    <div class="heading">
-        <small>WHAT WE OFFER</small>
-        <h2>Our Services & Packages</h2>
-        <p>Choose the service and package that matches your goals. Contact us for custom requirements.</p>
-    </div>
-    <div class="grid" id="serviceGrid"></div>
-    <p class="service-note">Need a custom package? Contact us directly through WhatsApp.</p>
-</div>
-</section>
-
-<section id="reviews">
-<div class="wrap">
-    <div class="heading">
-        <small>CLIENT FEEDBACK</small>
-        <h2>What Our Clients Say</h2>
-        <p>Feedback from clients about the services they received.</p>
-    </div>
-    <div class="reviewgrid" id="reviewGrid"></div>
-    <div style="text-align:center;margin-top:25px">
-        <a class="btn light" id="reviewLink" href="#" target="_blank" rel="noopener">Share Your Review</a>
-    </div>
-</div>
-</section>
-
-<section id="contact">
-<div class="wrap">
-    <div class="contact">
-        <h2>Ready to Grow Your Business?</h2>
-        <p>Tell us what you need. Our team will help you choose the right service.</p>
-        <p id="contactDetails"></p>
-        <a class="btn" id="contactWa" href="https://wa.me/8801913022305" target="_blank" rel="noopener">Contact on WhatsApp</a>
-    </div>
-</div>
-</section>
-
-</main>
-
-<footer>
-<div class="wrap">
-    © <span id="year"></span> Sirat Grow It Agency. All rights reserved.
-    <button class="btn dark" id="adminOpen" type="button">Admin</button>
-</div>
-</footer>
-
-<!-- ORDER MODAL -->
-<div class="backdrop" id="backdrop">
-<div class="modal" role="dialog" aria-modal="true" aria-labelledby="serviceName">
-    <div class="modalhead">
-        <h2>Place Your Order</h2>
-        <button class="close" id="close" type="button" aria-label="Close">×</button>
-    </div>
-
-    <p id="serviceName"></p>
-
-    <div class="field">
-        <label for="buyer">Your Name (optional)</label>
-        <input id="buyer" placeholder="Enter your name">
-    </div>
-
-    <div class="field">
-        <label for="qty">Quantity</label>
-        <input id="qty" type="number" min="1" max="100" value="1">
-    </div>
-
-    <div class="summary" id="summary">Total: ৳0</div>
-
-    <div class="field">
-        <label>Select Payment Method</label>
-
-        <img
-            src="assets/payment-methods.png"
-            alt="All Available Payment Methods"
-            class="payment-methods-preview"
-            loading="lazy"
-        >
-
-        <select id="paymentMethod" class="payment-method-select">
-            <option value="">Select Payment Method</option>
-            <option value="bKash">bKash</option>
-            <option value="Nagad">Nagad</option>
-            <option value="Rocket">Rocket</option>
-            <option value="Bank Account">Bank Account</option>
-            <option value="Visa">Visa</option>
-            <option value="Binance">Binance</option>
-            <option value="Western Union">Western Union</option>
-            <option value="Ria Money Transfer">Ria Money Transfer</option>
-            <option value="Payoneer">Payoneer</option>
-            <option value="PayPal">PayPal</option>
-            <option value="MoneyGram">MoneyGram</option>
-        </select>
-
-        <p class="pay-help">
-            Select your payment method. Our team will share payment instructions on WhatsApp.
-        </p>
-    </div>
-
-    <button class="btn" id="whatsOrder" type="button" disabled>Continue Order on WhatsApp</button>
-</div>
-</div>
-
-<!-- ADMIN PANEL -->
-<div class="admin-backdrop" id="adminBackdrop">
-<div class="admin-panel">
-
-    <div class="admin-head">
-        <div>
-            <small>WEBSITE CONTROL PANEL</small>
-            <h2>Admin Dashboard</h2>
-        </div>
-        <button class="btn red" id="adminClose" type="button">Close</button>
-    </div>
-
-    <p class="admin-warning">
-        Admin changes are saved in this browser and, when configured, synced to Supabase.
-        Keep your Supabase service-role key private; never put it in public website code.
-    </p>
-
-    <div id="adminLogin">
-        <div class="admin-card">
-            <h3>Admin Login</h3>
-            <input id="adminEmail" type="email" placeholder="Admin email">
-            <input id="adminPassword" type="password" placeholder="Password">
-            <button class="btn" id="loginButton" type="button">Login</button>
-            <p id="loginStatus" class="admin-status"></p>
-        </div>
-    </div>
-
-    <div id="adminContent" hidden>
-        <div class="admin-actions">
-            <button class="btn dark" id="logoutButton" type="button">Logout</button>
-            <button class="btn" id="saveAll" type="button">Save All Changes</button>
-        </div>
-
-        <div class="admin-grid">
-            <div class="admin-card">
-                <h3>Website Settings</h3>
-                <label>WhatsApp number (country code included)</label>
-                <input id="settingWa">
-
-                <label>Email</label>
-                <input id="settingEmail">
-
-                <label>Location</label>
-                <input id="settingLocation">
-
-                <label>Hero image</label>
-                <input id="heroFile" type="file" accept="image/*">
-
-                <button class="btn" id="uploadHero" type="button">Upload Hero Image</button>
-            </div>
-
-            <div class="admin-card">
-                <h3>Reviews JSON</h3>
-                <p class="hint">Each review can contain name, text and service. Example service: YouTube, Facebook, SEO.</p>
-                <textarea id="reviewsJson"></textarea>
-                <button class="btn" id="saveReviews" type="button">Save Reviews</button>
-            </div>
-        </div>
-
-        <div class="admin-card">
-            <h3>Service & Package Editor</h3>
-            <div id="serviceEditors"></div>
-        </div>
-
-        <p id="adminStatus" class="admin-status" role="status"></p>
-    </div>
-</div>
-</div>
+<div class="admin-backdrop" id="adminBackdrop" aria-hidden="true"><section class="admin-panel" role="dialog" aria-modal="true">
+<div class="admin-head"><div><small>WEBSITE CONTROL CENTER</small><h2>Sirat Grow It Agency · Admin Panel</h2></div><button id="adminClose" class="close" type="button">×</button></div>
+<div id="adminLogin"><p class="admin-help">Sign in with your Supabase admin email and password.</p>
+<div class="field"><label for="adminEmail">Admin Email</label><input id="adminEmail" type="email" autocomplete="username" placeholder="Your Supabase email"></div>
+<div class="field"><label for="adminPassword">Password</label><input id="adminPassword" type="password" autocomplete="current-password" placeholder="Your Supabase password"></div>
+<button class="btn" id="adminLoginBtn" type="button">Login</button><p id="loginStatus" class="admin-status"></p></div>
+<div id="adminContent" hidden>
+<p class="admin-warning">Login successful. Uploaded images are saved automatically. Click Save All Changes to save other updates.</p>
+<div class="admin-help"><h3>1. Update Hero Image</h3><p>Choose and upload the large image displayed at the top of the website.</p><input class="admin-file" type="file" id="heroFile" accept="image/*"><button class="btn" id="uploadHero" type="button">Upload Hero Image</button></div>
+<div class="admin-help"><h3>2. Manage Services and Packages</h3><p>Edit service names, posters, descriptions, packages and prices. Uploaded posters appear on the website immediately and are saved automatically.</p><div id="categoriesEditor"></div><button class="btn" id="addCategory" type="button">+ Add New Service</button></div>
+<div class="admin-help"><h3>3. Manage Client Reviews</h3><p>Edit the review list as JSON. Keep each review with a name and text. Set verified to true only for genuine customer feedback you have permission to publish.</p><textarea id="reviewsJson" rows="10" spellcheck="false"></textarea></div>
+<div class="admin-help"><h3>4. Contact Information</h3><div class="field"><label>WhatsApp Number (including country code, e.g. 8801913022305)</label><input id="editWhatsapp" type="text"></div><div class="field"><label>Email</label><input id="editEmail" type="email"></div><div class="field"><label>Location</label><input id="editLocation" type="text"></div></div>
+<div class="admin-actions"><button class="btn" id="adminSave" type="button">Save All Changes</button><button class="btn light" id="adminReset" type="button">Reset to Original</button><button class="btn dark" id="adminExport" type="button">Download Settings</button><button class="btn light" id="adminLogout" type="button">Logout</button></div>
+</div><p id="adminStatus" class="admin-status" role="status"></p>
+</section></div>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>"use strict";
 
-<script>
-"use strict";
+const DEFAULT_METHODS = [
+  {id:"bkash",name:"bKash",image:"assets/payment/bkash.png"},
+  {id:"nagad",name:"Nagad",image:"assets/payment/nagad.png"},
+  {id:"rocket",name:"Rocket",image:"assets/payment/rocket.png"},
+  {id:"bank",name:"Bank Account",image:"assets/payment/bank.png"},
+  {id:"visa",name:"Visa",image:"assets/payment/visa.png"},
+  {id:"binance",name:"Binance",image:"assets/payment/binance.png"},
+  {id:"western-union",name:"Western Union",image:"assets/payment/western-union.png"},
+  {id:"ria",name:"Ria Money Transfer",image:"assets/payment/ria.png"},
+  {id:"payoneer",name:"Payoneer",image:"assets/payment/payoneer.png"},
+  {id:"paypal",name:"PayPal",image:"assets/payment/paypal.png"},
+  {id:"moneygram",name:"MoneyGram",image:"assets/payment/moneygram.png"}
+];
 
-const DEFAULT_WA="8801913022305";
+const DEFAULT_SETTINGS = {
+  whatsapp:"8801913022305",
+  email:"siratakanda06@gmail.com",
+  location:"Kishoreganj, Bangladesh"
+};
 
-const DEFAULT_CATEGORIES=[
-{
+const DEFAULT_REVIEWS = [
+  {name:"Happy Customer",text:"The team was helpful and communicated clearly throughout the process.",verified:false},
+  {name:"Satisfied Client",text:"Professional support and a smooth ordering experience.",verified:false},
+  {name:"Business Owner",text:"Good communication and helpful service guidance.",verified:false}
+];
+
+const DEFAULT_SERVICES = [
+  {
     id:"youtube",
-    name:"YouTube Services",
-    image:"https://qdtpyovjxybwmcdlplpb.supabase.co/storage/v1/object/public/website-images/youtube-services.png",
-    description:"YouTube channel growth, subscribers, views and channel support.",
-    offers:[
-        {id:"yt-subs",name:"YouTube Subscribers",price:500,unit:"one-time"},
-        {id:"yt-views",name:"YouTube Views",price:300,unit:"one-time"},
-        {id:"yt-watch",name:"Watch Time",price:700,unit:"one-time"}
+    title:"YouTube Services",
+    description:"Professional YouTube channel support and creator services.",
+    poster:"assets/posters/youtube.jpg",
+    packages:[
+      {name:"Channel Setup",description:"Basic channel setup and guidance.",price:500},
+      {name:"Video Editing",description:"Professional video editing service.",price:1000}
     ]
-},
-{
-    id:"monetized",
-    name:"YouTube Monetized Channel",
-    image:"https://qdtpyovjxybwmcdlplpb.supabase.co/storage/v1/object/public/website-images/monetized-channel.png",
-    description:"Monetization-ready channel support and setup guidance.",
-    offers:[
-        {id:"yt-monetized",name:"Monetized Channel Support",price:5000,unit:"one-time"}
-    ]
-},
-{
+  },
+  {
     id:"facebook",
-    name:"Facebook Services",
-    image:"https://qdtpyovjxybwmcdlplpb.supabase.co/storage/v1/object/public/website-images/facebook-services.png",
-    description:"Facebook page growth, followers, likes and engagement.",
-    offers:[
-        {id:"fb-followers",name:"Facebook Followers",price:300,unit:"one-time"},
-        {id:"fb-likes",name:"Page Likes",price:250,unit:"one-time"}
+    title:"Facebook Services",
+    description:"Facebook page support and social media services.",
+    poster:"assets/posters/facebook.jpg",
+    packages:[
+      {name:"Page Setup",description:"Page setup and optimization guidance.",price:500},
+      {name:"Content Support",description:"Content planning and support.",price:1000}
     ]
-},
-{
-    id:"spotify",
-    name:"Spotify Services",
-    image:"https://qdtpyovjxybwmcdlplpb.supabase.co/storage/v1/object/public/website-images/spotify-services.png",
-    description:"Spotify promotion and artist profile support.",
-    offers:[
-        {id:"sp-streams",name:"Spotify Streams",price:500,unit:"one-time"}
+  },
+  {
+    id:"design",
+    title:"Graphic Design",
+    description:"Creative poster, banner and social media designs.",
+    poster:"assets/posters/design.jpg",
+    packages:[
+      {name:"Poster Design",description:"One custom poster design.",price:500},
+      {name:"Banner Design",description:"One custom banner design.",price:700}
     ]
-},
-{
-    id:"instagram",
-    name:"Instagram Services",
-    image:"https://qdtpyovjxybwmcdlplpb.supabase.co/storage/v1/object/public/website-images/instagram-services.png",
-    description:"Instagram followers, likes and profile engagement.",
-    offers:[
-        {id:"ig-followers",name:"Instagram Followers",price:300,unit:"one-time"},
-        {id:"ig-likes",name:"Instagram Likes",price:200,unit:"one-time"}
-    ]
-},
-{
-    id:"tiktok",
-    name:"TikTok Services",
-    image:"https://qdtpyovjxybwmcdlplpb.supabase.co/storage/v1/object/public/website-images/tiktok-services.png",
-    description:"TikTok views, followers and engagement services.",
-    offers:[
-        {id:"tt-views",name:"TikTok Views",price:200,unit:"one-time"}
-    ]
-},
-{
-    id:"video",
-    name:"Video Editing",
-    image:"https://qdtpyovjxybwmcdlplpb.supabase.co/storage/v1/object/public/website-images/video-editing.png",
-    description:"Professional short-form and promotional video editing.",
-    offers:[
-        {id:"video-short",name:"Short Video Editing",price:500,unit:"one-time"}
-    ]
-},
-{
+  },
+  {
     id:"website",
-    name:"Website Design & SEO",
-    image:"https://qdtpyovjxybwmcdlplpb.supabase.co/storage/v1/object/public/website-images/website-design.png",
-    description:"Responsive website design, landing pages and SEO support.",
-    offers:[
-        {id:"web-landing",name:"Landing Page Design",price:3000,unit:"one-time"},
-        {id:"web-ecommerce",name:"E-commerce Website",price:8000,unit:"one-time"},
-        {id:"web-custom",name:"Custom Website Development",price:10000,unit:"one-time"}
+    title:"Website Design",
+    description:"Responsive website design for businesses and creators.",
+    poster:"assets/posters/website.jpg",
+    packages:[
+      {name:"Landing Page",description:"Single-page website design.",price:3000},
+      {name:"Business Website",description:"Multi-section business website.",price:6000}
     ]
-}
+  }
 ];
 
-const DEFAULT_REVIEWS=[
-{
-    name:"Ayesha Rahman · Sample",
-    text:"The team explained the service options clearly and helped me understand the next steps before ordering.",
-    service:"YouTube"
-},
-{
-    name:"Rafiul Islam · Sample",
-    text:"The communication was friendly and the package details were easy to understand. A smooth experience.",
-    service:"Facebook"
-},
-{
-    name:"Nusrat Jahan · Sample",
-    text:"I liked how simple it was to choose a service and send my request directly through WhatsApp.",
-    service:"SEO"
-},
-{
-    name:"Md. Hasan · Sample",
-    text:"Quick responses to my questions and clear information about the available services and pricing.",
-    service:"Instagram"
-},
-{
-    name:"Tariqul Hasan · Sample",
-    text:"The website looks organized, and finding the service I needed was straightforward.",
-    service:"TikTok"
-},
-{
-    name:"Sadia Akter · Sample",
-    text:"Helpful support and a clear ordering process. It was easy to ask for a custom quote.",
-    service:"Video Editing"
-},
-{
-    name:"Imran Hossain · Sample",
-    text:"A convenient way to browse digital services and contact the team without confusion.",
-    service:"Website Design"
-}
-];
+const STORAGE_KEY = "sirატ_grow_it_settings";
+const PAYMENT_KEY = "sirat_grow_it_payments";
+const REVIEW_KEY = "sirat_grow_it_reviews";
+const SERVICE_KEY = "sirat_grow_it_services";
 
-const DEFAULT_CONFIG={
-    heroImage:"assets/hero-digital-growth.png",
-    whatsapp:DEFAULT_WA,
-    email:"siratakanda06@gmail.com",
-    location:"Kishoreganj, Bangladesh",
-    categories:DEFAULT_CATEGORIES,
-    reviews:DEFAULT_REVIEWS
-};
+let selectedService = null;
+let selectedPackage = null;
+let selectedPayment = null;
+let currentQuantity = 1;
+let services = loadData(SERVICE_KEY, DEFAULT_SERVICES);
+let payments = loadData(PAYMENT_KEY, DEFAULT_METHODS);
+let reviews = loadData(REVIEW_KEY, DEFAULT_REVIEWS);
+let settings = loadData(STORAGE_KEY, DEFAULT_SETTINGS);
 
-const clone=v=>JSON.parse(JSON.stringify(v));
-const STORAGE_KEY="siratGrowItAgencyConfig_v7";
-
-function loadLocal(){
-    try{
-        const x=JSON.parse(localStorage.getItem(STORAGE_KEY)||"null");
-        return x&&Array.isArray(x.categories)&&Array.isArray(x.reviews)
-            ?x
-            :clone(DEFAULT_CONFIG);
-    }catch(e){
-        return clone(DEFAULT_CONFIG);
-    }
+function loadData(key, fallback) {
+  try {
+    const saved = localStorage.getItem(key);
+    return saved ? JSON.parse(saved) : structuredClone(fallback);
+  } catch (error) {
+    console.warn("Could not load saved website data:", error);
+    return structuredClone(fallback);
+  }
 }
 
-let config=loadLocal();
-let categories=config.categories||clone(DEFAULT_CATEGORIES);
-let WA=config.whatsapp||DEFAULT_WA;
-let offers={};
-
-function $(id){
-    return document.getElementById(id);
+function saveData(key, value) {
+  try {
+    localStorage.setItem(key, JSON.stringify(value));
+    return true;
+  } catch (error) {
+    console.error("Could not save website data:", error);
+    return false;
+  }
 }
 
-function escapeHtml(v){
-    return String(v??"").replace(/[&<>"']/g,c=>({
-        "&":"&amp;",
-        "<":"&lt;",
-        ">":"&gt;",
-        '"':"&quot;",
-        "'":"&#39;"
-    }[c]));
+function money(value) {
+  return "৳" + Number(value || 0).toLocaleString("en-BD");
 }
 
-function money(v){
-    return "৳"+Number(v||0).toLocaleString("en-BD");
+function safeText(value) {
+  return String(value ?? "").replace(/[&<>"']/g, character => ({
+    "&":"&amp;",
+    "<":"&lt;",
+    ">":"&gt;",
+    '"':"&quot;",
+    "'":"&#39;"
+  })[character]);
 }
 
-function buildOffers(){
-    offers={};
-    categories.forEach(c=>(c.offers||[]).forEach(o=>{
-        offers[o.id]={...o,category:c.name};
-    }));
+function whatsappLink(message) {
+  const number = String(settings.whatsapp || DEFAULT_SETTINGS.whatsapp).replace(/\D/g,"");
+  return "https://wa.me/" + number + "?text=" + encodeURIComponent(message);
 }
-
-function renderServices(){
-    buildOffers();
-
-    const grid=$("serviceGrid");
-    grid.innerHTML="";
-
-    categories.forEach(c=>{
-        const card=document.createElement("article");
-        card.className="poster-card";
-
-        const offerHtml=(c.offers||[]).map(o=>`
-            <div class="offer">
-                <div>
-                    <strong>${escapeHtml(o.name)}</strong>
-                    <small>${o.unit==="month"?"Monthly package":"One-time service"}</small>
-                </div>
-                <span class="offer-price">${money(o.price)}${o.unit==="month"?"/mo":""}</span>
-                <button class="btn order" type="button" data-id="${escapeHtml(o.id)}">Order Now</button>
-            </div>
-        `).join("");
-
-        const poster=c.image
-            ?`<img src="${escapeHtml(c.image)}" alt="${escapeHtml(c.name)} promotional poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.hidden=false">
-              <div class="poster-placeholder" hidden>
-                <span>SIRAT GROW IT AGENCY</span>
-                <strong>${escapeHtml(c.name)}</strong>
-                <small>Upload your service poster from Admin Panel</small>
-              </div>`
-            :`<div class="poster-placeholder">
-                <span>SIRAT GROW IT AGENCY</span>
-                <strong>${escapeHtml(c.name)}</strong>
-                <small>Upload your service poster from Admin Panel</small>
-              </div>`;
-
-        card.innerHTML=`
-            ${poster}
-            <div class="poster-card-body">
-                <h3>${escapeHtml(c.name)}</h3>
-                <p>${escapeHtml(c.description||"")}</p>
-                <div class="offer-list">${offerHtml}</div>
-            </div>
-        `;
-
-        grid.appendChild(card);
-    });
-}
-
-function renderReviews(){
-    const serviceLabels=[
-        "YouTube",
-        "Facebook",
-        "SEO",
-        "Instagram",
-        "TikTok",
-        "Website Design",
-        "Video Editing"
-    ];
-
-    $("reviewGrid").innerHTML=(config.reviews||[]).map((r,i)=>{
-        const initials=String(r.name||"Client")
-            .replace(/·.*$/,"")
-            .trim()
-            .split(/\s+/)
-            .slice(0,2)
-            .map(x=>x[0]||"")
-            .join("")
-            .toUpperCase();
-
-        const service=r.service||r.category||serviceLabels[i%serviceLabels.length];
-
-        return `
-            <article class="review">
-                <div class="review-person">
-                    <span class="avatar">${escapeHtml(initials||"C")}</span>
-                    <div>
-                        <b>${escapeHtml(String(r.name||"Client").replace(/\s*·\s*Sample/i,""))}</b>
-                        <div class="stars">★★★★★</div>
-                        <span class="review-service">${escapeHtml(service)} Service</span>
-                    </div>
-                </div>
-                <p>“${escapeHtml(r.text||"")}”</p>
-            </article>
-        `;
-    }).join("");
-}
-
-function renderContact(){
-    $("contactDetails").textContent=
-        `WhatsApp: +${WA} · Email: ${config.email||""} · ${config.location||""}`;
-
-    $("headerWa").href=`https://wa.me/${WA}`;
-    $("contactWa").href=`https://wa.me/${WA}`;
-
-    $("reviewLink").href=
-        `https://wa.me/${WA}?text=${encodeURIComponent("Hello, I would like to share my genuine review.")}`;
-}
-
-function renderAll(){
-    renderServices();
-    renderReviews();
-    renderContact();
-
-    $("heroImage").src=config.heroImage||"assets/hero-digital-growth.png";
-}
-
-renderAll();
-
-/* ORDER SYSTEM */
-let current=null;
-let selected="";
-let qty=$("qty");
-let backdrop=$("backdrop");
-let paymentMethod=$("paymentMethod");
-let whatsOrder=$("whatsOrder");
-let grid=$("serviceGrid");
-
-function update(){
-    if(!current)return;
-
-    const q=Math.max(1,Math.min(100,parseInt(qty.value||"1",10)));
-    qty.value=q;
-
-    $("summary").textContent=
-        `Total: ${money(current.price*q)}${current.unit==="month"?" / month":""}`;
-}
-
-function openOrder(id){
-    current=offers[id];
-    if(!current)return;
-
-    selected="";
-    $("serviceName").textContent=`${current.category} · ${current.name}`;
-    $("buyer").value="";
-    qty.value=1;
-    paymentMethod.value="";
-
-    update();
-
-    whatsOrder.disabled=true;
-    backdrop.classList.add("open");
-}
-
-function requestQuote(id){
-    const o=offers[id];
-    if(!o)return;
-
-    const msg=
-        `Hello Sirat Grow It Agency, I would like a quotation for: ${o.name}. Please share the available packages and price.`;
-
-    window.open(
-        `https://wa.me/${WA}?text=${encodeURIComponent(msg)}`,
-        "_blank"
-    );
-}
-
-grid.addEventListener("click",e=>{
-    const order=e.target.closest(".order");
-    const quote=e.target.closest(".quote");
-
-    if(order)openOrder(order.dataset.id);
-    if(quote)requestQuote(quote.dataset.id);
-});
-
-/* PAYMENT METHOD DROPDOWN */
-paymentMethod.addEventListener("change",()=>{
-    selected=paymentMethod.value;
-    whatsOrder.disabled=!selected;
-});
-
-qty.addEventListener("input",update);
-
-$("close").onclick=()=>{
-    backdrop.classList.remove("open");
-};
-
-backdrop.addEventListener("click",e=>{
-    if(e.target===backdrop){
-        backdrop.classList.remove("open");
-    }
-});
-
-whatsOrder.onclick=()=>{
-    if(!current||!selected)return;
-
-    const q=Math.max(1,Math.min(100,parseInt(qty.value||"1",10)));
-    const buyer=$("buyer").value.trim();
-    const total=Number(current.price)*q;
-
-    const msg=[
-        "Hello Sirat Grow It Agency, I would like to place an order:",
-        `Service: ${current.category} — ${current.name}`,
-        `Quantity: ${q}`,
-        `Unit price: ${money(current.price)}${current.unit==="month"?" per month":""}`,
-        `Total: ${money(total)}${current.unit==="month"?" per month":""}`,
-        `Payment method: ${selected}`,
-        `Name: ${buyer||"Not provided"}`,
-        "Please confirm availability and share the payment instructions."
-    ].join("\n");
-
-    window.open(
-        `https://wa.me/${WA}?text=${encodeURIComponent(msg)}`,
-        "_blank"
-    );
-};
-
-/* SUPABASE CONFIGURATION */
-const SUPABASE_URL="https://qdtpyovjxybwmcdlplpb.supabase.co";
-const SUPABASE_ANON_KEY="YOUR_SUPABASE_ANON_KEY";
-
-let supabaseClient=null;
-let adminUser=null;
-
-try{
-    if(window.supabase&&SUPABASE_ANON_KEY!=="YOUR_SUPABASE_ANON_KEY"){
-        supabaseClient=window.supabase.createClient(
-            SUPABASE_URL,
-            SUPABASE_ANON_KEY
-        );
-    }
-}catch(e){
-    console.warn("Supabase initialization:",e);
-}
-
-function setAdminStatus(message,ok=false){
-    const el=$("adminStatus");
-    el.textContent=message;
-    el.className="admin-status "+(ok?"ok":"error");
-}
-
-async function uploadImage(file,folder){
-    if(!file)throw new Error("Please choose an image first.");
-
-    if(!supabaseClient){
-        throw new Error("Supabase is not configured. Add your anon key in the code.");
-    }
-
-    const ext=(file.name.split(".").pop()||"png")
-        .toLowerCase()
-        .replace(/[^a-z0-9]/g,"");
-
-    const path=
-        `${folder}/${Date.now()}-${Math.random().toString(36).slice(2)}.${ext}`;
-
-    const {error}=await supabaseClient.storage
-        .from("website-images")
-        .upload(path,file,{
-            upsert:true,
-            contentType:file.type||"image/png"
-        });
-
-    if(error)throw error;
-
-    const {data}=supabaseClient.storage
-        .from("website-images")
-        .getPublicUrl(path);
-
-    return data.publicUrl;
-}
-
-async function saveSettings(showMessage=true){
-    config.whatsapp=$("settingWa").value.replace(/\D/g,"")||DEFAULT_WA;
-    config.email=$("settingEmail").value.trim();
-    config.location=$("settingLocation").value.trim();
-    config.categories=categories;
-
-    WA=config.whatsapp;
-
-    localStorage.setItem(STORAGE_KEY,JSON.stringify(config));
-    renderAll();
-
-    if(supabaseClient){
-        const {error}=await supabaseClient
-            .from("website_settings")
-            .upsert({id:"main",config:config});
-
-        if(error)throw error;
-    }
-
-    if(showMessage)setAdminStatus("Changes saved.",true);
-}
-
-/* ADMIN PANEL */
-$("adminOpen").onclick=()=>{
-    $("adminBackdrop").classList.add("open");
-
-    $("settingWa").value=config.whatsapp||DEFAULT_WA;
-    $("settingEmail").value=config.email||"";
-    $("settingLocation").value=config.location||"";
-
-    $("reviewsJson").value=JSON.stringify(config.reviews||[],null,2);
-
-    $("adminLogin").hidden=!!adminUser;
-    $("adminContent").hidden=!adminUser;
-
-    renderEditors();
-};
-
-$("adminClose").onclick=()=>{
-    $("adminBackdrop").classList.remove("open");
-};
-
-$("loginButton").onclick=async()=>{
-    if(!supabaseClient){
-        $("loginStatus").textContent=
-            "Supabase is not configured. Add your anon key and configure Supabase Auth.";
-        return;
-    }
-
-    try{
-        const {data,error}=await supabaseClient.auth.signInWithPassword({
-            email:$("adminEmail").value,
-            password:$("adminPassword").value
-        });
-
-        if(error)throw error;
-
-        adminUser=data.user;
-
-        $("adminLogin").hidden=true;
-        $("adminContent").hidden=false;
-
-        setAdminStatus("Logged in successfully.",true);
-    }catch(e){
-        $("loginStatus").textContent=e.message;
-    }
-};
-
-$("logoutButton").onclick=async()=>{
-    if(supabaseClient)await supabaseClient.auth.signOut();
-
-    adminUser=null;
-    $("adminLogin").hidden=false;
-    $("adminContent").hidden=true;
-};
-
-$("saveAll").onclick=async()=>{
-    try{
-        await saveSettings();
-        setAdminStatus("All settings saved.",true);
-    }catch(e){
-        setAdminStatus("Save error: "+e.message);
-    }
-};
-
-$("saveReviews").onclick=async()=>{
-    try{
-        const list=JSON.parse($("reviewsJson").value);
-
-        if(!Array.isArray(list)){
-            throw new Error("Reviews must be a JSON array.");
-        }
-
-        config.reviews=list;
-
-        localStorage.setItem(STORAGE_KEY,JSON.stringify(config));
-        renderReviews();
-
-        if(supabaseClient){
-            const {error}=await supabaseClient
-                .from("website_settings")
-                .upsert({id:"main",config:config});
-
-            if(error)throw error;
-        }
-
-        setAdminStatus("Reviews saved.",true);
-    }catch(e){
-        setAdminStatus("Review error: "+e.message);
-    }
-};
-
-$("uploadHero").onclick=async()=>{
-    try{
-        setAdminStatus("Uploading hero image...",true);
-
-        const url=await uploadImage($("heroFile").files[0],"hero");
-
-        config.heroImage=url;
-        $("heroImage").src=url;
-
-        await saveSettings(false);
-
-        $("heroFile").value="";
-        setAdminStatus("Hero image uploaded and saved.",true);
-    }catch(e){
-        setAdminStatus("Hero upload error: "+e.message);
-    }
-};
-
-function makeId(prefix){
-    return prefix+"-"+Date.now().toString(36)+"-"+Math.random().toString(36).slice(2,6);
-}
-
-function renderEditors(){
-    $("reviewsJson").value=JSON.stringify(config.reviews||[],null,2);
-
-    $("serviceEditors").innerHTML=categories.map((c,i)=>`
-        <div class="admin-service">
-            <h4>${escapeHtml(c.name)}</h4>
-
-            <label>Service description</label>
-            <textarea data-cat="${i}" data-field="description">${escapeHtml(c.description||"")}</textarea>
-
-            <label>Poster image URL</label>
-            <input data-cat="${i}" data-field="image" value="${escapeHtml(c.image||"")}">
-
-            <label>Upload new poster</label>
-            <input type="file" data-upload-cat="${i}" accept="image/*">
-
-            <div class="admin-actions">
-                <button class="btn" type="button" data-save-cat="${i}">Save Poster & Details</button>
-                <button class="btn light" type="button" data-add-offer="${i}">Add Package</button>
-            </div>
-
-            ${(c.offers||[]).map((o,j)=>`
-                <div class="admin-card">
-                    <label>Package name</label>
-                    <input data-cat="${i}" data-offer="${j}" data-field="name" value="${escapeHtml(o.name)}">
-
-                    <label>Price (BDT)</label>
-                    <input type="number" data-cat="${i}" data-offer="${j}" data-field="price" value="${Number(o.price)}">
-
-                    <label>Unit (one-time or month)</label>
-                    <input data-cat="${i}" data-offer="${j}" data-field="unit" value="${escapeHtml(o.unit||"one-time")}">
-
-                    <button class="btn red" type="button" data-remove-offer="${i}" data-offer="${j}">Remove Package</button>
-                </div>
-            `).join("")}
-        </div>
-    `).join("");
-}
-
-$("serviceEditors").addEventListener("click",async e=>{
-    const save=e.target.closest("[data-save-cat]");
-    const add=e.target.closest("[data-add-offer]");
-    const remove=e.target.closest("[data-remove-offer]");
-
-    if(save){
-        const i=Number(save.dataset.saveCat);
-        const card=save.closest(".admin-service");
-
-        categories[i].description=
-            card.querySelector('[data-field="description"]').value;
-
-        const file=card.querySelector("[data-upload-cat]").files[0];
-
-        try{
-            if(file){
-                categories[i].image=await uploadImage(file,"services");
-            }else{
-                categories[i].image=
-                    card.querySelector('[data-field="image"]').value;
-            }
-
-            await saveSettings(false);
-            renderEditors();
-
-            setAdminStatus("Service details and poster saved.",true);
-        }catch(err){
-            setAdminStatus("Service save error: "+err.message);
-        }
-    }
-
-    if(add){
-        const i=Number(add.dataset.addOffer);
-
-        categories[i].offers.push({
-            id:makeId("package"),
-            name:"New Package",
-            price:0,
-            unit:"one-time"
-        });
-
-        renderEditors();
-    }
-
-    if(remove){
-        const i=Number(remove.dataset.removeOffer);
-        const j=Number(remove.dataset.offer);
-
-        categories[i].offers.splice(j,1);
-        renderEditors();
-    }
-});
-
-$("serviceEditors").addEventListener("change",e=>{
-    const el=e.target;
-
-    if(el.dataset.cat===undefined||el.dataset.offer===undefined)return;
-
-    const c=categories[Number(el.dataset.cat)];
-    const o=c.offers[Number(el.dataset.offer)];
-    const field=el.dataset.field;
-
-    o[field]=field==="price"?Number(el.value):el.value;
-});
-
-$("year").textContent=new Date().getFullYear();
-
-</script>
-</body>
-</html>
