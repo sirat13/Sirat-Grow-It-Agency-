@@ -25,12 +25,14 @@ section{padding:60px 0}.heading{text-align:center;margin-bottom:32px}.heading sm
 @media(max-width:740px){.nav{min-height:70px}.brand{font-size:17px}.navlinks{display:none}.wa{padding:10px;font-size:12px}.hero-inner{grid-template-columns:1fr;padding:40px 0;gap:15px}.hero-art img{max-width:100%}.hero h1{font-size:clamp(36px,10vw,50px)}.grid{grid-template-columns:1fr}.reviewgrid{grid-template-columns:1fr}section{padding:46px 0}.offer{flex-wrap:wrap}.offer .btn{margin-left:auto}.admin-panel{padding:13px}.editor-row{grid-template-columns:1fr 1fr}.editor-row input:first-child{grid-column:1/-1}}
 @media(max-width:380px){.paychoices{grid-template-columns:repeat(2,minmax(0,1fr))}}
 </style>
-</head><body>
+</head>
+<body>
 <header><div class="wrap nav">
 <a class="brand" href="#">↗ Sirat Grow It <span>Agency</span></a>
 <nav class="navlinks"><a href="#services">Services</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a></nav>
 <a class="wa" id="headerWa" href="https://wa.me/8801913022305">☏ Chat on WhatsApp</a>
 </div></header>
+
 <div class="hero"><div class="wrap hero-inner"><div>
 <div class="kicker">Creative • Content • Digital Growth</div>
 <h1>Grow Your Online Presence with <span>Professional Services!</span></h1>
@@ -41,7 +43,7 @@ section{padding:60px 0}.heading{text-align:center;margin-bottom:32px}.heading sm
 
 <section id="services"><div class="wrap"><div class="heading"><small>OUR SERVICES</small><h2>Choose Your Service</h2><p>Browse our service posters, select a package and place your order directly through WhatsApp.</p></div><div class="grid" id="servicesGrid"></div><p class="service-note">All campaigns are subject to platform rules and account eligibility. No guaranteed reach, monetization approval or audience results are implied.</p></div></section>
 
-<section id="reviews"><div class="wrap"><div class="heading"><small>CLIENT FEEDBACK</small><h2>Customer Reviews</h2><p>Sample review layout — replace these examples with genuine customer feedback before publishing.</p></div><div class="reviewgrid" id="reviewGrid"></div><div style="text-align:center;margin-top:22px"><a class="btn" id="reviewLink" href="https://wa.me/8801913022305">Share Your Genuine Review</a></div></div></section>
+<section id="reviews"><div class="wrap"><div class="heading"><small>CLIENT FEEDBACK</small><h2>Customer Reviews</h2><p>Customer feedback. Only genuine, authorized reviews should be published here.</p></div><div class="reviewgrid" id="reviewGrid"></div><div style="text-align:center;margin-top:22px"><a class="btn" id="reviewLink" href="https://wa.me/8801913022305">Share Your Genuine Review</a></div></div></section>
 
 <section id="contact"><div class="wrap"><div class="contact"><h2>Let's Grow Together!</h2><p id="contactDetails">WhatsApp: 01913022305 · Email: siratakanda06@gmail.com · Kishoreganj, Bangladesh</p><a class="btn" id="contactWa" href="https://wa.me/8801913022305">Chat on WhatsApp Now</a></div></div></section>
 <footer>© 2026 Sirat Grow It Agency · All rights reserved</footer>
@@ -51,7 +53,7 @@ section{padding:60px 0}.heading{text-align:center;margin-bottom:32px}.heading sm
 <p id="serviceName" class="hint"></p>
 <div class="field"><label for="quantity">Quantity</label><input id="quantity" type="number" min="1" max="100" value="1"></div>
 <div class="field"><label for="buyer">Your name (optional)</label><input id="buyer" placeholder="Your name"></div>
-<div class="summary" id="summary">Total: $0</div>
+<div class="summary" id="summary">Total: ৳0</div>
 <b>Select a payment method</b><p class="hint">Choose one of the 11 payment methods below.</p>
 <div class="paychoices" id="payChoices"></div>
 <p class="hint">Your service, selected package, total and payment choice will be sent to WhatsApp. We will confirm the recipient details before you pay.</p>
@@ -60,141 +62,368 @@ section{padding:60px 0}.heading{text-align:center;margin-bottom:32px}.heading sm
 
 <div class="admin-backdrop" id="adminBackdrop" aria-hidden="true"><section class="admin-panel" role="dialog" aria-modal="true">
 <div class="admin-head"><div><small>WEBSITE CONTROL CENTER</small><h2>Sirat Grow It Agency · Admin Panel</h2></div><button id="adminClose" class="close" type="button">×</button></div>
-<div id="adminLogin"><p class="admin-help">Sign in with your Supabase admin email and password.</p>
-<div class="field"><label for="adminEmail">Admin Email</label><input id="adminEmail" type="email" autocomplete="username" placeholder="Your Supabase email"></div>
-<div class="field"><label for="adminPassword">Password</label><input id="adminPassword" type="password" autocomplete="current-password" placeholder="Your Supabase password"></div>
+<div id="adminLogin"><p class="admin-help">Admin editing is available on this browser. Changes are saved in this browser's local storage.</p>
+<div class="field"><label for="adminPassword">Admin password</label><input id="adminPassword" type="password" autocomplete="current-password" placeholder="Enter admin password"></div>
 <button class="btn" id="adminLoginBtn" type="button">Login</button><p id="loginStatus" class="admin-status"></p></div>
 <div id="adminContent" hidden>
-<p class="admin-warning">Login successful. Uploaded images are saved automatically. Click Save All Changes to save other updates.</p>
-<div class="admin-help"><h3>1. Update Hero Image</h3><p>Choose and upload the large image displayed at the top of the website.</p><input class="admin-file" type="file" id="heroFile" accept="image/*"><button class="btn" id="uploadHero" type="button">Upload Hero Image</button></div>
-<div class="admin-help"><h3>2. Manage Services and Packages</h3><p>Edit service names, posters, descriptions, packages and prices. Uploaded posters appear on the website immediately and are saved automatically.</p><div id="categoriesEditor"></div><button class="btn" id="addCategory" type="button">+ Add New Service</button></div>
-<div class="admin-help"><h3>3. Manage Client Reviews</h3><p>Edit the review list as JSON. Keep each review with a name and text. Set verified to true only for genuine customer feedback you have permission to publish.</p><textarea id="reviewsJson" rows="10" spellcheck="false"></textarea></div>
-<div class="admin-help"><h3>4. Contact Information</h3><div class="field"><label>WhatsApp Number (including country code, e.g. 8801913022305)</label><input id="editWhatsapp" type="text"></div><div class="field"><label>Email</label><input id="editEmail" type="email"></div><div class="field"><label>Location</label><input id="editLocation" type="text"></div></div>
+<p class="admin-warning">Uploaded images are saved in this browser. Save All Changes to save other updates.</p>
+<div class="admin-help"><h3>1. Update Hero Image</h3><input class="admin-file" type="file" id="heroFile" accept="image/*"><button class="btn" id="uploadHero" type="button">Upload Hero Image</button></div>
+<div class="admin-help"><h3>2. Manage Services and Packages</h3><div id="categoriesEditor"></div><button class="btn" id="addCategory" type="button">+ Add New Service</button></div>
+<div class="admin-help"><h3>3. Manage Client Reviews</h3><textarea id="reviewsJson" rows="10" spellcheck="false"></textarea></div>
+<div class="admin-help"><h3>4. Contact Information</h3><div class="field"><label>WhatsApp Number (country code included)</label><input id="editWhatsapp" type="text"></div><div class="field"><label>Email</label><input id="editEmail" type="email"></div><div class="field"><label>Location</label><input id="editLocation" type="text"></div></div>
 <div class="admin-actions"><button class="btn" id="adminSave" type="button">Save All Changes</button><button class="btn light" id="adminReset" type="button">Reset to Original</button><button class="btn dark" id="adminExport" type="button">Download Settings</button><button class="btn light" id="adminLogout" type="button">Logout</button></div>
 </div><p id="adminStatus" class="admin-status" role="status"></p>
 </section></div>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script>"use strict";
+<script>
+"use strict";
 
 const DEFAULT_METHODS = [
-  {id:"bkash",name:"bKash",image:"assets/payment/bkash.png"},
-  {id:"nagad",name:"Nagad",image:"assets/payment/nagad.png"},
-  {id:"rocket",name:"Rocket",image:"assets/payment/rocket.png"},
-  {id:"bank",name:"Bank Account",image:"assets/payment/bank.png"},
-  {id:"visa",name:"Visa",image:"assets/payment/visa.png"},
-  {id:"binance",name:"Binance",image:"assets/payment/binance.png"},
-  {id:"western-union",name:"Western Union",image:"assets/payment/western-union.png"},
-  {id:"ria",name:"Ria Money Transfer",image:"assets/payment/ria.png"},
-  {id:"payoneer",name:"Payoneer",image:"assets/payment/payoneer.png"},
-  {id:"paypal",name:"PayPal",image:"assets/payment/paypal.png"},
-  {id:"moneygram",name:"MoneyGram",image:"assets/payment/moneygram.png"}
+{id:"bkash",name:"bKash",image:"assets/payment/bkash.png"},
+{id:"nagad",name:"Nagad",image:"assets/payment/nagad.png"},
+{id:"rocket",name:"Rocket",image:"assets/payment/rocket.png"},
+{id:"bank",name:"Bank Account",image:"assets/payment/bank.png"},
+{id:"visa",name:"Visa",image:"assets/payment/visa.png"},
+{id:"binance",name:"Binance",image:"assets/payment/binance.png"},
+{id:"western-union",name:"Western Union",image:"assets/payment/western-union.png"},
+{id:"ria",name:"Ria Money Transfer",image:"assets/payment/ria.png"},
+{id:"payoneer",name:"Payoneer",image:"assets/payment/payoneer.png"},
+{id:"paypal",name:"PayPal",image:"assets/payment/paypal.png"},
+{id:"moneygram",name:"MoneyGram",image:"assets/payment/moneygram.png"}
 ];
 
 const DEFAULT_SETTINGS = {
-  whatsapp:"8801913022305",
-  email:"siratakanda06@gmail.com",
-  location:"Kishoreganj, Bangladesh"
+whatsapp:"8801913022305",
+email:"siratakanda06@gmail.com",
+location:"Kishoreganj, Bangladesh"
 };
 
 const DEFAULT_REVIEWS = [
-  {name:"Happy Customer",text:"The team was helpful and communicated clearly throughout the process.",verified:false},
-  {name:"Satisfied Client",text:"Professional support and a smooth ordering experience.",verified:false},
-  {name:"Business Owner",text:"Good communication and helpful service guidance.",verified:false}
+{name:"Happy Customer",text:"The team was helpful and communicated clearly throughout the process.",verified:false},
+{name:"Satisfied Client",text:"Professional support and a smooth ordering experience.",verified:false},
+{name:"Business Owner",text:"Good communication and helpful service guidance.",verified:false}
 ];
 
 const DEFAULT_SERVICES = [
-  {
-    id:"youtube",
-    title:"YouTube Services",
-    description:"Professional YouTube channel support and creator services.",
-    poster:"assets/posters/youtube.jpg",
-    packages:[
-      {name:"Channel Setup",description:"Basic channel setup and guidance.",price:500},
-      {name:"Video Editing",description:"Professional video editing service.",price:1000}
-    ]
-  },
-  {
-    id:"facebook",
-    title:"Facebook Services",
-    description:"Facebook page support and social media services.",
-    poster:"assets/posters/facebook.jpg",
-    packages:[
-      {name:"Page Setup",description:"Page setup and optimization guidance.",price:500},
-      {name:"Content Support",description:"Content planning and support.",price:1000}
-    ]
-  },
-  {
-    id:"design",
-    title:"Graphic Design",
-    description:"Creative poster, banner and social media designs.",
-    poster:"assets/posters/design.jpg",
-    packages:[
-      {name:"Poster Design",description:"One custom poster design.",price:500},
-      {name:"Banner Design",description:"One custom banner design.",price:700}
-    ]
-  },
-  {
-    id:"website",
-    title:"Website Design",
-    description:"Responsive website design for businesses and creators.",
-    poster:"assets/posters/website.jpg",
-    packages:[
-      {name:"Landing Page",description:"Single-page website design.",price:3000},
-      {name:"Business Website",description:"Multi-section business website.",price:6000}
-    ]
-  }
+{id:"youtube",title:"YouTube Services",description:"Professional YouTube channel support and creator services.",poster:"assets/posters/youtube.jpg",packages:[
+{name:"Channel Setup",description:"Basic channel setup and guidance.",price:500},
+{name:"Video Editing",description:"Professional video editing service.",price:1000}]},
+{id:"facebook",title:"Facebook Services",description:"Facebook page support and social media services.",poster:"assets/posters/facebook.jpg",packages:[
+{name:"Page Setup",description:"Page setup and optimization guidance.",price:500},
+{name:"Content Support",description:"Content planning and support.",price:1000}]},
+{id:"design",title:"Graphic Design",description:"Creative poster, banner and social media designs.",poster:"assets/posters/design.jpg",packages:[
+{name:"Poster Design",description:"One custom poster design.",price:500},
+{name:"Banner Design",description:"One custom banner design.",price:700}]},
+{id:"website",title:"Website Design",description:"Responsive website design for businesses and creators.",poster:"assets/posters/website.jpg",packages:[
+{name:"Landing Page",description:"Single-page website design.",price:3000},
+{name:"Business Website",description:"Multi-section business website.",price:6000}]}
 ];
 
-const STORAGE_KEY = "sirატ_grow_it_settings";
-const PAYMENT_KEY = "sirat_grow_it_payments";
-const REVIEW_KEY = "sirat_grow_it_reviews";
-const SERVICE_KEY = "sirat_grow_it_services";
+const STORAGE_KEY="sirat_grow_it_settings";
+const PAYMENT_KEY="sirat_grow_it_payments";
+const REVIEW_KEY="sirat_grow_it_reviews";
+const SERVICE_KEY="sirat_grow_it_services";
+const HERO_KEY="sirat_grow_it_hero";
 
-let selectedService = null;
-let selectedPackage = null;
-let selectedPayment = null;
-let currentQuantity = 1;
-let services = loadData(SERVICE_KEY, DEFAULT_SERVICES);
-let payments = loadData(PAYMENT_KEY, DEFAULT_METHODS);
-let reviews = loadData(REVIEW_KEY, DEFAULT_REVIEWS);
-let settings = loadData(STORAGE_KEY, DEFAULT_SETTINGS);
+let selectedService=null,selectedPackage=null,selectedPayment=null,currentQuantity=1;
+let services=loadData(SERVICE_KEY,DEFAULT_SERVICES);
+let payments=loadData(PAYMENT_KEY,DEFAULT_METHODS);
+let reviews=loadData(REVIEW_KEY,DEFAULT_REVIEWS);
+let settings=loadData(STORAGE_KEY,DEFAULT_SETTINGS);
 
-function loadData(key, fallback) {
-  try {
-    const saved = localStorage.getItem(key);
-    return saved ? JSON.parse(saved) : structuredClone(fallback);
-  } catch (error) {
-    console.warn("Could not load saved website data:", error);
-    return structuredClone(fallback);
-  }
+function loadData(key,fallback){
+try{const saved=localStorage.getItem(key);return saved?JSON.parse(saved):structuredClone(fallback)}
+catch(error){console.warn("Could not load saved website data:",error);return structuredClone(fallback)}
 }
-
-function saveData(key, value) {
-  try {
-    localStorage.setItem(key, JSON.stringify(value));
-    return true;
-  } catch (error) {
-    console.error("Could not save website data:", error);
-    return false;
-  }
+function saveData(key,value){
+try{localStorage.setItem(key,JSON.stringify(value));return true}
+catch(error){console.error("Could not save website data:",error);return false}
 }
-
-function money(value) {
-  return "৳" + Number(value || 0).toLocaleString("en-BD");
+function money(value){return "৳"+Number(value||0).toLocaleString("en-BD")}
+function safeText(value){
+return String(value??"").replace(/[&<>"']/g,character=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[character]))
 }
-
-function safeText(value) {
-  return String(value ?? "").replace(/[&<>"']/g, character => ({
-    "&":"&amp;",
-    "<":"&lt;",
-    ">":"&gt;",
-    '"':"&quot;",
-    "'":"&#39;"
-  })[character]);
+function whatsappLink(message){
+const number=String(settings.whatsapp||DEFAULT_SETTINGS.whatsapp).replace(/\D/g,"");
+return "https://wa.me/"+number+"?text="+encodeURIComponent(message)
 }
-
-function whatsappLink(message) {
-  const number = String(settings.whatsapp || DEFAULT_SETTINGS.whatsapp).replace(/\D/g,"");
-  return "https://wa.me/" + number + "?text=" + encodeURIComponent(message);
+function updateContact(){
+const number=String(settings.whatsapp||DEFAULT_SETTINGS.whatsapp).replace(/\D/g,"");
+const display=number.startsWith("880")?"0"+number.slice(3):number;
+const url="https://wa.me/"+number;
+document.getElementById("headerWa").href=url;
+document.getElementById("contactWa").href=url;
+document.getElementById("reviewLink").href=whatsappLink("Hello, I would like to share my feedback about Sirat Grow It Agency.");
+document.getElementById("contactDetails").textContent="WhatsApp: "+display+" · Email: "+settings.email+" · "+settings.location
 }
+function renderServices(){
+const grid=document.getElementById("servicesGrid");
+grid.innerHTML="";
+services.forEach((service,serviceIndex)=>{
+const card=document.createElement("article");
+card.className="poster-card";
+const poster=document.createElement("img");
+poster.src=service.poster||"";
+poster.alt=service.title+" poster";
+poster.loading="lazy";
+poster.onerror=function(){
+this.style.display="none";
+const placeholder=document.createElement("div");
+placeholder.className="poster-placeholder";
+placeholder.innerHTML="<span>SIRAT GROW IT AGENCY</span><strong>"+safeText(service.title)+"</strong><small>Professional Digital Services</small>";
+card.insertBefore(placeholder,card.firstChild)
+};
+card.appendChild(poster);
+const body=document.createElement("div");
+body.className="poster-card-body";
+let packagesHTML="";
+(service.packages||[]).forEach((pkg,packageIndex)=>{
+packagesHTML+=`<div class="offer">
+<div><strong>${safeText(pkg.name)}</strong><small>${safeText(pkg.description||"")}</small></div>
+<div class="offer-price">${money(pkg.price)}</div>
+<button class="btn" type="button" data-service="${serviceIndex}" data-package="${packageIndex}">Order Now</button>
+</div>`
+});
+body.innerHTML=`<h3>${safeText(service.title)}</h3><p>${safeText(service.description||"")}</p><div class="offer-list">${packagesHTML}</div>`;
+card.appendChild(body);
+grid.appendChild(card)
+});
+grid.querySelectorAll("[data-service]").forEach(button=>{
+button.addEventListener("click",()=>{
+openOrder(Number(button.dataset.service),Number(button.dataset.package))
+})
+})
+}
+function renderReviews(){
+const grid=document.getElementById("reviewGrid");
+grid.innerHTML="";
+reviews.forEach(review=>{
+const card=document.createElement("article");
+card.className="review";
+const initial=(String(review.name||"C").trim()[0]||"C").toUpperCase();
+card.innerHTML=`<div class="review-person"><div class="avatar">${safeText(initial)}</div><div><b>${safeText(review.name||"Customer")}</b><div class="stars">★★★★★</div></div></div><p>${safeText(review.text||"")}</p>${review.verified?'<span class="stars">Verified customer review</span>':'<span class="review-demo">UNVERIFIED SAMPLE</span>'}`;
+grid.appendChild(card)
+})
+}
+function renderPayments(){
+const choices=document.getElementById("payChoices");
+choices.innerHTML="";
+payments.forEach(method=>{
+const button=document.createElement("button");
+button.type="button";
+button.className="pay"+(selectedPayment===method.id?" selected":"");
+button.innerHTML=`<img src="${safeText(method.image)}" alt="${safeText(method.name)}" loading="eager"><span>${safeText(method.name)}</span>`;
+button.addEventListener("click",()=>{
+selectedPayment=method.id;
+renderPayments();
+document.getElementById("whatsOrder").disabled=false;
+document.getElementById("whatsOrder").textContent="Continue to WhatsApp with "+method.name+" →";
+});
+choices.appendChild(button)
+})
+}
+function calculateTotal(){
+const quantity=Math.max(1,Math.min(100,Number(document.getElementById("quantity").value)||1));
+currentQuantity=quantity;
+const price=Number(selectedPackage?.price)||0;
+document.getElementById("summary").textContent="Total: "+money(price*quantity);
+return price*quantity
+}
+function openOrder(serviceIndex,packageIndex){
+selectedService=services[serviceIndex];
+selectedPackage=selectedService?.packages?.[packageIndex];
+if(!selectedService||!selectedPackage)return;
+selectedPayment=null;
+document.getElementById("serviceName").textContent=selectedService.title+" — "+selectedPackage.name;
+document.getElementById("quantity").value=1;
+document.getElementById("buyer").value="";
+document.getElementById("whatsOrder").disabled=true;
+document.getElementById("whatsOrder").textContent="Contact on WhatsApp to Order →";
+calculateTotal();
+renderPayments();
+document.getElementById("backdrop").classList.add("open")
+}
+function closeOrder(){
+document.getElementById("backdrop").classList.remove("open")
+}
+document.getElementById("close").addEventListener("click",closeOrder);
+document.getElementById("backdrop").addEventListener("click",event=>{
+if(event.target.id==="backdrop")closeOrder()
+});
+document.getElementById("quantity").addEventListener("input",calculateTotal);
+document.getElementById("whatsOrder").addEventListener("click",()=>{
+if(!selectedService||!selectedPackage||!selectedPayment)return;
+const method=payments.find(item=>item.id===selectedPayment);
+const buyer=document.getElementById("buyer").value.trim()||"Not provided";
+const total=calculateTotal();
+const message=[
+"Hello Sirat Grow It Agency, I want to place an order.",
+"",
+"Service: "+selectedService.title,
+"Package: "+selectedPackage.name,
+"Price per unit: "+money(selectedPackage.price),
+"Quantity: "+currentQuantity,
+"Total: "+money(total),
+"Customer name: "+buyer,
+"Payment method: "+(method?.name||selectedPayment),
+"",
+"Please send me the payment instructions."
+].join("\n");
+window.open(whatsappLink(message),"_blank","noopener,noreferrer")
+});
+
+function openAdmin(){
+document.getElementById("adminBackdrop").classList.add("open");
+document.getElementById("adminBackdrop").setAttribute("aria-hidden","false")
+}
+function closeAdmin(){
+document.getElementById("adminBackdrop").classList.remove("open");
+document.getElementById("adminBackdrop").setAttribute("aria-hidden","true")
+}
+document.getElementById("adminClose").addEventListener("click",closeAdmin);
+document.getElementById("adminBackdrop").addEventListener("click",event=>{
+if(event.target.id==="adminBackdrop")closeAdmin()
+});
+document.getElementById("adminLoginBtn").addEventListener("click",()=>{
+const password=document.getElementById("adminPassword").value;
+if(password!==""){
+document.getElementById("loginStatus").textContent="For security, configure a real server-side admin login before using the admin panel.";
+}else{
+document.getElementById("loginStatus").textContent="Enter your admin password."
+}
+});
+function renderEditor(){
+const editor=document.getElementById("categoriesEditor");
+editor.innerHTML="";
+services.forEach((service,index)=>{
+const card=document.createElement("div");
+card.className="editor-card";
+card.innerHTML=`<div class="editor-title">${safeText(service.title)}</div>
+<label class="admin-label">Service title</label><input type="text" data-s-title="${index}" value="${safeText(service.title)}">
+<label class="admin-label">Description</label><input type="text" data-s-description="${index}" value="${safeText(service.description||"")}">
+<label class="admin-label">Poster image path</label><input type="text" data-s-poster="${index}" value="${safeText(service.poster||"")}">
+<div class="editor-actions"><button type="button" class="small-btn red" data-delete-service="${index}">Delete Service</button></div>
+<hr><b>Packages</b><div data-packages="${index}"></div>
+<button type="button" class="small-btn" data-add-package="${index}">+ Add Package</button>`;
+editor.appendChild(card);
+const packageBox=card.querySelector(`[data-packages="${index}"]`);
+(service.packages||[]).forEach((pkg,pkgIndex)=>{
+const row=document.createElement("div");
+row.className="editor-card";
+row.innerHTML=`<label class="admin-label">Package name</label><input type="text" data-p-name="${index}-${pkgIndex}" value="${safeText(pkg.name)}">
+<label class="admin-label">Description</label><input type="text" data-p-description="${index}-${pkgIndex}" value="${safeText(pkg.description||"")}">
+<label class="admin-label">Price (BDT)</label><input type="number" min="0" data-p-price="${index}-${pkgIndex}" value="${Number(pkg.price)||0}">
+<button type="button" class="small-btn red" data-delete-package="${index}-${pkgIndex}">Delete Package</button>`;
+packageBox.appendChild(row)
+})
+});
+editor.querySelectorAll("[data-delete-service]").forEach(button=>button.onclick=()=>{
+services.splice(Number(button.dataset.deleteService),1);renderEditor()
+});
+editor.querySelectorAll("[data-delete-package]").forEach(button=>button.onclick=()=>{
+const [i,j]=button.dataset.deletePackage.split("-").map(Number);
+services[i].packages.splice(j,1);renderEditor()
+});
+editor.querySelectorAll("[data-add-package]").forEach(button=>button.onclick=()=>{
+const i=Number(button.dataset.addPackage);
+services[i].packages.push({name:"New Package",description:"Package details",price:0});renderEditor()
+})
+}
+document.getElementById("addCategory").addEventListener("click",()=>{
+services.push({id:"service-"+Date.now(),title:"New Service",description:"Service description",poster:"",packages:[{name:"New Package",description:"Package details",price:0}]});
+renderEditor()
+});
+function collectEditor(){
+document.querySelectorAll("[data-s-title]").forEach(input=>services[Number(input.dataset.sTitle)].title=input.value);
+document.querySelectorAll("[data-s-description]").forEach(input=>services[Number(input.dataset.sDescription)].description=input.value);
+document.querySelectorAll("[data-s-poster]").forEach(input=>services[Number(input.dataset.sPoster)].poster=input.value);
+document.querySelectorAll("[data-p-name]").forEach(input=>{
+const [i,j]=input.dataset.pName.split("-").map(Number);if(services[i]?.packages[j])services[i].packages[j].name=input.value
+});
+document.querySelectorAll("[data-p-description]").forEach(input=>{
+const [i,j]=input.dataset.pDescription.split("-").map(Number);if(services[i]?.packages[j])services[i].packages[j].description=input.value
+});
+document.querySelectorAll("[data-p-price]").forEach(input=>{
+const [i,j]=input.dataset.pPrice.split("-").map(Number);if(services[i]?.packages[j])services[i].packages[j].price=Math.max(0,Number(input.value)||0)
+})
+}
+document.getElementById("adminSave").addEventListener("click",()=>{
+collectEditor();
+let newReviews;
+try{newReviews=JSON.parse(document.getElementById("reviewsJson").value);if(!Array.isArray(newReviews))throw new Error("Reviews must be a JSON array")}
+catch(error){document.getElementById("adminStatus").textContent="Review JSON error: "+error.message;return}
+settings.whatsapp=document.getElementById("editWhatsapp").value.replace(/\D/g,"");
+settings.email=document.getElementById("editEmail").value.trim();
+settings.location=document.getElementById("editLocation").value.trim();
+const ok1=saveData(SERVICE_KEY,services);
+const ok2=saveData(REVIEW_KEY,newReviews);
+const ok3=saveData(STORAGE_KEY,settings);
+if(ok1&&ok2&&ok3){
+reviews=newReviews;
+renderServices();renderReviews();updateContact();
+document.getElementById("adminStatus").textContent="Changes saved successfully in this browser."
+}else{
+document.getElementById("adminStatus").textContent="Could not save all changes. Browser storage may be full."
+}
+});
+document.getElementById("adminReset").addEventListener("click",()=>{
+if(!confirm("Reset services, reviews and contact settings to the default values?"))return;
+services=structuredClone(DEFAULT_SERVICES);
+reviews=structuredClone(DEFAULT_REVIEWS);
+settings=structuredClone(DEFAULT_SETTINGS);
+saveData(SERVICE_KEY,services);saveData(REVIEW_KEY,reviews);saveData(STORAGE_KEY,settings);
+renderServices();renderReviews();updateContact();fillAdmin();
+document.getElementById("adminStatus").textContent="Default settings restored."
+});
+function fillAdmin(){
+document.getElementById("reviewsJson").value=JSON.stringify(reviews,null,2);
+document.getElementById("editWhatsapp").value=settings.whatsapp;
+document.getElementById("editEmail").value=settings.email;
+document.getElementById("editLocation").value=settings.location;
+renderEditor()
+}
+document.getElementById("uploadHero").addEventListener("click",()=>{
+const file=document.getElementById("heroFile").files[0];
+if(!file){document.getElementById("adminStatus").textContent="Please select an image first.";return}
+if(!file.type.startsWith("image/")){document.getElementById("adminStatus").textContent="Please select a valid image.";return}
+const reader=new FileReader();
+reader.onload=()=>{
+try{
+localStorage.setItem(HERO_KEY,reader.result);
+document.getElementById("heroImage").src=reader.result;
+document.getElementById("adminStatus").textContent="Hero image updated and saved in this browser."
+}catch(error){document.getElementById("adminStatus").textContent="Image is too large for browser storage. Use a smaller image."}
+};
+reader.readAsDataURL(file)
+});
+document.getElementById("adminExport").addEventListener("click",()=>{
+collectEditor();
+const data={services,reviews,settings,payments};
+const blob=new Blob([JSON.stringify(data,null,2)],{type:"application/json"});
+const url=URL.createObjectURL(blob);
+const a=document.createElement("a");
+a.href=url;a.download="sirat-grow-it-settings.json";a.click();
+URL.revokeObjectURL(url)
+});
+document.getElementById("adminLogout").addEventListener("click",()=>{
+document.getElementById("adminContent").hidden=true;
+document.getElementById("adminLogin").hidden=false;
+document.getElementById("adminPassword").value="";
+document.getElementById("loginStatus").textContent="";
+document.getElementById("adminStatus").textContent="Logged out."
+});
+document.addEventListener("keydown",event=>{
+if(event.ctrlKey&&event.shiftKey&&event.key.toLowerCase()==="a"){
+event.preventDefault();openAdmin()
+}
+if(event.key==="Escape"){closeOrder();closeAdmin()}
+});
+const savedHero=localStorage.getItem(HERO_KEY);
+if(savedHero)document.getElementById("heroImage").src=savedHero;
+renderServices();
+renderReviews();
+updateContact();
+fillAdmin();
+</script>
+</body>
+</html>
